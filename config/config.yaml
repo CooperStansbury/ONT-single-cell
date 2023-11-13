@@ -1,0 +1,4 @@
+output_path: "/scratch/indikar_root/indikar1/cstansbu/sc-iHSC/"
+fastq: "config/fastq.txt"
+ref_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz" 
+gtf_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.107.gtf"
