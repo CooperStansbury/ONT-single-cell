@@ -1,0 +1,87 @@
+{
+  "build": "h7f98852_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=9.3.0",
+    "xorg-inputproto",
+    "xorg-libx11 >=1.7.0,<2.0a0",
+    "xorg-libxext 1.3.*",
+    "xorg-libxfixes 5.0.*"
+  ],
+  "extracted_package_dir": "/home/cstansbu/.conda/pkgs/xorg-libxi-1.7.10-h7f98852_0",
+  "features": "",
+  "files": [
+    "include/X11/extensions/XInput.h",
+    "include/X11/extensions/XInput2.h",
+    "lib/libXi.so",
+    "lib/libXi.so.6",
+    "lib/libXi.so.6.1.0",
+    "lib/pkgconfig/xi.pc"
+  ],
+  "fn": "xorg-libxi-1.7.10-h7f98852_0.tar.bz2",
+  "license": "MIT",
+  "link": {
+    "source": "/home/cstansbu/.conda/pkgs/xorg-libxi-1.7.10-h7f98852_0",
+    "type": 1
+  },
+  "md5": "e77615e5141cad5a2acaa043d1cf0ca5",
+  "name": "xorg-libxi",
+  "package_tarball_full_path": "/home/cstansbu/.conda/pkgs/xorg-libxi-1.7.10-h7f98852_0",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "include/X11/extensions/XInput.h",
+        "path_type": "hardlink",
+        "sha256": "126588b55b982955d401e82d6cd32f0710a4bb7d25aa8dac2f5d1363dc0f2fb8",
+        "sha256_in_prefix": "126588b55b982955d401e82d6cd32f0710a4bb7d25aa8dac2f5d1363dc0f2fb8",
+        "size_in_bytes": 36014
+      },
+      {
+        "_path": "include/X11/extensions/XInput2.h",
+        "path_type": "hardlink",
+        "sha256": "5b9fed36c5b97e6ca2a85149227d276eb14ed6f2dd940d8506972441ea4e700c",
+        "sha256_in_prefix": "5b9fed36c5b97e6ca2a85149227d276eb14ed6f2dd940d8506972441ea4e700c",
+        "size_in_bytes": 18788
+      },
+      {
+        "_path": "lib/libXi.so",
+        "path_type": "softlink",
+        "sha256": "b13219a840ceebac336f72a93df0456c3eb1de80b94a1de3dcf52ffbb6cb58f9",
+        "size_in_bytes": 82264
+      },
+      {
+        "_path": "lib/libXi.so.6",
+        "path_type": "softlink",
+        "sha256": "b13219a840ceebac336f72a93df0456c3eb1de80b94a1de3dcf52ffbb6cb58f9",
+        "size_in_bytes": 82264
+      },
+      {
+        "_path": "lib/libXi.so.6.1.0",
+        "path_type": "hardlink",
+        "sha256": "b13219a840ceebac336f72a93df0456c3eb1de80b94a1de3dcf52ffbb6cb58f9",
+        "sha256_in_prefix": "b13219a840ceebac336f72a93df0456c3eb1de80b94a1de3dcf52ffbb6cb58f9",
+        "size_in_bytes": 82264
+      },
+      {
+        "_path": "lib/pkgconfig/xi.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/xorg-libxi_1620070710515/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "bfbab4cc723cc527ff11ace6626a1866b2f7a2d07c6788e32f3cdd8495235caa",
+        "sha256_in_prefix": "261f810e2f0982fbea4f9a819251127214e9eeca9836344d879f9bd315f3035c",
+        "size_in_bytes": 507
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "745c1284a96b4282fe6fe122b2643e1e8c26a7ff40b733a8f4b61357238c4e68",
+  "size": 47287,
+  "subdir": "linux-64",
+  "timestamp": 1620070911000,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxi-1.7.10-h7f98852_0.tar.bz2",
+  "version": "1.7.10"
+}

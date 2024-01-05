@@ -1,4 +1,6 @@
-output_path: "/scratch/indikar_root/indikar1/cstansbu/sc-iHSC/"
-fastq: "config/fastq.txt"
+output_path: "/scratch/indikar_root/indikar1/cstansbu/HSC_p2/"
+fastq: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/P2_run5/blaze_outputs/matched_reads.fastq.gz"
 ref_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz" 
 gtf_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.107.gtf"
+minimap2_args: "-ax splice -uf --secondary=no --MD" 
+umi_distance: 1
