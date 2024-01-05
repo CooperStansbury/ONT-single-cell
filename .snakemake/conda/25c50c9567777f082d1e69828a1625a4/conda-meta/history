@@ -1,0 +1,11 @@
+==> 2023-11-15 12:29:18 <==
+# cmd: /home/cstansbu/miniconda3/condabin/mamba create --quiet --file /home/cstansbu/git_repositories/ONT-single-cell/.snakemake/conda/25c50c9567777f082d1e69828a1625a4.yaml --prefix /home/cstansbu/git_repositories/ONT-single-cell/.snakemake/conda/25c50c9567777f082d1e69828a1625a4
+# conda version: 4.13.0
++bioconda/linux-64::bamtools-2.5.2-hdcf5f25_2
++conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge
++conda-forge/linux-64::_openmp_mutex-4.5-2_gnu
++conda-forge/linux-64::libgcc-ng-13.2.0-h807b86a_3
++conda-forge/linux-64::libgomp-13.2.0-h807b86a_3
++conda-forge/linux-64::libstdcxx-ng-13.2.0-h7e041cc_3
++conda-forge/linux-64::libzlib-1.2.13-hd590300_5
+# update specs: ['bamtools=2.5.2']

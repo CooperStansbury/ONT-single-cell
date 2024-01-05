@@ -1,0 +1,16 @@
+{"__default__": {
+    "account_slurm": "indikar1",
+    "partition": "standard",
+    "jobname": "{rule}.{wildcards}",
+    "nodes": 1,
+    "procs" : 1,
+    "cpus": 36,
+    "mem": "180G",
+    "walltime": "96:00:00",
+    "email": "cstansbu@umich.edu",
+    "mailon": "a",
+    "mail_type": "NONE",
+    "jobout": "oe",
+    "outfile": "/nfs/turbo/umms-indikar/shared/projects/poreC/runLogs/{rule}.{wildcards}.out"
+    }
+}

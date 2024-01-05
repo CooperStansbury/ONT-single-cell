@@ -1,0 +1,63 @@
+{
+  "build": "h7e041cc_3",
+  "build_number": 3,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [],
+  "extracted_package_dir": "/home/cstansbu/.conda/pkgs/libstdcxx-ng-13.2.0-h7e041cc_3",
+  "features": "",
+  "files": [
+    "lib/libstdc++.so",
+    "lib/libstdc++.so.6",
+    "lib/libstdc++.so.6.0.32",
+    "share/licenses/libstdc++/RUNTIME.LIBRARY.EXCEPTION"
+  ],
+  "fn": "libstdcxx-ng-13.2.0-h7e041cc_3.conda",
+  "license": "GPL-3.0-only WITH GCC-exception-3.1",
+  "link": {
+    "source": "/home/cstansbu/.conda/pkgs/libstdcxx-ng-13.2.0-h7e041cc_3",
+    "type": 1
+  },
+  "md5": "937eaed008f6bf2191c5fe76f87755e9",
+  "name": "libstdcxx-ng",
+  "package_tarball_full_path": "/home/cstansbu/.conda/pkgs/libstdcxx-ng-13.2.0-h7e041cc_3.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/libstdc++.so",
+        "path_type": "softlink",
+        "sha256": "e5230ae637a448d059af781ee10444f6d3a6c6fc10be7d4c2378bf84a7e1d748",
+        "size_in_bytes": 13799120
+      },
+      {
+        "_path": "lib/libstdc++.so.6",
+        "path_type": "softlink",
+        "sha256": "e5230ae637a448d059af781ee10444f6d3a6c6fc10be7d4c2378bf84a7e1d748",
+        "size_in_bytes": 13799120
+      },
+      {
+        "_path": "lib/libstdc++.so.6.0.32",
+        "path_type": "hardlink",
+        "sha256": "e5230ae637a448d059af781ee10444f6d3a6c6fc10be7d4c2378bf84a7e1d748",
+        "sha256_in_prefix": "e5230ae637a448d059af781ee10444f6d3a6c6fc10be7d4c2378bf84a7e1d748",
+        "size_in_bytes": 13799120
+      },
+      {
+        "_path": "share/licenses/libstdc++/RUNTIME.LIBRARY.EXCEPTION",
+        "path_type": "hardlink",
+        "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+        "sha256_in_prefix": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+        "size_in_bytes": 3324
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "6c6c49efedcc5709a66f19fb6b26b69c6a5245310fd1d9a901fd5e38aaf7f882",
+  "size": 3842940,
+  "subdir": "linux-64",
+  "timestamp": 1699753676000,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-ng-13.2.0-h7e041cc_3.conda",
+  "version": "13.2.0"
+}
