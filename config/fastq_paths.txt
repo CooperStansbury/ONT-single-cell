@@ -1,0 +1,8 @@
+sample_id,file_path
+Gridr1,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/GridION_run1/merged.fastq.gz
+Gridr2,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/GridION_run2/merged.fastq.gz
+Gridr3,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/GridION_run3/merged.fastq.gz
+Gridr4,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/GridION_run4/merged.fastq.gz
+P2r5,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/P2_run5/merged.fastq.gz
+P2r6,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/P2_run6/merged.fastq.gz
+P2r7,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/P2_run7/merged.fastq.gz

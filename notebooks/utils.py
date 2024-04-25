@@ -11,6 +11,9 @@ from Bio.KEGG import REST
 from Bio.KEGG.KGML import KGML_parser
 import io
 
+def min_max(v):
+    return (v - v.min()) / (v.max() - v.min())
+
 def label_point(x, y, val, ax):
     a = pd.concat({'x': x, 'y': y, 'val': val}, axis=1)
     for i, point in a.iterrows():
@@ -20,6 +23,11 @@ def label_point(x, y, val, ax):
                 fontsize=4,
                 fontweight='bold')
 
+def labeler(x, y, label, ax, 
+            kws={'fontsize': 4, 'fontweight':'bold'}):
+    ax.text(x, y, str(label), **kws)
+    
+        
 def ncolor(n, cmap='viridis'):
     cmap = matplotlib.cm.get_cmap(cmap)
     arr = np.linspace(0, 1, n)
@@ -53,6 +61,7 @@ def parseKEGG(pathId):
                 genes.append(gene_symbol)
     return genes
 
+
 def getPathname(pathId):
     """A function to return the legg pathname"""
     result = REST.kegg_list(pathId).read()
@@ -76,35 +85,35 @@ def makeColorbar(cmap, width, hieght, title, orientation, tickLabels):
     else:
         cbar.ax.set_xticklabels(tickLabels)
 
-        
-def _normalize_data(X, counts, after=None, copy=False):
-    X = X.copy() if copy else X
-    if issubclass(X.dtype.type, (int, np.integer)):
-        X = X.astype(np.float32)  # TODO: Check if float64 should be used
-    else:
-        counts_greater_than_zero = counts[counts > 0]
 
-    after = np.median(counts_greater_than_zero, axis=0) if after is None else after
-    counts += counts == 0
-    counts = counts / after
-    if scipy.sparse.issparse(X):
-        sparsefuncs.inplace_row_scale(X, 1 / counts)
-    elif isinstance(counts, np.ndarray):
-        np.divide(X, counts[:, None], out=X)
-    else:
-        X = np.divide(X, counts[:, None])  # dask does not support kwarg "out"
-    return X
-
-
-def normalize(df, target_sum=1):
-    """A function to normalize spots """
-    index = df.index
-    columns = df.columns
-    X = df.to_numpy().copy()
-    counts_per_cell = X.sum(1)
-    counts_per_cell = np.ravel(counts_per_cell)
-    cell_subset = counts_per_cell > 0
-    Xnorm = _normalize_data(X, counts_per_cell, target_sum)
+def get_pangloa(fpath, celltypes, cell_names):
+    """A fucntion to get marker genes from panglao"""
+    pdf = pd.read_csv(fpath, sep='\t')
+    pdf = pdf[pdf['cell type'].isin(celltypes)]
+    pdf = pdf[['official gene symbol', 'cell type']].drop_duplicates()
+    pdf.columns = ['gene_name', 'cell_type']
+    pdf['values'] = 1
+    pdf = pd.pivot_table(pdf, 
+                         columns='cell_type', 
+                         index='gene_name',
+                         values='values')
+    pdf = pdf.fillna(0)
+    pdf.columns = cell_names
+    pdf = pdf.reset_index(drop=False)
+    return pdf
     
-    ndf = pd.DataFrame(Xnorm, columns=columns, index=index)
-    return ndf
+
+def get_marker_genes(fpath, adata, celltypes, cell_names):
+    """A function to load marker genes for given cell
+    types """
+    pdf = get_pangloa(fpath, celltypes, cell_names)
+    var = adata.var.copy()
+    var = var[var['gene_name'].isin(pdf['gene_name'].to_list())]
+    var = var.reset_index(drop=False)
+    var = pd.merge(var, pdf, 
+                   how='left',
+                   left_on='gene_name',
+                   right_on='gene_name',)
+    var = var.set_index('gene_id')
+    return var
+

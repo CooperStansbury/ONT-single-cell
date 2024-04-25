@@ -1,0 +1,3 @@
+sample_id,file_path
+test1,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/test/test1.fastq.gz
+test2,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/test/test2.fastq.gz

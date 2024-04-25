@@ -24,4 +24,3 @@ Illumina Small RNA 3' Adapter				TGGAATTCTCGG
 Illumina Small RNA 5' Adapter				GATCGTCGGACT
 Nextera Transposase Sequence				CTGTCTCTTATA
 PolyA										AAAAAAAAAAAA
-PolyG										GGGGGGGGGGGG

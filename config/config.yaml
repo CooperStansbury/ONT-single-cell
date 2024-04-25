@@ -1,6 +1,14 @@
-output_path: "/scratch/indikar_root/indikar1/cstansbu/HSC_p2/"
-fastq: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/P2_run5/blaze_outputs/matched_reads.fastq.gz"
+output_path: "/scratch/indikar_root/indikar1/cstansbu/HSC/"
+inputs: "config/fastq_paths.txt"
 ref_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz" 
+transcript_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.cdna.all.fa.gz" 
 gtf_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.107.gtf"
+expected_cells: 10000
+barcode_whitelist: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/3M-february-2018.txt"
 minimap2_args: "-ax splice -uf --secondary=no --MD" 
 umi_distance: 1
+threads: 36
+scanpy_params:
+    target_sum: 1000000
+    min_genes: 200
+    min_cells: 3
