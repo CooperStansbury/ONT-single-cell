@@ -1,5 +1,7 @@
 # snakemake files 
 .snakemake/*
+*.h5ad
+*.pt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

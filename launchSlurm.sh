@@ -19,4 +19,4 @@ THREADS=36
 cp Snakefile workflow.smk
 echo "Built Workflow..."
 
-snakemake --profile ${SLURM_CONFIG} --cores ${THREADS} --latency-wait 90 -s workflow.smk --use-conda
+snakemake --profile ${SLURM_CONFIG} --cores ${THREADS} --latency-wait 90 -s workflow.smk --use-conda --rerun-incomplete

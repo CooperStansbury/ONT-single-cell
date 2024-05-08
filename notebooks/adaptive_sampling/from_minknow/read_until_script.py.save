@@ -8,12 +8,12 @@ import os
 import pprint
 import random
 import signal
+import sys
 import threading
 import time
 from collections import defaultdict
 from typing import Any, Callable, Optional, TypeAlias
 
-import minknow
 import minknow_api.manager
 import numpy as np
 import pandas as pd
@@ -24,7 +24,7 @@ from google.protobuf import json_format
 from grpc import RpcError
 from minknow_api import protocol_service
 from minknow_api.statistics_pb2 import ReadEndReason
-from pybasecall_client_lib.pyclient import PyBasecallClient
+from pyguppy_client_lib.pyclient import PyGuppyClient
 from read_until import AccumulatingCache, ReadUntilClient
 from sequencing.read_until.read_until_utils import WatchAcquisitionStatus, basecall, wait_for_sequencing_to_start
 from utility.config_argparse import boolify
@@ -56,7 +56,7 @@ GUPPY_PARAMS_RENAME = {
     "min_score_mask": "min_score_barcode_mask",
 }
 
-ReadType: TypeAlias = "dict[str, Any]"  # The read that comes back from the basecall client
+ReadType: TypeAlias = "dict[str, Any]"  # The read that comes back from pyguppy
 
 
 class ReadUntil(threading.Thread):
@@ -74,7 +74,7 @@ class ReadUntil(threading.Thread):
         config: dict[str, Any],
         device: BaseDeviceInterface,
         read_until_client: ReadUntilClient,
-        guppy_client: PyBasecallClient,
+        guppy_client: PyGuppyClient,
         barcode_counts: Optional[dict[str, int]] = None,
         exception_callback: Optional[Callable] = None,
     ):
@@ -113,7 +113,6 @@ class ReadUntil(threading.Thread):
         if self.report_sam_path:
             self.report_sam_path = get_run_output_path(device, "adaptive_sampling_sam.csv")
 
-        self.sample_rate = device.get_sample_rate()
         super().__init__()
 
     def _recalculate_barcode_balance_stats(self) -> None:
@@ -243,10 +242,8 @@ class ReadUntil(threading.Thread):
             code = exc.code
             if code == code.CANCELLED or code == code.ABORTED:
                 return
-            self.logger.info("rpc_error", exc_info=True)
             self.exception = exc
         except Exception as exc:
-            self.logger.info("error", exc_info=True)
             self.exception = exc
 
         if self.exception_callback:
@@ -267,7 +264,6 @@ class ReadUntil(threading.Thread):
         info_time = time.monotonic() + 60
         read_basecalled_count = 0
         read_chunk_count = 0
-        sample_rate = float(self.sample_rate)
 
         while self.keep_going:
 
@@ -298,7 +294,6 @@ class ReadUntil(threading.Thread):
                 dtype=self.read_until_client.signal_dtype,
                 daq_values=self.read_until_client.calibration_values,
                 basecall_timeout=self.config["basecall_timeout"],
-                sample_rate=sample_rate,
             )
 
             # Tell progress
@@ -462,14 +457,14 @@ class ReadUntilManager:
             raise RuntimeError("Only one alignment reference file is supported")
 
         # Get client handle
-        self.guppy_client = PyBasecallClient(
+        self.guppy_client = PyGuppyClient(
             address=self._get_guppy_conn_str(),
             config=custom_settings["guppy_config"],
             align_ref=custom_settings["reference_files"][0],
-            minimap_opt_string="-ax sr -k 15 -w 8 -n 2 -m 20",
+            minimap_opt_string="-ax sr -k 15 -w 2 -n 1 -m 2",
             bed_file=custom_settings["bed_file"],
             server_file_load_timeout=180,
-            priority=PyBasecallClient.high_priority,
+            priority=PyGuppyClient.high_priority,
             retries=3,
             throttle=0.01,
         )
@@ -492,7 +487,7 @@ class ReadUntilManager:
                 raise RuntimeError("Barcode balancing specified, but no barcode kits enabled")
 
         # This will block until the guppy server has loaded the model, index,
-        #   and bed file to get around this, we could init the basecall client in another
+        #   and bed file to get around this, we could init pyguppy in another
         #   thread
         self.guppy_client.connect()
         self.logger.info("Guppy client connected")
@@ -795,7 +790,6 @@ def parse_args(args: list) -> argparse.Namespace:
     return parser.parse_args(args)
 
 
-@minknow.main
-def read_until_script(local: minknow.ScriptLocalState):
-    args = parse_args(local.argv[1:])
+if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
     main(config=vars(args))

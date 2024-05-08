@@ -12,8 +12,8 @@ from bream4.device_interfaces.devices.base_device import BaseDeviceInterface
 from grpc import RpcError
 from minknow_api import protocol_service
 from minknow_api.acquisition_pb2 import ACQUISITION_RUNNING
-from pyguppy_client_lib.helper_functions import package_read
-from pyguppy_client_lib.pyclient import PyGuppyClient
+from pybasecall_client_lib.helper_functions import package_read
+from pybasecall_client_lib.pyclient import PyBasecallClient
 
 BREAM_KEYSTORE = "bream.protocol_communication"
 logger = logging.getLogger(__name__)
@@ -88,20 +88,22 @@ class WatchAcquisitionStatus(threading.Thread):
 
 
 def basecall(
-    guppy_client: PyGuppyClient,
+    guppy_client: PyBasecallClient,
     reads: list,
     dtype: "np.dtype",
     daq_values: dict,
+    sample_rate: float,
     basecall_timeout: Optional[int] = None,
 ) -> Generator[tuple[tuple[int, int], dict], None, None]:
     """Generator that sends and receives data from guppy
 
-    :param caller: pyguppy_client_lib.pyclient.PyGuppyClient
+    :param caller: pybasecall_client_lib.pyclient.PyBasecallClient
     :param reads: List of reads from read_until
     :param dtype: Numpy dtype to cast buffer to
     :param daq_values: Dict of channel -> NamedTuple(offset/scaling)
     :param basecall_timeout: Wait up to x seconds for the basecaller to basecall reads.
                              Skip the rest of the reads. If 0 or none, no timeout.
+    :param sample_rate: int
 
     :returns:
         - read_info (:py:class:`tuple`) - channel (int), read number (int)
@@ -121,6 +123,8 @@ def basecall(
             raw_data=np.frombuffer(read.raw_data, dtype),
             daq_offset=daq_values[channel].offset,
             daq_scaling=daq_values[channel].scaling,
+            start_time=int(read.start_sample),
+            sampling_rate=sample_rate,
         )
         packaged_reads.append(packaged)
         hold[read.id] = (channel, read.number)
@@ -130,7 +134,7 @@ def basecall(
         if guppy_client.pass_reads(packaged_reads):
             break
     else:
-        logger.info("Guppy rejected {len(packaged_reads)} reads {attempts} times. Giving up.")
+        logger.info(f"Guppy rejected {len(packaged_reads)} reads {attempts} times. Giving up.")
         return
 
     start_time = time.monotonic()

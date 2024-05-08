@@ -466,7 +466,7 @@ class ReadUntilManager:
             address=self._get_guppy_conn_str(),
             config=custom_settings["guppy_config"],
             align_ref=custom_settings["reference_files"][0],
-            minimap_opt_string="-ax sr -k 15 -w 8 -n 2 -m 20",
+            minimap_opt_string="-ax sr -k 15 -w 2 -n 1 -m 10",
             bed_file=custom_settings["bed_file"],
             server_file_load_timeout=180,
             priority=PyBasecallClient.high_priority,

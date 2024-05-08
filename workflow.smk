@@ -29,7 +29,14 @@ for x in input_names:
 
 ################ RULE FILES ################
 include: "rules/reference.smk"
-include: "rules/process_reads.smk"
+include: "rules/demultiplex.smk"
+include: "rules/flair.smk"
+include: "rules/core.smk"
+include: "rules/anndata.smk"
+include: "rules/v5tags.smk"
+include: "rules/nanocount.smk"
+
+
 
 rule all:
     input:
@@ -55,221 +62,20 @@ rule all:
         OUTPUT + 'scanpy/anndata.h5ad',
         OUTPUT + 'scanpy/anndata.processed.h5ad',
         OUTPUT + 'nanocount/merged/merged_tx_counts.tsv',
-        OUTPUT + 'merged/merged_v5_tagged.bam',
-        expand(f"{OUTPUT}velocyto/{{sid}}.done", sid=samples),
+        OUTPUT + 'v5_tagged/v5_tagged.fastq.gz',
 
 
-rule all_flair:
+
+rule archive:
     input:
+        expand(f"{OUTPUT}nanocount/mapping/{{sid}}.bam", sid=samples),
+        expand(f"{OUTPUT}nanocount/{{sid}}.tx_counts.tsv", sid=samples),
         expand(f"{OUTPUT}flair/align/{{sid}}.bam", sid=samples),
         expand(f"{OUTPUT}flair/correct/{{sid}}_all_corrected.bed", sid=samples),
         expand(f"{OUTPUT}flair/collapse/{{sid}}.isoforms.bed", sid=samples),
-
-
-rule htseq_count:
-    input:
-        bam=OUTPUT + 'merged/merged.bam',
-        annotations=config['gtf_path'],
-    output:
-        OUTPUT + "counts/counts.txt"
-    conda:
-        "envs/htseq_count.yml"
-    params:
-        d=int(config['umi_distance'])
-    shell:
-        "htseq-count-barcodes --nonunique all {input.bam} {input.annotations} > {output}"
-
-
-rule htseq_count_individual:
-    input:
-        bam=OUTPUT + 'mapping/{sid}.tagged.bam',
-        annotations=config['gtf_path'],
-    output:
-        OUTPUT + "counts/individual/{sid}.counts.txt"
-    conda:
-        "envs/htseq_count.yml"
-    params:
-        d=int(config['umi_distance'])
-    wildcard_constraints:
-        sid='|'.join([re.escape(x) for x in set(samples)]),
-    shell:
-        "htseq-count-barcodes --nonunique all {input.bam} {input.annotations} > {output}"
-
-
-rule make_anndata:
-    input:
-        counts=OUTPUT + "counts/counts.txt",
-        gtf=OUTPUT + "references/annotations.gtf",
-    output:
-        OUTPUT + "scanpy/anndata.h5ad",
-    shell:
-        """python scripts/make_anndata.py {input.counts} {input.gtf} {output}"""
-
-
-rule process_anndata:
-    input:
-        anndata=OUTPUT + "scanpy/anndata.h5ad",
-    output:
-        OUTPUT + "scanpy/anndata.processed.h5ad",
-    params:
-        config=str(BASE_DIR) + "/config/config.yaml"
-    shell:
-        """python scripts/process_anndata.py {input.anndata} {params.config} {output}"""
-
-
-rule prepare_nanocount:
-    input:
-        flag=OUTPUT + "demultiplex/{sid}.done",
-        ref=OUTPUT + 'references/transcripts.fa',
-    output:        
-        bam=OUTPUT + 'nanocount/mapping/{sid}.bam',
-    params:
-        fastq=OUTPUT + "demultiplex/{sid}.matched_reads.fastq.gz",
-    threads:
-        int(config['threads'])
-    wildcard_constraints:
-        sid='|'.join([re.escape(x) for x in set(samples)]),
-    log:
-        OUTPUT + "nanocount/mapping/{sid}.log",
-    shell:
-        """minimap2 -ax map-ont -N 10 -t {threads} \
-        {input.ref} {params.fastq} | samtools view \
-        -bh > {output.bam} """
-
-
-rule run_nanocount:
-    input:
-        OUTPUT + 'nanocount/mapping/{sid}.bam',
-    output:
-        counts=OUTPUT + 'nanocount/{sid}.tx_counts.tsv',
-        bam=OUTPUT + 'nanocount/{sid}.filtered.bam',
-    wildcard_constraints:
-        sid='|'.join([re.escape(x) for x in set(samples)]),
-    shell:
-        """NanoCount -i {input} -b {output.bam} \
-        --extra_tx_info -o {output.counts} """
-
-
-rule merge_nanocount_bam:
-    input:
-        expand(f"{OUTPUT}nanocount/mapping/{{sid}}.bam", sid=samples),
-    output:
-        OUTPUT + 'nanocount/merged/merged.bam',
-    wildcard_constraints:
-        sid='|'.join([re.escape(x) for x in set(samples)]),
-    threads:
-        int(config['threads'])
-    shell:
-        """samtools merge -@ {threads} {output} {input} """
-
-
-rule run_nanocount_merged:
-    input:
-        OUTPUT + 'nanocount/merged/merged.bam',
-    output:
-        counts=OUTPUT + 'nanocount/merged/merged_tx_counts.tsv',
-        bam=OUTPUT + 'nanocount/merged/merged.filtered.bam',
-    shell:
-        """NanoCount -i {input} -b {output.bam} \
-        --extra_tx_info -o {output.counts} """
-
-
-rule run_velocyto:
-    input:
-        bam=OUTPUT + 'mapping/{sid}.tagged.bam',
-        gtf=config['gtf_path'],
-    output:
-        flag=touch(OUTPUT + 'velocyto/{sid}.done'),
-    conda:
-        "envs/velocyto.yml"
-    wildcard_constraints:
-        sid='|'.join([re.escape(x) for x in set(samples)]),
-    threads:
-        config['threads'] // 2
-    params:
-        prefix=lambda wildcards: OUTPUT + "velocyto/" + wildcards.sid + "/",
-    shell:
-        """velocyto run --multimap \
-        --samtools-threads {threads} \
-        -o {params.prefix} {input.bam} {input.gtf} """
-
-
-rule extract_read_v5_tag:
-    input:
-        bam=OUTPUT + "merged/merged.bam",
-        ids="/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/all_merged/v5_reads/tf_read_ids.txt",
-    output:
-        OUTPUT + "merged/merged_v5_tagged.bam"
-    threads:
-        config['threads'] 
-    shell:
-        """seqkit -n -f {input.ids} -j {threads} -o {output} {input.bam}"""
+        expand(f"{OUTPUT}velocyto/{{sid}}.done", sid=samples),
 
 
 
 
-rule flair_align:
-    input:
-        fastq=OUTPUT + "demultiplex/{sid}.matched_reads.fastq.gz",
-        ref=OUTPUT + 'references/reference.fa',
-        refindex=OUTPUT + 'references/reference.mmi',
-    output:
-        bam=OUTPUT + 'flair/align/{sid}.bam',
-        bai=OUTPUT + 'flair/align/{sid}.bam.bai',
-        bed=OUTPUT + 'flair/align/{sid}.bed',
-    conda:
-        "envs/flair.yml"
-    wildcard_constraints:
-        sid='|'.join([re.escape(x) for x in set(samples)]),
-    params:
-        prefix=lambda wildcards: OUTPUT + "flair/align/" + wildcards.sid, 
-    threads:
-        int(config['threads']) // 4
-    shell:
-        """flair align -g {input.ref} -r {input.fastq} \
-        --threads {threads} --output {params.prefix} """
 
-
-rule flair_correct:
-    input:
-        bed=OUTPUT + 'flair/align/{sid}.bed',
-        gtf=OUTPUT + 'references/annotations.gtf',
-        ref=OUTPUT + 'references/reference.fa',
-    output:
-        bed=OUTPUT + 'flair/correct/{sid}_all_corrected.bed',
-    conda:
-        "envs/flair.yml"
-    wildcard_constraints:
-        sid='|'.join([re.escape(x) for x in set(samples)]),
-    params:
-        prefix=lambda wildcards: OUTPUT + "flair/correct/" + wildcards.sid, 
-    threads:
-        int(config['threads']) // 4
-    shell:
-        """flair correct -q {input.bed} -f {input.gtf} \
-        -g {input.ref} --threads {threads} --output {params.prefix} """
-
-
-rule flair_collapse:
-    input:
-        fastq=OUTPUT + "demultiplex/{sid}.matched_reads.fastq.gz",
-        bed=OUTPUT + 'flair/correct/{sid}_all_corrected.bed',
-        gtf=OUTPUT + 'references/annotations.gtf',
-        ref=OUTPUT + 'references/reference.fa',
-    output:
-        bam=OUTPUT + 'flair/collapse/{sid}.isoforms.bed',
-    conda:
-        "envs/flair.yml"
-    wildcard_constraints:
-        sid='|'.join([re.escape(x) for x in set(samples)]),
-    params:
-        prefix=lambda wildcards: OUTPUT + "flair/collapse/" + wildcards.sid + ".", 
-        tmp=OUTPUT + "flair"
-    threads:
-        int(config['threads']) // 4
-    shell:
-        """flair collapse --threads {threads} \
-        -g {input.ref} -q {input.bed} -r {input.fastq} \
-        --isoformtss --annotation_reliant generate \
-        --generate_map --trust_ends \
-        --temp_dir {params.tmp} --output {params.prefix} """
