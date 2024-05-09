@@ -117,3 +117,24 @@ def get_marker_genes(fpath, adata, celltypes, cell_names):
     var = var.set_index('gene_id')
     return var
 
+
+def get_genes_by_cell_type(pdf, cell_type, ui_upper=None):
+    """Retrieves genes based on cell type and optional ubiquitousness index filtering.
+
+    Args:
+        pdf (pandas.DataFrame): The DataFrame containing gene data.
+        cell_type (str): The cell type to filter for.
+        ui_upper (float, optional): Maximum ubiquitousness index for filtering. 
+                                    Defaults to None (no filtering).
+
+    Returns:
+        list: A list of official gene symbols matching the criteria.
+    """
+
+    genes = pdf[pdf['cell type'] == cell_type]
+
+    if ui_upper is not None:
+        genes = genes[genes['ubiquitousness index'] < ui_upper]
+
+    return genes['official gene symbol'].to_list()
+

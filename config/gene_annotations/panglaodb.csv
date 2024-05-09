@@ -1,0 +1,1435 @@
+gene_name,cell_type,ubiquitousness_index,gene_type,organ,sensitivity_human,specificity_human
+CD38,B cells memory,0.016,protein-coding gene,Immune system,0.0,0.0140977
+CD80,B cells memory,0.0,protein-coding gene,Immune system,0.0,0.0
+CD84,B cells memory,0.023,protein-coding gene,Immune system,0.0,0.0093985
+CD86,B cells memory,0.026,protein-coding gene,Immune system,0.0,0.012218
+NT5E,B cells memory,0.005,protein-coding gene,Immune system,0.0,0.00720551
+PAX5,B cells memory,0.003,protein-coding gene,Immune system,0.0,0.00156642
+PTPRC,B cells memory,0.125,protein-coding gene,Immune system,0.0,0.216165
+SPIB,B cells memory,0.01,protein-coding gene,Immune system,0.0,0.00877193
+ADAM28,B cells memory,0.004,protein-coding gene,Immune system,0.0,0.0172306
+AIM2,B cells memory,0.002,protein-coding gene,Immune system,0.0,0.00156642
+ALOX5,B cells memory,0.006,protein-coding gene,Immune system,0.0,0.00313283
+BACH2,B cells memory,0.003,protein-coding gene,Immune system,0.0,0.00156642
+BANK1,B cells memory,0.006,protein-coding gene,Immune system,0.0,0.00845865
+BLK,B cells memory,0.005,protein-coding gene,Immune system,0.0,0.00250627
+CCR6,B cells memory,0.001,protein-coding gene,Immune system,0.0,0.0
+CD180,B cells memory,0.012,protein-coding gene,Immune system,0.0,0.00093985
+CD19,B cells memory,0.007,protein-coding gene,Immune system,0.0,0.00783208
+CD1C,B cells memory,0.001,protein-coding gene,Immune system,0.0,0.00501253
+CD22,B cells memory,0.003,protein-coding gene,Immune system,0.0,0.00313283
+CD27,B cells memory,0.018,protein-coding gene,Immune system,0.0,0.0228697
+CD37,B cells memory,0.116,protein-coding gene,Immune system,0.0,0.215852
+CD69,B cells memory,0.024,protein-coding gene,Immune system,0.0,0.111216
+CD72,B cells memory,0.003,protein-coding gene,Immune system,0.0,0.0018797
+CD79A,B cells memory,0.024,protein-coding gene,Immune system,0.0,0.0432331
+CD79B,B cells memory,0.028,protein-coding gene,Immune system,0.0,0.0429198
+CLCA3P,B cells memory,0.0,pseudogene,Immune system,0.0,0.0
+CR2,B cells memory,0.001,protein-coding gene,Immune system,0.0,0.00093985
+CXCR5,B cells memory,0.001,protein-coding gene,Immune system,0.0,0.0
+DENND5B,B cells memory,0.013,protein-coding gene,Immune system,0.0,0.00595238
+FCGR2B,B cells memory,0.031,protein-coding gene,Immune system,0.0,0.00469925
+FCRL2,B cells memory,0.0,protein-coding gene,Immune system,0.0,0.0
+FRK,B cells memory,0.005,protein-coding gene,Immune system,0.0,0.00720551
+GNG7,B cells memory,0.009,protein-coding gene,Immune system,0.0,0.0260025
+GPR18,B cells memory,0.001,protein-coding gene,Immune system,0.0,0.00689223
+GUSBP11,B cells memory,0.0,pseudogene,Immune system,0.0,0.0
+HHEX,B cells memory,0.037,protein-coding gene,Immune system,0.0,0.0228697
+HLA-DOB,B cells memory,0.001,protein-coding gene,Immune system,0.0,0.00501253
+IFNA10,B cells memory,0.0,protein-coding gene,Immune system,0.0,0.0
+IGHD,B cells memory,0.008,other,Immune system,0.0,0.00877193
+IGHM,B cells memory,0.078,other,Immune system,0.0,0.0551378
+IGKC,B cells memory,0.072,other,Immune system,0.0,0.162907
+IGLL3P,B cells memory,0.0,pseudogene,Immune system,0.0,0.0
+IL7,B cells memory,0.007,protein-coding gene,Immune system,0.0,0.0093985
+IRF8,B cells memory,0.069,protein-coding gene,Immune system,0.0,0.0272556
+LTB,B cells memory,0.065,protein-coding gene,Immune system,0.0,0.163221
+LY86,B cells memory,0.07,protein-coding gene,Immune system,0.0,0.0272556
+MBL2,B cells memory,0.002,protein-coding gene,Immune system,0.0,0.000626566
+MS4A1,B cells memory,0.014,protein-coding gene,Immune system,0.0,0.0203634
+NMBR,B cells memory,0.0,protein-coding gene,Immune system,0.0,0.0
+NPIPB15,B cells memory,0.002,protein-coding gene,Immune system,0.0,0.0103383
+P2RX5,B cells memory,0.0,protein-coding gene,Immune system,0.0,0.0018797
+PNOC,B cells memory,0.009,protein-coding gene,Immune system,0.0,0.00093985
+PTPRCAP,B cells memory,0.072,protein-coding gene,Immune system,0.0,0.0
+RALGPS2,B cells memory,0.048,protein-coding gene,Immune system,0.0,0.023183
+RASGRP2,B cells memory,0.066,protein-coding gene,Immune system,0.0,0.0238095
+SIK1,B cells memory,0.029,protein-coding gene,Immune system,0.0,0.0
+SIT1,B cells memory,0.003,protein-coding gene,Immune system,0.0,0.00971178
+SLC12A1,B cells memory,0.001,protein-coding gene,Immune system,0.0,0.000626566
+SP140,B cells memory,0.014,protein-coding gene,Immune system,0.0,0.0037594
+STAP1,B cells memory,0.004,protein-coding gene,Immune system,0.0,0.00281955
+TMEM156,B cells memory,0.001,protein-coding gene,Immune system,0.0,0.00501253
+TNFRSF13B,B cells memory,0.016,protein-coding gene,Immune system,0.0,0.00532581
+TNFRSF17,B cells memory,0.005,protein-coding gene,Immune system,0.0,0.0100251
+TRAF4,B cells memory,0.062,protein-coding gene,Immune system,0.0,0.0
+VPREB3,B cells memory,0.011,protein-coding gene,Immune system,0.0,0.0169173
+ZBTB32,B cells memory,0.004,protein-coding gene,Immune system,0.0,0.0150376
+CD19,B cells naive,0.007,protein-coding gene,Immune system,0.0,0.00786906
+CD2,B cells naive,0.04,protein-coding gene,Immune system,0.0,0.0944287
+CD72,B cells naive,0.003,protein-coding gene,Immune system,0.0,0.00188857
+IL2RA,B cells naive,0.009,protein-coding gene,Immune system,0.0,0.0201448
+MME,B cells naive,0.017,protein-coding gene,Immune system,0.0,0.0270696
+ABCB4,B cells naive,0.002,protein-coding gene,Immune system,0.0,0.0
+ADAM28,B cells naive,0.004,protein-coding gene,Immune system,0.333333,0.0157381
+BACH2,B cells naive,0.003,protein-coding gene,Immune system,0.0,0.00157381
+BANK1,B cells naive,0.006,protein-coding gene,Immune system,0.533333,0.00598048
+BCL7A,B cells naive,0.078,protein-coding gene,Immune system,0.0,0.0141643
+BEND5,B cells naive,0.007,protein-coding gene,Immune system,0.0,0.00157381
+BLK,B cells naive,0.005,protein-coding gene,Immune system,0.0666667,0.00220334
+BRAF,B cells naive,0.025,protein-coding gene,Immune system,0.0,0.0160529
+CD180,B cells naive,0.012,protein-coding gene,Immune system,0.0,0.000944287
+CD1C,B cells naive,0.001,protein-coding gene,Immune system,0.0,0.0050362
+CD22,B cells naive,0.003,protein-coding gene,Immune system,0.0666667,0.00283286
+CD37,B cells naive,0.116,protein-coding gene,Immune system,1.0,0.21215
+CD69,B cells naive,0.024,protein-coding gene,Immune system,0.666667,0.108593
+CD79A,B cells naive,0.024,protein-coding gene,Immune system,0.933333,0.0390305
+CD79B,B cells naive,0.028,protein-coding gene,Immune system,1.0,0.038401
+CR2,B cells naive,0.001,protein-coding gene,Immune system,0.0,0.000944287
+CXCR5,B cells naive,0.001,protein-coding gene,Immune system,0.0,0.0
+EAF2,B cells naive,0.009,protein-coding gene,Immune system,0.133333,0.0302172
+FCER2,B cells naive,0.002,protein-coding gene,Immune system,0.4,0.000314762
+FCGR2B,B cells naive,0.031,protein-coding gene,Immune system,0.0,0.00472144
+FCRL2,B cells naive,0.0,protein-coding gene,Immune system,0.0,0.0
+FRK,B cells naive,0.005,protein-coding gene,Immune system,0.0,0.00723953
+GPR18,B cells naive,0.001,protein-coding gene,Immune system,0.0,0.00692477
+GUSBP11,B cells naive,0.0,pseudogene,Immune system,0.0,0.0
+HHEX,B cells naive,0.037,protein-coding gene,Immune system,0.0,0.0229777
+HLA-DOB,B cells naive,0.001,protein-coding gene,Immune system,0.0,0.0050362
+IGHD,B cells naive,0.008,other,Immune system,0.866667,0.00472144
+IGHM,B cells naive,0.078,other,Immune system,1.0,0.0506767
+IGKC,B cells naive,0.072,other,Immune system,1.0,0.158955
+IGLL3P,B cells naive,0.0,pseudogene,Immune system,0.0,0.0
+IL4R,B cells naive,0.002,protein-coding gene,Immune system,0.4,0.00849858
+IRF8,B cells naive,0.069,protein-coding gene,Immune system,0.2,0.02644
+LTB,B cells naive,0.065,protein-coding gene,Immune system,1.0,0.15927
+LY86,B cells naive,0.07,protein-coding gene,Immune system,0.2,0.02644
+MEP1A,B cells naive,0.004,protein-coding gene,Immune system,0.0,0.000944287
+MICAL3,B cells naive,0.02,protein-coding gene,Immune system,0.0,0.0100724
+MS4A1,B cells naive,0.014,protein-coding gene,Immune system,1.0,0.0157381
+NMBR,B cells naive,0.0,protein-coding gene,Immune system,0.0,0.0
+P2RX5,B cells naive,0.0,protein-coding gene,Immune system,0.0,0.00188857
+P2RY14,B cells naive,0.012,protein-coding gene,Immune system,0.0,0.00346239
+PNOC,B cells naive,0.009,protein-coding gene,Immune system,0.0,0.000944287
+PSG2,B cells naive,0.0,protein-coding gene,Immune system,0.0,0.0
+PTPRCAP,B cells naive,0.072,protein-coding gene,Immune system,0.0,0.0
+RALGPS2,B cells naive,0.048,protein-coding gene,Immune system,0.0,0.0232924
+RASGRP2,B cells naive,0.066,protein-coding gene,Immune system,0.0666667,0.0236072
+SELL,B cells naive,0.035,protein-coding gene,Immune system,0.533333,0.0579163
+SIK1,B cells naive,0.029,protein-coding gene,Immune system,0.0,0.0
+SLC12A1,B cells naive,0.001,protein-coding gene,Immune system,0.0,0.000629525
+SPIB,B cells naive,0.01,protein-coding gene,Immune system,0.0,0.00881335
+STAP1,B cells naive,0.004,protein-coding gene,Immune system,0.0,0.00283286
+TCL1A,B cells naive,0.003,protein-coding gene,Immune system,0.733333,0.0116462
+UGT1A8,B cells naive,0.0,other,Immune system,0.0,0.0
+VPREB3,B cells naive,0.011,protein-coding gene,Immune system,0.533333,0.0144791
+ZNF286A,B cells naive,0.0,protein-coding gene,Immune system,0.0,0.000944287
+TNFSF8,B cells naive,0.001,protein-coding gene,Immune system,0.0,0.0
+FOXP1,B cells naive,0.174,protein-coding gene,Immune system,0.8,0.229777
+MITF,B cells naive,0.004,protein-coding gene,Immune system,0.0,0.00598048
+CD52,B cells naive,0.181,protein-coding gene,Immune system,1.0,0.274473
+HLA-DQB1,B cells naive,0.012,protein-coding gene,Immune system,0.866667,0.0610639
+TNFRSF13C,B cells naive,0.008,protein-coding gene,Immune system,0.933333,0.0147938
+LINC00926,B cells naive,0.003,non-coding RNA,Immune system,0.933333,0.0113314
+STAG3,B cells naive,0.006,protein-coding gene,Immune system,0.0666667,0.0182562
+BIRC3,B cells naive,0.026,protein-coding gene,Immune system,0.533333,0.0812087
+CD74,B cells naive,0.169,protein-coding gene,Immune system,1.0,0.360718
+CD69,Basophils,0.024,protein-coding gene,Immune system,0.0,0.111216
+IL3RA,Basophils,0.008,protein-coding gene,Immune system,0.0,0.0
+CCR3,Basophils,0.001,protein-coding gene,Immune system,0.0,0.0
+ENPP3,Basophils,0.002,protein-coding gene,Immune system,0.0,0.0
+FCER1A,Basophils,0.004,protein-coding gene,Immune system,0.0,0.0184837
+TLR4,Basophils,0.0,protein-coding gene,Immune system,0.0,0.000313283
+LTC4S,Basophils,0.037,protein-coding gene,Immune system,0.0,0.00783208
+CPA3,Basophils,0.009,protein-coding gene,Immune system,0.0,0.00845865
+ITGAL,Basophils,0.013,protein-coding gene,Immune system,0.0,0.00407268
+ITGAM,Basophils,0.025,protein-coding gene,Immune system,0.0,0.00313283
+ITGAX,Basophils,0.007,protein-coding gene,Immune system,0.0,0.0162907
+IL4R,Basophils,0.002,protein-coding gene,Immune system,0.0,0.0103383
+ITGB7,Basophils,0.031,protein-coding gene,Immune system,0.0,0.0
+IL4,Basophils,0.002,protein-coding gene,Immune system,0.0,0.0
+MS4A2,Basophils,0.003,protein-coding gene,Immune system,0.0,0.0018797
+MS4A3,Basophils,0.013,protein-coding gene,Immune system,0.0,0.00313283
+HDC,Basophils,0.019,protein-coding gene,Immune system,0.0,0.00156642
+GATA2,Basophils,0.02,protein-coding gene,Immune system,0.0,0.0134712
+CCL3,Basophils,0.036,protein-coding gene,Immune system,0.0,0.00783208
+CD33,Basophils,0.017,protein-coding gene,Immune system,0.0,0.0125313
+CD44,Basophils,0.127,protein-coding gene,Immune system,0.0,0.300439
+CDH1,Basophils,0.056,protein-coding gene,Immune system,0.0,0.0416667
+HTR1B,Basophils,0.002,protein-coding gene,Immune system,0.0,0.0
+IGFBP7,Basophils,0.172,protein-coding gene,Immune system,0.0,0.239035
+DNASE2B,Basophils,0.001,protein-coding gene,Immune system,0.0,0.00093985
+FADS2,Basophils,0.008,protein-coding gene,Immune system,0.0,0.02099
+GPC4,Basophils,0.01,protein-coding gene,Immune system,0.0,0.0075188
+GRM6,Basophils,0.003,protein-coding gene,Immune system,0.0,0.0
+ACSS2,Basophils,0.006,protein-coding gene,Immune system,0.0,0.00595238
+ADORA2B,Basophils,0.004,protein-coding gene,Immune system,0.0,0.00438596
+AQP9,Basophils,0.003,protein-coding gene,Immune system,0.0,0.00313283
+BACE1,Basophils,0.022,protein-coding gene,Immune system,0.0,0.0037594
+BMP4,Basophils,0.019,protein-coding gene,Immune system,0.0,0.0241228
+CABLES1,Basophils,0.001,protein-coding gene,Immune system,0.0,0.000313283
+CCL4,Basophils,0.049,protein-coding gene,Immune system,0.0,0.0557644
+CEBPA,Basophils,0.025,protein-coding gene,Immune system,0.0,0.0
+E2F8,Basophils,0.002,protein-coding gene,Immune system,0.0,0.0
+FADS1,Basophils,0.05,protein-coding gene,Immune system,0.0,0.0770677
+FAR2,Basophils,0.004,protein-coding gene,Immune system,0.0,0.0103383
+FBXO9,Basophils,0.059,protein-coding gene,Immune system,0.0,0.0388471
+GABBR1,Basophils,0.14,protein-coding gene,Immune system,0.0,0.0018797
+GPR183,Basophils,0.019,protein-coding gene,Immune system,0.0,0.0488722
+HGF,Basophils,0.002,protein-coding gene,Immune system,0.0,0.0075188
+HIST1H1D,Basophils,0.006,protein-coding gene,Immune system,0.0,0.0200501
+HIST1H2AC,Basophils,0.01,protein-coding gene,Immune system,0.0,0.0316416
+IFITM1,Basophils,0.059,protein-coding gene,Immune system,0.0,0.0322682
+INF2,Basophils,0.015,protein-coding gene,Immune system,0.0,0.0175439
+JAZF1,Basophils,0.002,protein-coding gene,Immune system,0.0,0.0075188
+L1CAM,Basophils,0.018,protein-coding gene,Immune system,0.0,0.00156642
+LAMA5,Basophils,0.008,protein-coding gene,Immune system,0.0,0.012218
+MBOAT1,Basophils,0.006,protein-coding gene,Immune system,0.0,0.0
+NFIL3,Basophils,0.014,protein-coding gene,Immune system,0.0,0.00313283
+NPL,Basophils,0.017,protein-coding gene,Immune system,0.0,0.018797
+OSBPL5,Basophils,0.003,protein-coding gene,Immune system,0.0,0.0
+OTUB2,Basophils,0.006,protein-coding gene,Immune system,0.0,0.0140977
+P2RY1,Basophils,0.003,protein-coding gene,Immune system,0.0,0.00219298
+PDK3,Basophils,0.015,protein-coding gene,Immune system,0.0,0.00595238
+PDZD4,Basophils,0.005,protein-coding gene,Immune system,0.0,0.0
+PERP,Basophils,0.077,protein-coding gene,Immune system,0.0,0.167607
+PIGY,Basophils,0.0,protein-coding gene,Immune system,,
+PLEKHG5,Basophils,0.003,protein-coding gene,Immune system,0.0,0.000626566
+PLG,Basophils,0.001,protein-coding gene,Immune system,0.0,0.000313283
+RNF39,Basophils,0.001,protein-coding gene,Immune system,0.0,0.00219298
+SLC26A3,Basophils,0.003,protein-coding gene,Immune system,0.0,0.012218
+SLC26A8,Basophils,0.003,protein-coding gene,Immune system,0.0,0.0119048
+SNCAIP,Basophils,0.002,protein-coding gene,Immune system,0.0,0.0056391
+ST6GALNAC5,Basophils,0.007,protein-coding gene,Immune system,0.0,0.00156642
+SUPT3H,Basophils,0.004,protein-coding gene,Immune system,0.0,0.0191103
+TULP3,Basophils,0.007,protein-coding gene,Immune system,0.0,0.0119048
+TEC,Basophils,0.001,protein-coding gene,Immune system,0.0,0.0
+UNC93A,Basophils,0.0,protein-coding gene,Immune system,0.0,0.0
+WRN,Basophils,0.004,protein-coding gene,Immune system,0.0,0.00595238
+ID1,Basophils,0.149,protein-coding gene,Immune system,0.0,0.209586
+IL6,Dendritic cells,0.007,protein-coding gene,Immune system,0.0,0.0141215
+CD86,Dendritic cells,0.026,protein-coding gene,Immune system,0.204082,0.00295567
+CD83,Dendritic cells,0.045,protein-coding gene,Immune system,0.44898,0.0187192
+CD1A,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+CR2,Dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.000985222
+TLR9,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+CD1C,Dendritic cells,0.001,protein-coding gene,Immune system,0.0952381,0.000656814
+CD209,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+LAMP3,Dendritic cells,0.008,protein-coding gene,Immune system,0.0340136,0.0124795
+CD1B,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+TREM2,Dendritic cells,0.042,protein-coding gene,Immune system,0.0272109,0.00558292
+FABP4,Dendritic cells,0.028,protein-coding gene,Immune system,0.0340136,0.0091954
+S100A9,Dendritic cells,0.061,protein-coding gene,Immune system,0.517007,0.0834154
+ARG1,Dendritic cells,0.007,protein-coding gene,Immune system,0.0,0.00361248
+HLA-DRA,Dendritic cells,0.039,protein-coding gene,Immune system,1.0,0.174384
+HLA-DQA1,Dendritic cells,0.01,protein-coding gene,Immune system,0.55102,0.0272578
+HLA-DMB,Dendritic cells,0.009,protein-coding gene,Immune system,0.482993,0.0229885
+HLA-DMA,Dendritic cells,0.022,protein-coding gene,Immune system,0.809524,0.090312
+HLA-DQB1,Dendritic cells,0.012,protein-coding gene,Immune system,0.632653,0.0374384
+CLEC10A,Dendritic cells,0.01,protein-coding gene,Immune system,0.238095,0.000985222
+HLA-DRB1,Dendritic cells,0.033,protein-coding gene,Immune system,0.986395,0.141215
+HLA-DPA1,Dendritic cells,0.031,protein-coding gene,Immune system,1.0,0.130706
+HLA-DPB1,Dendritic cells,0.032,protein-coding gene,Immune system,1.0,0.137603
+DNASE1L3,Dendritic cells,0.015,protein-coding gene,Immune system,0.0952381,0.00591133
+CLEC9A,Dendritic cells,0.002,protein-coding gene,Immune system,0.0612245,0.00131363
+LILRB2,Dendritic cells,0.002,protein-coding gene,Immune system,0.190476,0.000985222
+ETV6,Dendritic cells,0.015,protein-coding gene,Immune system,0.251701,0.0394089
+CD163,Dendritic cells,0.005,protein-coding gene,Immune system,0.0952381,0.00295567
+CXCR4,Dendritic cells,0.04,protein-coding gene,Immune system,0.455782,0.185878
+CXCL8,Dendritic cells,0.02,protein-coding gene,Immune system,0.360544,0.107061
+VSIG4,Dendritic cells,0.005,protein-coding gene,Immune system,0.204082,0.00426929
+NR4A3,Dendritic cells,0.01,protein-coding gene,Immune system,0.102041,0.00788177
+CCR7,Dendritic cells,0.016,protein-coding gene,Immune system,0.0544218,0.0413793
+TRAF1,Dendritic cells,0.01,protein-coding gene,Immune system,0.0204082,0.00525452
+RELB,Dendritic cells,0.015,protein-coding gene,Immune system,0.0612245,0.0144499
+BATF3,Dendritic cells,0.008,protein-coding gene,Immune system,0.0612245,0.00656814
+CCL22,Dendritic cells,0.002,protein-coding gene,Immune system,0.00680272,0.000656814
+SLAMF7,Dendritic cells,0.013,protein-coding gene,Immune system,0.0204082,0.00689655
+XCR1,Dendritic cells,0.001,protein-coding gene,Immune system,0.0136054,0.0
+CXCL16,Dendritic cells,0.048,protein-coding gene,Immune system,0.265306,0.0561576
+SCIMP,Dendritic cells,0.008,protein-coding gene,Immune system,0.0136054,0.000985222
+FCGR2B,Dendritic cells,0.031,protein-coding gene,Immune system,0.0748299,0.00131363
+FGD2,Dendritic cells,0.017,protein-coding gene,Immune system,0.176871,0.00361248
+RAB7B,Dendritic cells,0.013,protein-coding gene,Immune system,0.0272109,0.000985222
+NAAA,Dendritic cells,0.025,protein-coding gene,Immune system,0.217687,0.00426929
+HCK,Dendritic cells,0.031,protein-coding gene,Immune system,0.401361,0.0045977
+CD180,Dendritic cells,0.012,protein-coding gene,Immune system,0.0,0.000985222
+HFE,Dendritic cells,0.017,protein-coding gene,Immune system,0.0,0.000328407
+CCR2,Dendritic cells,0.022,protein-coding gene,Immune system,0.0,0.0
+RYR1,Dendritic cells,0.002,protein-coding gene,Immune system,0.0,0.00164204
+ITGAE,Dendritic cells,0.033,protein-coding gene,Immune system,0.047619,0.132677
+SEMA4A,Dendritic cells,0.013,protein-coding gene,Immune system,0.047619,0.00229885
+DPP4,Dendritic cells,0.02,protein-coding gene,Immune system,0.0,0.0137931
+SLAMF8,Dendritic cells,0.003,protein-coding gene,Immune system,0.0,0.00197044
+CXCR3,Dendritic cells,0.005,protein-coding gene,Immune system,0.0,0.00558292
+BTLA,Dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.000328407
+FLT3,Dendritic cells,0.009,protein-coding gene,Immune system,0.0136054,0.000328407
+TLR3,Dendritic cells,0.003,protein-coding gene,Immune system,0.0,0.00755337
+ITGAX,Dendritic cells,0.007,protein-coding gene,Immune system,0.183673,0.00821018
+GPR132,Dendritic cells,0.009,protein-coding gene,Immune system,0.00680272,0.0
+ADAM19,Dendritic cells,0.013,protein-coding gene,Immune system,0.122449,0.0190476
+AP1S3,Dendritic cells,0.003,protein-coding gene,Immune system,0.0,0.00361248
+ASS1,Dendritic cells,0.048,protein-coding gene,Immune system,0.0,0.0426929
+ADGRG5,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.000328407
+GPR68,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+KIT,Dendritic cells,0.015,protein-coding gene,Immune system,0.0,0.00262726
+KMO,Dendritic cells,0.004,protein-coding gene,Immune system,0.0,0.000328407
+P2RY10,Dendritic cells,0.004,protein-coding gene,Immune system,0.0,0.000656814
+RAB30,Dendritic cells,0.002,protein-coding gene,Immune system,0.0,0.00394089
+SEPT6,Dendritic cells,0.06,protein-coding gene,Immune system,0.190476,0.120854
+ZBTB46,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.000328407
+S100A4,Dendritic cells,0.098,protein-coding gene,Immune system,0.836735,0.348768
+CLEC7A,Dendritic cells,0.03,protein-coding gene,Immune system,0.62585,0.0187192
+AIF1,Dendritic cells,0.085,protein-coding gene,Immune system,0.884354,0.0945813
+LST1,Dendritic cells,0.082,protein-coding gene,Immune system,0.877551,0.0689655
+CTSS,Dendritic cells,0.129,protein-coding gene,Immune system,0.911565,0.0968801
+IRF8,Dendritic cells,0.069,protein-coding gene,Immune system,0.183673,0.0197044
+ADGRE1,Dendritic cells,0.033,protein-coding gene,Immune system,0.00680272,0.000328407
+CCL17,Dendritic cells,0.002,protein-coding gene,Immune system,0.0,0.0
+CD14,Dendritic cells,0.051,protein-coding gene,Immune system,0.278912,0.0144499
+CD207,Dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.0
+CD8A,Dendritic cells,0.01,protein-coding gene,Immune system,0.0,0.0167488
+CX3CR1,Dendritic cells,0.039,protein-coding gene,Immune system,0.0408163,0.000328407
+ITGAM,Dendritic cells,0.025,protein-coding gene,Immune system,0.00680272,0.00295567
+LY75,Dendritic cells,0.003,protein-coding gene,Immune system,0.0,0.0
+PDCD1LG2,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+PTPRC,Dendritic cells,0.125,protein-coding gene,Immune system,0.782313,0.188834
+SIRPA,Dendritic cells,0.074,protein-coding gene,Immune system,0.0340136,0.00492611
+FCGR3A,Dendritic cells,0.006,protein-coding gene,Immune system,0.326531,0.0213465
+FTL,Dendritic cells,0.178,protein-coding gene,Immune system,0.993197,0.935961
+SERPINA1,Dendritic cells,0.016,protein-coding gene,Immune system,0.44898,0.0676519
+AXL,Dendritic cells,0.054,protein-coding gene,Immune system,0.047619,0.0571429
+PPP1R14A,Dendritic cells,0.07,protein-coding gene,Immune system,0.0136054,0.0778325
+SIGLEC6,Dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+CD22,Dendritic cells,0.003,protein-coding gene,Immune system,0.0,0.00328407
+DAB2,Dendritic cells,0.068,protein-coding gene,Immune system,0.0748299,0.0466338
+S100A8,Dendritic cells,0.064,protein-coding gene,Immune system,0.367347,0.0660098
+VCAN,Dendritic cells,0.056,protein-coding gene,Immune system,0.0952381,0.0968801
+LYZ,Dendritic cells,0.008,protein-coding gene,Immune system,0.442177,0.0213465
+ANXA1,Dendritic cells,0.161,protein-coding gene,Immune system,0.748299,0.341215
+FCER1A,Dendritic cells,0.004,protein-coding gene,Immune system,0.204082,0.00952381
+C1ORF54,Dendritic cells,0.008,protein-coding gene,Immune system,0.122449,0.0367816
+CADM1,Dendritic cells,0.161,protein-coding gene,Immune system,0.047619,0.0738916
+CAMK2D,Dendritic cells,0.052,protein-coding gene,Immune system,0.047619,0.0298851
+LGALS3,Dendritic cells,0.164,protein-coding gene,Immune system,0.585034,0.295566
+NAPSA,Dendritic cells,0.054,protein-coding gene,Immune system,0.00680272,0.00853859
+PLBD1,Dendritic cells,0.03,protein-coding gene,Immune system,0.0680272,0.00952381
+RNASE6,Dendritic cells,0.024,protein-coding gene,Immune system,0.44898,0.0187192
+PLAC8,Dendritic cells,0.14,protein-coding gene,Immune system,0.360544,0.155008
+H2AFY,Dendritic cells,0.385,protein-coding gene,Immune system,0.62585,0.28046
+SLC11A1,Dendritic cells,0.017,protein-coding gene,Immune system,0.0748299,0.00328407
+PDPN,Dendritic cells,0.062,protein-coding gene,Immune system,0.0,0.0246305
+S100B,Dendritic cells,0.066,protein-coding gene,Immune system,0.14966,0.0275862
+CD28,Dendritic cells,0.011,protein-coding gene,Immune system,0.0,0.00295567
+PPL,Dendritic cells,0.004,protein-coding gene,Immune system,0.0,0.00558292
+SLURP1,Dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.0
+HLA-A,Dendritic cells,0.126,protein-coding gene,Immune system,0.993197,0.679475
+HLA-B,Dendritic cells,0.116,protein-coding gene,Immune system,1.0,0.637767
+HLA-C,Dendritic cells,0.113,protein-coding gene,Immune system,0.986395,0.607553
+HLA-DRB5,Dendritic cells,0.011,protein-coding gene,Immune system,0.387755,0.0469622
+SERPINB9,Dendritic cells,0.018,protein-coding gene,Immune system,0.22449,0.0236453
+PECAM1,Endothelial cells,0.051,protein-coding gene,Vasculature,0.798077,0.0187824
+ICAM1,Endothelial cells,0.009,protein-coding gene,Vasculature,0.0865385,0.00323834
+ITGB3,Endothelial cells,0.001,protein-coding gene,Vasculature,0.0,0.000323834
+SELE,Endothelial cells,0.001,protein-coding gene,Vasculature,0.105769,0.00194301
+VCAM1,Endothelial cells,0.041,protein-coding gene,Vasculature,0.0,0.00744819
+MCAM,Endothelial cells,0.031,protein-coding gene,Vasculature,0.278846,0.0126295
+PROCR,Endothelial cells,0.016,protein-coding gene,Vasculature,0.240385,0.0213731
+TEK,Endothelial cells,0.02,protein-coding gene,Vasculature,0.0480769,0.000323834
+FLT4,Endothelial cells,0.007,protein-coding gene,Vasculature,0.0384615,0.000647668
+APLN,Endothelial cells,0.015,protein-coding gene,Vasculature,0.25,0.00453368
+VWF,Endothelial cells,0.016,protein-coding gene,Vasculature,0.711538,0.00356218
+NOS3,Endothelial cells,0.003,protein-coding gene,Vasculature,0.0,0.00744819
+THBD,Endothelial cells,0.022,protein-coding gene,Vasculature,0.259615,0.00485751
+PLVAP,Endothelial cells,0.026,protein-coding gene,Vasculature,0.394231,0.00485751
+ACKR1,Endothelial cells,0.008,protein-coding gene,Vasculature,0.201923,0.00582902
+SLCO1C1,Endothelial cells,0.032,protein-coding gene,Vasculature,0.0,0.0
+TMEM100,Endothelial cells,0.021,protein-coding gene,Vasculature,0.0288462,0.00291451
+ADGRF5,Endothelial cells,0.047,protein-coding gene,Vasculature,0.346154,0.00680052
+ABCG2,Endothelial cells,0.038,protein-coding gene,Vasculature,0.0384615,0.00356218
+PODXL,Endothelial cells,0.04,protein-coding gene,Vasculature,0.346154,0.0307642
+NOSTRIN,Endothelial cells,0.025,protein-coding gene,Vasculature,0.384615,0.011658
+MFSD2A,Endothelial cells,0.02,protein-coding gene,Vasculature,0.0288462,0.00777202
+ACVRL1,Endothelial cells,0.03,protein-coding gene,Vasculature,0.269231,0.00388601
+AQP1,Endothelial cells,0.037,protein-coding gene,Vasculature,0.173077,0.0126295
+MYLK,Endothelial cells,0.047,protein-coding gene,Vasculature,0.0576923,0.0553756
+RASIP1,Endothelial cells,0.026,protein-coding gene,Vasculature,0.163462,0.000971503
+FLI1,Endothelial cells,0.036,protein-coding gene,Vasculature,0.144231,0.00129534
+TIE1,Endothelial cells,0.025,protein-coding gene,Vasculature,0.413462,0.00194301
+APLNR,Endothelial cells,0.015,protein-coding gene,Vasculature,0.201923,0.0103627
+NRP2,Endothelial cells,0.04,protein-coding gene,Vasculature,0.336538,0.0252591
+ADAMTS1,Endothelial cells,0.053,protein-coding gene,Vasculature,0.115385,0.0540803
+RPRM,Endothelial cells,0.039,protein-coding gene,Vasculature,0.0,0.00291451
+FABP4,Endothelial cells,0.028,protein-coding gene,Vasculature,0.0961538,0.00744819
+GPIHBP1,Endothelial cells,0.017,protein-coding gene,Vasculature,0.134615,0.000323834
+FHL2,Endothelial cells,0.043,protein-coding gene,Vasculature,0.173077,0.101684
+LOX,Endothelial cells,0.017,protein-coding gene,Vasculature,0.00961538,0.0152202
+KLK1,Endothelial cells,0.013,protein-coding gene,Vasculature,0.0,0.00841969
+ADORA2A,Endothelial cells,0.01,protein-coding gene,Vasculature,0.0,0.0
+ARAP3,Endothelial cells,0.009,protein-coding gene,Vasculature,0.0,0.0
+ARHGEF15,Endothelial cells,0.01,protein-coding gene,Vasculature,0.0384615,0.0
+CARD10,Endothelial cells,0.002,protein-coding gene,Vasculature,0.0192308,0.000323834
+CLEC14A,Endothelial cells,0.024,protein-coding gene,Vasculature,0.769231,0.00420984
+DLL4,Endothelial cells,0.007,protein-coding gene,Vasculature,0.0769231,0.000323834
+ESM1,Endothelial cells,0.006,protein-coding gene,Vasculature,0.269231,0.00356218
+GIMAP5,Endothelial cells,0.016,protein-coding gene,Vasculature,0.0,0.0
+GJA4,Endothelial cells,0.02,protein-coding gene,Vasculature,0.115385,0.0100389
+MMRN2,Endothelial cells,0.022,protein-coding gene,Vasculature,0.259615,0.0
+NOTCH4,Endothelial cells,0.003,protein-coding gene,Vasculature,0.0384615,0.00226684
+NPR1,Endothelial cells,0.009,protein-coding gene,Vasculature,0.00961538,0.00161917
+PRKCH,Endothelial cells,0.012,protein-coding gene,Vasculature,0.105769,0.0200777
+RASGRP3,Endothelial cells,0.025,protein-coding gene,Vasculature,0.0769231,0.00712435
+ROBO4,Endothelial cells,0.013,protein-coding gene,Vasculature,0.125,0.000323834
+SCARF1,Endothelial cells,0.004,protein-coding gene,Vasculature,0.0673077,0.000323834
+SOX18,Endothelial cells,0.012,protein-coding gene,Vasculature,0.365385,0.00809585
+SOX7,Endothelial cells,0.011,protein-coding gene,Vasculature,0.0961538,0.00323834
+SPNS2,Endothelial cells,0.002,protein-coding gene,Vasculature,0.0,0.0
+THSD1,Endothelial cells,0.008,protein-coding gene,Vasculature,0.0576923,0.00323834
+APOLD1,Endothelial cells,0.03,protein-coding gene,Vasculature,0.0769231,0.00323834
+EMP1,Endothelial cells,0.076,protein-coding gene,Vasculature,0.75,0.0913212
+CD36,Endothelial cells,0.042,protein-coding gene,Vasculature,0.115385,0.0317358
+RNASE1,Endothelial cells,0.022,protein-coding gene,Vasculature,0.807692,0.0660622
+CTGF,Endothelial cells,0.028,protein-coding gene,Vasculature,0.644231,0.0812824
+HYAL2,Endothelial cells,0.031,protein-coding gene,Vasculature,0.567308,0.0540803
+CLEC4G,Endothelial cells,0.001,protein-coding gene,Vasculature,0.00961538,0.0
+GPR182,Endothelial cells,0.005,protein-coding gene,Vasculature,0.0,0.00356218
+F8,Endothelial cells,0.003,protein-coding gene,Vasculature,0.182692,0.0
+RBP7,Endothelial cells,0.009,protein-coding gene,Vasculature,0.326923,0.0119819
+CALCRL,Endothelial cells,0.017,protein-coding gene,Vasculature,0.605769,0.00518135
+FOXF1,Endothelial cells,0.008,protein-coding gene,Vasculature,0.0288462,0.00777202
+CASZ1,Endothelial cells,0.016,protein-coding gene,Vasculature,0.0,0.0
+AQP7,Endothelial cells,0.005,protein-coding gene,Vasculature,0.0,0.00939119
+TCF15,Endothelial cells,0.006,protein-coding gene,Vasculature,0.00961538,0.000323834
+CD300LG,Endothelial cells,0.008,protein-coding gene,Vasculature,0.0384615,0.0
+BTNL9,Endothelial cells,0.004,protein-coding gene,Vasculature,0.115385,0.0
+MEOX2,Endothelial cells,0.004,protein-coding gene,Vasculature,0.0384615,0.00420984
+ERG,Endothelial cells,0.01,protein-coding gene,Vasculature,0.240385,0.000323834
+HEXIM1,Endothelial cells,0.019,protein-coding gene,Vasculature,0.0480769,0.0297927
+GLYCAM1,Endothelial cells,0.004,pseudogene,Vasculature,0.0,0.0
+CD55,Endothelial cells,0.037,protein-coding gene,Vasculature,0.326923,0.119171
+MMRN1,Endothelial cells,0.005,protein-coding gene,Vasculature,0.134615,0.00485751
+C7,Endothelial cells,0.003,protein-coding gene,Vasculature,0.0384615,0.0145725
+RAMP3,Endothelial cells,0.014,protein-coding gene,Vasculature,0.423077,0.000971503
+VEGFC,Endothelial cells,0.005,protein-coding gene,Vasculature,0.0,0.0142487
+GJA5,Endothelial cells,0.002,protein-coding gene,Vasculature,0.00961538,0.00129534
+HEY1,Endothelial cells,0.01,protein-coding gene,Vasculature,0.201923,0.0113342
+RND1,Endothelial cells,0.007,protein-coding gene,Vasculature,0.105769,0.00161917
+BDP1,Endothelial cells,0.037,protein-coding gene,Vasculature,0.0288462,0.102332
+CD46,Endothelial cells,0.014,protein-coding gene,Vasculature,0.134615,0.0767487
+MEOX1,Endothelial cells,0.005,protein-coding gene,Vasculature,0.0480769,0.000647668
+CCL19,Endothelial cells,0.002,protein-coding gene,Vasculature,0.0,0.00161917
+MADCAM1,Endothelial cells,0.001,protein-coding gene,Vasculature,0.0673077,0.0
+CYP1B1,Endothelial cells,0.016,protein-coding gene,Vasculature,0.0673077,0.0485751
+IRX3,Endothelial cells,0.015,protein-coding gene,Vasculature,0.00961538,0.0110104
+BIRC2,Endothelial cells,0.015,protein-coding gene,Vasculature,0.0,0.0359456
+LYVE1,Endothelial cells,0.012,protein-coding gene,Vasculature,0.0384615,0.00420984
+SEMA3D,Endothelial cells,0.005,protein-coding gene,Vasculature,0.00961538,0.000971503
+EMCN,Endothelial cells,0.043,protein-coding gene,Vasculature,0.653846,0.0100389
+WFDC1,Endothelial cells,0.024,protein-coding gene,Vasculature,0.0,0.0152202
+ADGRL4,Endothelial cells,0.042,protein-coding gene,Vasculature,0.778846,0.0126295
+VWA1,Endothelial cells,0.034,protein-coding gene,Vasculature,0.269231,0.0145725
+ECE1,Endothelial cells,0.062,protein-coding gene,Vasculature,0.259615,0.0197539
+PTPRB,Endothelial cells,0.041,protein-coding gene,Vasculature,0.336538,0.000647668
+CLDN5,Endothelial cells,0.054,protein-coding gene,Vasculature,0.971154,0.0210492
+TBX1,Endothelial cells,0.003,protein-coding gene,Vasculature,0.0,0.000971503
+SEMA7A,Endothelial cells,0.006,protein-coding gene,Vasculature,0.0,0.000323834
+FOXF2,Endothelial cells,0.016,protein-coding gene,Vasculature,0.0192308,0.000647668
+PDGFB,Endothelial cells,0.01,protein-coding gene,Vasculature,0.0480769,0.0
+ECSCR,Endothelial cells,0.047,protein-coding gene,Vasculature,0.855769,0.00906736
+ELK3,Endothelial cells,0.034,protein-coding gene,Vasculature,0.269231,0.0148964
+CDH5,Endothelial cells,0.043,protein-coding gene,Vasculature,0.644231,0.00453368
+PLEC,Endothelial cells,0.056,protein-coding gene,Vasculature,0.00961538,0.0310881
+STAB1,Endothelial cells,0.018,protein-coding gene,Vasculature,0.0288462,0.00161917
+TGFBR2,Endothelial cells,0.044,protein-coding gene,Vasculature,0.528846,0.0229922
+CD93,Endothelial cells,0.044,protein-coding gene,Vasculature,0.471154,0.00388601
+CXCL1,Endothelial cells,0.032,protein-coding gene,Vasculature,0.0288462,0.0463083
+RGS5,Endothelial cells,0.043,protein-coding gene,Vasculature,,
+SLC7A5,Endothelial cells,0.043,protein-coding gene,Vasculature,0.0673077,0.0297927
+ENG,Endothelial cells,0.058,protein-coding gene,Vasculature,0.846154,0.0395078
+KDR,Endothelial cells,0.041,protein-coding gene,Vasculature,0.25,0.0110104
+SLC2A1,Endothelial cells,0.062,protein-coding gene,Vasculature,0.0576923,0.0563472
+EGFL7,Endothelial cells,0.092,protein-coding gene,Vasculature,0.913462,0.0880829
+FLT1,Endothelial cells,0.051,protein-coding gene,Vasculature,0.615385,0.0262306
+EPAS1,Endothelial cells,0.076,protein-coding gene,Vasculature,0.576923,0.0391839
+EDNRB,Endothelial cells,0.057,protein-coding gene,Vasculature,0.0480769,0.0204016
+KCNJ8,Endothelial cells,0.017,protein-coding gene,Vasculature,0.0,0.00194301
+CD82,Endothelial cells,0.097,protein-coding gene,Vasculature,0.0480769,0.0637953
+CHST1,Endothelial cells,0.032,protein-coding gene,Vasculature,0.00961538,0.0132772
+PLAC8,Endothelial cells,0.14,protein-coding gene,Vasculature,0.0288462,0.169041
+TSPAN8,Endothelial cells,0.047,protein-coding gene,Vasculature,0.0,0.0495466
+ETS1,Endothelial cells,0.095,protein-coding gene,Vasculature,0.259615,0.0314119
+CD34,Endothelial cells,0.071,protein-coding gene,Vasculature,0.538462,0.0236399
+PDPN,Endothelial cells,0.062,protein-coding gene,Vasculature,0.0288462,0.0233161
+PROX1,Endothelial cells,0.028,protein-coding gene,Vasculature,0.0384615,0.0100389
+EHD3,Endothelial cells,0.017,protein-coding gene,Vasculature,0.0,0.0
+SRGN,Endothelial cells,0.236,protein-coding gene,Vasculature,0.798077,0.314767
+S100A10,Endothelial cells,0.374,protein-coding gene,Vasculature,0.971154,0.516839
+CLIC4,Endothelial cells,0.152,protein-coding gene,Vasculature,0.451923,0.0634715
+USHBP1,Endothelial cells,0.001,protein-coding gene,Vasculature,0.0,0.0
+MYF6,Endothelial cells,0.0,protein-coding gene,Vasculature,0.0,0.000323834
+OIT3,Endothelial cells,0.0,protein-coding gene,Vasculature,0.00961538,0.0
+IL1A,Endothelial cells,0.006,protein-coding gene,Vasculature,0.0,0.00582902
+BMP2,Endothelial cells,0.008,protein-coding gene,Vasculature,0.0,0.00874352
+C1QTNF1,Endothelial cells,0.002,protein-coding gene,Vasculature,0.0,0.00388601
+PCDH12,Endothelial cells,0.003,protein-coding gene,Vasculature,0.0576923,0.0
+DPP4,Endothelial cells,0.02,protein-coding gene,Vasculature,0.0,0.013601
+IGFBP7,Endothelial cells,0.172,protein-coding gene,Vasculature,0.913462,0.216321
+PALMD,Endothelial cells,0.026,protein-coding gene,Vasculature,0.461538,0.0123057
+POSTN,Endothelial cells,0.033,protein-coding gene,Vasculature,0.0384615,0.0226684
+BMX,Endothelial cells,0.003,protein-coding gene,Vasculature,0.125,0.00194301
+SLC38A5,Endothelial cells,0.02,protein-coding gene,Vasculature,0.0384615,0.0223446
+XDH,Endothelial cells,0.011,protein-coding gene,Vasculature,0.0,0.00518135
+SPARC,Endothelial cells,0.307,protein-coding gene,Vasculature,0.884615,0.208873
+MGLL,Endothelial cells,0.064,protein-coding gene,Vasculature,0.307692,0.0563472
+SLC9A3R2,Endothelial cells,0.078,protein-coding gene,Vasculature,0.740385,0.0569948
+RGCC,Endothelial cells,0.14,protein-coding gene,Vasculature,0.423077,0.118523
+ICAM2,Endothelial cells,0.035,protein-coding gene,Vasculature,0.0,0.0
+MGP,Endothelial cells,0.082,protein-coding gene,Vasculature,0.596154,0.100389
+SPARCL1,Endothelial cells,0.156,protein-coding gene,Vasculature,0.557692,0.0867876
+TM4SF1,Endothelial cells,0.118,protein-coding gene,Vasculature,0.961538,0.150259
+ID1,Endothelial cells,0.149,protein-coding gene,Vasculature,0.769231,0.190738
+ADIRF,Endothelial cells,0.0,protein-coding gene,Vasculature,,
+CD9,Endothelial cells,0.344,protein-coding gene,Vasculature,0.634615,0.258744
+SRPX,Endothelial cells,0.014,protein-coding gene,Vasculature,0.221154,0.0139249
+ID3,Endothelial cells,0.245,protein-coding gene,Vasculature,0.923077,0.206282
+CAV1,Endothelial cells,0.077,protein-coding gene,Vasculature,0.807692,0.0981218
+GNG11,Endothelial cells,0.138,protein-coding gene,Vasculature,1.0,0.0867876
+HSPG2,Endothelial cells,0.042,protein-coding gene,Vasculature,0.00961538,0.0
+CCL14,Endothelial cells,0.0,protein-coding gene,Vasculature,0.0,0.0
+CLEC1B,Endothelial cells,0.003,protein-coding gene,Vasculature,0.00961538,0.000647668
+FCN2,Endothelial cells,0.0,protein-coding gene,Vasculature,0.0192308,0.000323834
+S100A13,Endothelial cells,0.229,protein-coding gene,Vasculature,0.730769,0.146049
+FCN3,Endothelial cells,0.001,protein-coding gene,Vasculature,0.0961538,0.00129534
+CRHBP,Endothelial cells,0.003,protein-coding gene,Vasculature,0.0865385,0.00388601
+IFI27,Endothelial cells,0.15,protein-coding gene,Vasculature,0.740385,0.0835492
+CCL23,Endothelial cells,0.0,protein-coding gene,Vasculature,0.00961538,0.000647668
+SGK1,Endothelial cells,0.096,protein-coding gene,Vasculature,0.211538,0.0440415
+DNASE1L3,Endothelial cells,0.015,protein-coding gene,Vasculature,0.0384615,0.00906736
+LIFR,Endothelial cells,0.042,protein-coding gene,Vasculature,0.346154,0.0113342
+PCAT19,Endothelial cells,0.005,non-coding RNA,Vasculature,0.75,0.00809585
+CDKN1C,Endothelial cells,0.097,protein-coding gene,Vasculature,0.0,0.0485751
+INMT,Endothelial cells,0.016,protein-coding gene,Vasculature,0.0384615,0.00874352
+PTGDS,Endothelial cells,0.054,protein-coding gene,Vasculature,0.0769231,0.0576425
+TIMP3,Endothelial cells,0.147,protein-coding gene,Vasculature,0.759615,0.140868
+GPM6A,Endothelial cells,0.241,protein-coding gene,Vasculature,0.00961538,0.0239637
+FAM167B,Endothelial cells,0.008,protein-coding gene,Vasculature,0.240385,0.000971503
+LTC4S,Endothelial cells,0.037,protein-coding gene,Vasculature,0.0961538,0.00485751
+STAB2,Endothelial cells,0.003,protein-coding gene,Vasculature,0.0,0.0
+C3AR1,Eosinophils,0.022,protein-coding gene,Immune system,0.0,0.00626566
+FUT4,Eosinophils,0.001,protein-coding gene,Immune system,0.0,0.0
+FCER2,Eosinophils,0.002,protein-coding gene,Immune system,0.0,0.00219298
+C5AR1,Eosinophils,0.027,protein-coding gene,Immune system,0.0,0.0140977
+CXCR3,Eosinophils,0.005,protein-coding gene,Immune system,0.0,0.00532581
+CCR1,Eosinophils,0.014,protein-coding gene,Immune system,0.0,0.00532581
+CCR3,Eosinophils,0.001,protein-coding gene,Immune system,0.0,0.0
+CD244,Eosinophils,0.002,protein-coding gene,Immune system,0.0,0.0
+PTGDR2,Eosinophils,0.0,protein-coding gene,Immune system,0.0,0.0
+S100A9,Eosinophils,0.061,protein-coding gene,Immune system,0.0,0.103383
+SIGLEC8,Eosinophils,0.0,protein-coding gene,Immune system,0.0,0.0
+SIGLEC10,Eosinophils,0.001,protein-coding gene,Immune system,0.0,0.00407268
+PGLYRP1,Eosinophils,0.062,protein-coding gene,Immune system,0.0,0.0
+LTC4S,Eosinophils,0.037,protein-coding gene,Immune system,0.0,0.00783208
+EPX,Eosinophils,0.0,protein-coding gene,Immune system,0.0,0.0
+CD69,Eosinophils,0.024,protein-coding gene,Immune system,0.0,0.111216
+RNASE3,Eosinophils,0.0,protein-coding gene,Immune system,0.0,0.000313283
+RNASE2,Eosinophils,0.001,protein-coding gene,Immune system,0.0,0.00720551
+IL5,Eosinophils,0.002,protein-coding gene,Immune system,0.0,0.00626566
+PRG2,Eosinophils,0.003,protein-coding gene,Immune system,0.0,0.00313283
+PRG3,Eosinophils,0.0,protein-coding gene,Immune system,0.0,0.0
+CPA3,Eosinophils,0.009,protein-coding gene,Immune system,0.0,0.00845865
+IKZF2,Eosinophils,0.011,protein-coding gene,Immune system,0.0,0.000626566
+CCL11,Eosinophils,0.008,protein-coding gene,Immune system,0.0,0.00313283
+CCL5,Eosinophils,0.042,protein-coding gene,Immune system,0.0,0.0858396
+CSF2,Eosinophils,0.002,protein-coding gene,Immune system,0.0,0.0093985
+IL5RA,Eosinophils,0.0,protein-coding gene,Immune system,0.0,0.0
+CGA,Erythroblasts,0.003,protein-coding gene,Blood,0.0,0.00845865
+TFRC,Erythroblasts,0.042,protein-coding gene,Blood,0.0,0.0614035
+CDH1,Erythroblasts,0.056,protein-coding gene,Blood,0.0,0.0416667
+WRN,Erythroblasts,0.004,protein-coding gene,Blood,0.0,0.00595238
+CD44,Erythroblasts,0.127,protein-coding gene,Blood,0.0,0.300439
+KLF1,Erythroblasts,0.009,protein-coding gene,Blood,0.0,0.0253759
+BCL11A,Erythroblasts,0.134,protein-coding gene,Blood,0.0,0.113409
+BPGM,Erythroblasts,0.063,protein-coding gene,Blood,0.0,0.0460526
+ETS1,Erythroblasts,0.095,protein-coding gene,Blood,0.0,0.0388471
+EPOR,Erythroblasts,0.004,protein-coding gene,Blood,0.0,0.0147243
+IGBP1,Erythroblasts,0.089,protein-coding gene,Blood,0.0,0.128759
+TFR2,Erythroblasts,0.003,protein-coding gene,Blood,0.0,0.00783208
+GYPA,Erythroblasts,0.011,protein-coding gene,Blood,0.0,0.0272556
+LMNB1,Erythroblasts,0.138,protein-coding gene,Blood,0.0,0.037594
+LRP8,Erythroblasts,0.029,protein-coding gene,Blood,0.0,0.00125313
+GRSF1,Erythroblasts,0.056,protein-coding gene,Blood,0.0,0.106516
+USE1,Erythroblasts,0.015,protein-coding gene,Blood,0.0,0.0
+ITGB1,Erythroblasts,0.276,protein-coding gene,Blood,0.0,0.168546
+CFP,Erythroblasts,0.035,protein-coding gene,Blood,0.0,0.035401
+ENG,Erythroblasts,0.058,protein-coding gene,Blood,0.0,0.0657895
+KIT,Erythroblasts,0.015,protein-coding gene,Blood,0.0,0.00250627
+LMO2,Erythroblasts,0.072,protein-coding gene,Blood,0.0,0.018797
+GATA1,Erythroblasts,0.008,protein-coding gene,Blood,0.0,0.0178571
+TAL1,Erythroblasts,0.004,protein-coding gene,Blood,0.0,0.00657895
+KMT5A,Erythroblasts,0.002,protein-coding gene,Blood,0.0,0.0103383
+PIEZO1,Erythroblasts,0.01,protein-coding gene,Blood,0.0,0.0162907
+IL1R1,Fibroblasts,0.008,protein-coding gene,Connective tissue,0.234234,0.0113599
+FAP,Fibroblasts,0.006,protein-coding gene,Connective tissue,0.0720721,0.0
+FLI1,Fibroblasts,0.036,protein-coding gene,Connective tissue,0.0,0.00616683
+CELA1,Fibroblasts,0.017,protein-coding gene,Connective tissue,0.0,0.0
+LOX,Fibroblasts,0.017,protein-coding gene,Connective tissue,0.234234,0.00714054
+PDGFRB,Fibroblasts,0.033,protein-coding gene,Connective tissue,0.198198,0.0305096
+P4HA1,Fibroblasts,0.04,protein-coding gene,Connective tissue,0.0990991,0.0275884
+UCP2,Fibroblasts,0.013,protein-coding gene,Connective tissue,0.0,0.00519312
+CCR2,Fibroblasts,0.022,protein-coding gene,Connective tissue,0.0,0.0
+ITGAL,Fibroblasts,0.013,protein-coding gene,Connective tissue,0.0,0.00421941
+FGR,Fibroblasts,0.013,protein-coding gene,Connective tissue,0.0,0.0227199
+HCK,Fibroblasts,0.031,protein-coding gene,Connective tissue,0.0,0.0236936
+TNFRSF1B,Fibroblasts,0.02,protein-coding gene,Connective tissue,0.0,0.0295359
+PRKCD,Fibroblasts,0.042,protein-coding gene,Connective tissue,0.0,0.00811425
+ENO3,Fibroblasts,0.01,protein-coding gene,Connective tissue,0.0,0.00032457
+ABI3,Fibroblasts,0.006,protein-coding gene,Connective tissue,0.0,0.027913
+TREML4,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.0,0.0
+PIP4K2A,Fibroblasts,0.038,protein-coding gene,Connective tissue,0.0,0.0834145
+CD300E,Fibroblasts,0.001,protein-coding gene,Connective tissue,0.0,0.00227199
+SERPINB10,Fibroblasts,0.004,protein-coding gene,Connective tissue,0.0,0.00032457
+CTHRC1,Fibroblasts,0.031,protein-coding gene,Connective tissue,0.0900901,0.0298604
+TBX18,Fibroblasts,0.004,protein-coding gene,Connective tissue,0.0,0.00032457
+COL15A1,Fibroblasts,0.016,protein-coding gene,Connective tissue,0.144144,0.0240182
+GJB2,Fibroblasts,0.009,protein-coding gene,Connective tissue,0.0720721,0.0097371
+IL34,Fibroblasts,0.012,protein-coding gene,Connective tissue,0.018018,0.00097371
+EDN3,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.0,0.00259656
+SLC6A13,Fibroblasts,0.005,protein-coding gene,Connective tissue,0.0,0.00032457
+VTN,Fibroblasts,0.029,protein-coding gene,Connective tissue,0.036036,0.00876339
+ITIH5,Fibroblasts,0.036,protein-coding gene,Connective tissue,0.045045,0.00681597
+LUM,Fibroblasts,0.051,protein-coding gene,Connective tissue,0.873874,0.0587472
+DPT,Fibroblasts,0.021,protein-coding gene,Connective tissue,0.0630631,0.00389484
+POSTN,Fibroblasts,0.033,protein-coding gene,Connective tissue,0.171171,0.0178513
+PENK,Fibroblasts,0.02,protein-coding gene,Connective tissue,0.00900901,0.0282376
+MMP14,Fibroblasts,0.054,protein-coding gene,Connective tissue,0.306306,0.025641
+COL6A2,Fibroblasts,0.056,protein-coding gene,Connective tissue,0.792793,0.0785459
+FABP4,Fibroblasts,0.028,protein-coding gene,Connective tissue,0.018018,0.0100617
+ASPN,Fibroblasts,0.019,protein-coding gene,Connective tissue,0.162162,0.00162285
+ANGPTL2,Fibroblasts,0.013,protein-coding gene,Connective tissue,0.0900901,0.00292113
+EFEMP1,Fibroblasts,0.021,protein-coding gene,Connective tissue,0.342342,0.0311587
+SCARA5,Fibroblasts,0.007,protein-coding gene,Connective tissue,0.297297,0.00129828
+IGFBP3,Fibroblasts,0.031,protein-coding gene,Connective tissue,0.396396,0.0470626
+COPZ2,Fibroblasts,0.038,protein-coding gene,Connective tissue,0.234234,0.0129828
+DPEP1,Fibroblasts,0.023,protein-coding gene,Connective tissue,0.018018,0.0116845
+ADAMTS5,Fibroblasts,0.016,protein-coding gene,Connective tissue,0.279279,0.00486855
+COL5A1,Fibroblasts,0.028,protein-coding gene,Connective tissue,0.369369,0.0236936
+CD248,Fibroblasts,0.022,protein-coding gene,Connective tissue,0.288288,0.00454398
+PI16,Fibroblasts,0.011,protein-coding gene,Connective tissue,0.045045,0.00064914
+PAMR1,Fibroblasts,0.006,protein-coding gene,Connective tissue,0.153153,0.00194742
+TNXB,Fibroblasts,0.008,protein-coding gene,Connective tissue,0.0,0.00259656
+MMP2,Fibroblasts,0.045,protein-coding gene,Connective tissue,0.666667,0.0460889
+COL14A1,Fibroblasts,0.017,protein-coding gene,Connective tissue,0.333333,0.00811425
+CLEC3B,Fibroblasts,0.021,protein-coding gene,Connective tissue,0.0,0.0
+IGFBP6,Fibroblasts,0.039,protein-coding gene,Connective tissue,0.684685,0.0623174
+COL5A2,Fibroblasts,0.044,protein-coding gene,Connective tissue,0.333333,0.0243427
+FBN1,Fibroblasts,0.028,protein-coding gene,Connective tissue,0.459459,0.0126582
+MFAP5,Fibroblasts,0.021,protein-coding gene,Connective tissue,0.162162,0.00519312
+FKBP10,Fibroblasts,0.041,protein-coding gene,Connective tissue,0.378378,0.0545278
+PALLD,Fibroblasts,0.053,protein-coding gene,Connective tissue,0.423423,0.090555
+WIF1,Fibroblasts,0.007,protein-coding gene,Connective tissue,0.0,0.0032457
+SNHG18,Fibroblasts,0.046,non-coding RNA,Connective tissue,0.126126,0.0103862
+CDH11,Fibroblasts,0.039,protein-coding gene,Connective tissue,0.540541,0.0340798
+PTCH1,Fibroblasts,0.012,protein-coding gene,Connective tissue,0.0540541,0.0178513
+ARAP1,Fibroblasts,0.007,protein-coding gene,Connective tissue,0.0,0.00032457
+FBLN2,Fibroblasts,0.025,protein-coding gene,Connective tissue,0.288288,0.0100617
+IGF1,Fibroblasts,0.044,protein-coding gene,Connective tissue,0.036036,0.00162285
+PRRX1,Fibroblasts,0.033,protein-coding gene,Connective tissue,0.27027,0.0266147
+FKBP7,Fibroblasts,0.031,protein-coding gene,Connective tissue,0.117117,0.0149302
+OAF,Fibroblasts,0.036,protein-coding gene,Connective tissue,0.0810811,0.0266147
+COL6A3,Fibroblasts,0.032,protein-coding gene,Connective tissue,0.567568,0.0259656
+CTSK,Fibroblasts,0.027,protein-coding gene,Connective tissue,0.288288,0.00778968
+DKK1,Fibroblasts,0.006,protein-coding gene,Connective tissue,0.306306,0.0146056
+C1S,Fibroblasts,0.013,protein-coding gene,Connective tissue,0.792793,0.0516066
+RARRES2,Fibroblasts,0.03,protein-coding gene,Connective tissue,0.54955,0.0616683
+GREM1,Fibroblasts,0.01,protein-coding gene,Connective tissue,0.0540541,0.0366764
+SPON2,Fibroblasts,0.017,protein-coding gene,Connective tissue,0.558559,0.0305096
+TCF21,Fibroblasts,0.014,protein-coding gene,Connective tissue,0.0,0.00616683
+PCSK6,Fibroblasts,0.007,protein-coding gene,Connective tissue,0.0,0.0
+COL8A1,Fibroblasts,0.011,protein-coding gene,Connective tissue,0.036036,0.00486855
+ENTPD2,Fibroblasts,0.012,protein-coding gene,Connective tissue,0.0,0.00097371
+CXCL8,Fibroblasts,0.02,protein-coding gene,Connective tissue,0.153153,0.117494
+CXCL3,Fibroblasts,0.006,protein-coding gene,Connective tissue,0.045045,0.030185
+IL6,Fibroblasts,0.007,protein-coding gene,Connective tissue,0.135135,0.00908796
+CYP1B1,Fibroblasts,0.016,protein-coding gene,Connective tissue,0.216216,0.0431678
+COL13A1,Fibroblasts,0.004,protein-coding gene,Connective tissue,0.0,0.00292113
+ADAMTS10,Fibroblasts,0.002,protein-coding gene,Connective tissue,0.0,0.0
+CCL11,Fibroblasts,0.008,protein-coding gene,Connective tissue,0.0720721,0.00064914
+ADAM33,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.0,0.0
+COL4A3,Fibroblasts,0.006,protein-coding gene,Connective tissue,0.00900901,0.00032457
+COL4A4,Fibroblasts,0.007,protein-coding gene,Connective tissue,0.036036,0.00129828
+LAMA2,Fibroblasts,0.007,protein-coding gene,Connective tissue,0.279279,0.00259656
+ACKR3,Fibroblasts,0.01,protein-coding gene,Connective tissue,0.0720721,0.00421941
+CD55,Fibroblasts,0.037,protein-coding gene,Connective tissue,0.279279,0.120415
+FBLN7,Fibroblasts,0.002,protein-coding gene,Connective tissue,0.00900901,0.00194742
+FIBIN,Fibroblasts,0.009,protein-coding gene,Connective tissue,0.0810811,0.00551769
+THBS2,Fibroblasts,0.01,protein-coding gene,Connective tissue,0.027027,0.00227199
+NOV,Fibroblasts,0.004,protein-coding gene,Connective tissue,0.117117,0.00064914
+PTX3,Fibroblasts,0.013,protein-coding gene,Connective tissue,0.036036,0.0123337
+MMP3,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.00900901,0.00194742
+LRRK1,Fibroblasts,0.008,protein-coding gene,Connective tissue,0.00900901,0.00129828
+HGF,Fibroblasts,0.002,protein-coding gene,Connective tissue,0.0900901,0.00454398
+FRZB,Fibroblasts,0.012,protein-coding gene,Connective tissue,0.198198,0.0243427
+COL12A1,Fibroblasts,0.013,protein-coding gene,Connective tissue,0.036036,0.00454398
+COL7A1,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.00900901,0.00129828
+MEOX1,Fibroblasts,0.005,protein-coding gene,Connective tissue,0.0,0.00227199
+PRG4,Fibroblasts,0.004,protein-coding gene,Connective tissue,0.0,0.00162285
+PKD2,Fibroblasts,0.01,protein-coding gene,Connective tissue,0.126126,0.0064914
+CCL19,Fibroblasts,0.002,protein-coding gene,Connective tissue,0.027027,0.00064914
+NNMT,Fibroblasts,0.017,protein-coding gene,Connective tissue,0.495495,0.0447907
+FOXF1,Fibroblasts,0.008,protein-coding gene,Connective tissue,0.162162,0.00292113
+HAS1,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.018018,0.00097371
+CTGF,Fibroblasts,0.028,protein-coding gene,Connective tissue,0.576577,0.0824408
+ERCC1,Fibroblasts,0.033,protein-coding gene,Connective tissue,0.153153,0.092827
+WISP1,Fibroblasts,0.008,protein-coding gene,Connective tissue,0.0,0.0
+TWIST2,Fibroblasts,0.012,protein-coding gene,Connective tissue,0.162162,0.00129828
+RIPK3,Fibroblasts,0.01,protein-coding gene,Connective tissue,0.0,0.0
+DDR2,Fibroblasts,0.018,protein-coding gene,Connective tissue,0.144144,0.00811425
+ELN,Fibroblasts,0.026,protein-coding gene,Connective tissue,0.18018,0.00421941
+FN1,Fibroblasts,0.091,protein-coding gene,Connective tissue,0.468468,0.086011
+HHIP,Fibroblasts,0.008,protein-coding gene,Connective tissue,0.0,0.0129828
+FMO2,Fibroblasts,0.014,protein-coding gene,Connective tissue,0.045045,0.00227199
+COL1A2,Fibroblasts,0.097,protein-coding gene,Connective tissue,0.711712,0.103213
+COL3A1,Fibroblasts,0.086,protein-coding gene,Connective tissue,0.666667,0.0788705
+VIM,Fibroblasts,0.427,protein-coding gene,Connective tissue,0.918919,0.578708
+FSTL1,Fibroblasts,0.123,protein-coding gene,Connective tissue,0.594595,0.0918533
+GSN,Fibroblasts,0.206,protein-coding gene,Connective tissue,0.63964,0.186628
+SPARC,Fibroblasts,0.307,protein-coding gene,Connective tissue,0.837838,0.209023
+S100A4,Fibroblasts,0.098,protein-coding gene,Connective tissue,0.747748,0.357676
+NT5E,Fibroblasts,0.005,protein-coding gene,Connective tissue,0.027027,0.0064914
+COL1A1,Fibroblasts,0.081,protein-coding gene,Connective tissue,0.657658,0.0798442
+MGP,Fibroblasts,0.082,protein-coding gene,Connective tissue,0.621622,0.0983447
+NOX4,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.0,0.0
+THY1,Fibroblasts,0.095,protein-coding gene,Connective tissue,0.306306,0.0223953
+CD40,Fibroblasts,0.012,protein-coding gene,Connective tissue,0.00900901,0.0133074
+SERPINH1,Fibroblasts,0.219,protein-coding gene,Connective tissue,0.522523,0.142486
+CD44,Fibroblasts,0.127,protein-coding gene,Connective tissue,0.396396,0.296982
+PDGFRA,Fibroblasts,0.044,protein-coding gene,Connective tissue,0.396396,0.0350536
+EN1,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.0,0.0
+DCN,Fibroblasts,0.084,protein-coding gene,Connective tissue,0.936937,0.0772476
+CEBPB,Fibroblasts,0.138,protein-coding gene,Connective tissue,0.477477,0.14703
+EGR1,Fibroblasts,0.202,protein-coding gene,Connective tissue,0.63964,0.171373
+FOSB,Fibroblasts,0.125,protein-coding gene,Connective tissue,0.54955,0.189224
+FOSL2,Fibroblasts,0.045,protein-coding gene,Connective tissue,0.135135,0.0311587
+HIF1A,Fibroblasts,0.089,protein-coding gene,Connective tissue,0.189189,0.0986693
+KLF2,Fibroblasts,0.162,protein-coding gene,Connective tissue,0.117117,0.0944499
+KLF4,Fibroblasts,0.126,protein-coding gene,Connective tissue,0.396396,0.129503
+KLF6,Fibroblasts,0.3,protein-coding gene,Connective tissue,0.648649,0.423239
+KLF9,Fibroblasts,0.13,protein-coding gene,Connective tissue,0.198198,0.0217462
+NFAT5,Fibroblasts,0.017,protein-coding gene,Connective tissue,0.045045,0.0201233
+NFATC1,Fibroblasts,0.006,protein-coding gene,Connective tissue,0.0,0.00519312
+NFKB1,Fibroblasts,0.028,protein-coding gene,Connective tissue,0.027027,0.025641
+NR4A1,Fibroblasts,0.083,protein-coding gene,Connective tissue,0.0540541,0.00292113
+NR4A2,Fibroblasts,0.033,protein-coding gene,Connective tissue,0.0810811,0.0778968
+PBX1,Fibroblasts,0.175,protein-coding gene,Connective tissue,0.198198,0.0730282
+RUNX1,Fibroblasts,0.054,protein-coding gene,Connective tissue,0.117117,0.0282376
+STAT3,Fibroblasts,0.099,protein-coding gene,Connective tissue,0.504505,0.136644
+TCF4,Fibroblasts,0.394,protein-coding gene,Connective tissue,0.441441,0.159688
+ZEB2,Fibroblasts,0.144,protein-coding gene,Connective tissue,0.126126,0.083739
+LAMC1,Fibroblasts,0.058,protein-coding gene,Connective tissue,0.405405,0.0379747
+MEDAG,Fibroblasts,0.007,protein-coding gene,Connective tissue,0.189189,0.00292113
+LAMB1,Fibroblasts,0.051,protein-coding gene,Connective tissue,0.378378,0.0344044
+DKK3,Fibroblasts,0.034,protein-coding gene,Connective tissue,0.234234,0.0305096
+TBX20,Fibroblasts,0.004,protein-coding gene,Connective tissue,0.0,0.0
+MDK,Fibroblasts,0.222,protein-coding gene,Connective tissue,0.333333,0.24148
+GSTM5,Fibroblasts,0.201,protein-coding gene,Connective tissue,0.045045,0.00389484
+NGF,Fibroblasts,0.003,protein-coding gene,Connective tissue,0.0,0.00064914
+VEGFA,Fibroblasts,0.021,protein-coding gene,Connective tissue,0.045045,0.0240182
+FGF2,Fibroblasts,0.004,protein-coding gene,Connective tissue,0.171171,0.0123337
+P4HTM,Fibroblasts,0.013,protein-coding gene,Connective tissue,0.018018,0.0431678
+CKAP4,Fibroblasts,0.078,protein-coding gene,Connective tissue,0.207207,0.0610191
+INMT,Fibroblasts,0.016,protein-coding gene,Connective tissue,0.036036,0.00876339
+CXCL14,Fibroblasts,0.049,protein-coding gene,Connective tissue,0.540541,0.0246673
+THY1,Hematopoietic stem cells,0.095,protein-coding gene,Bone,0.0,0.0322682
+MPL,Hematopoietic stem cells,0.001,protein-coding gene,Bone,0.0,0.0
+KIT,Hematopoietic stem cells,0.015,protein-coding gene,Bone,0.0,0.00250627
+PROM1,Hematopoietic stem cells,0.021,protein-coding gene,Bone,0.0,0.00720551
+FLT3,Hematopoietic stem cells,0.009,protein-coding gene,Bone,0.0,0.00093985
+SLAMF1,Hematopoietic stem cells,0.001,protein-coding gene,Bone,0.0,0.00156642
+CXCR4,Hematopoietic stem cells,0.04,protein-coding gene,Bone,0.0,0.198308
+TEK,Hematopoietic stem cells,0.02,protein-coding gene,Bone,0.0,0.0018797
+ABCB1,Hematopoietic stem cells,0.001,protein-coding gene,Bone,0.0,0.0056391
+ABCG2,Hematopoietic stem cells,0.038,protein-coding gene,Bone,0.0,0.00469925
+BAALC,Hematopoietic stem cells,0.018,protein-coding gene,Bone,0.0,0.0153509
+SPN,Hematopoietic stem cells,0.029,protein-coding gene,Bone,0.0,0.0507519
+CDCP1,Hematopoietic stem cells,0.01,protein-coding gene,Bone,0.0,0.0250627
+MYADM,Hematopoietic stem cells,0.063,protein-coding gene,Bone,0.0,0.119361
+KITLG,Hematopoietic stem cells,0.001,protein-coding gene,Bone,0.0,0.00626566
+TGFB2,Hematopoietic stem cells,0.041,protein-coding gene,Bone,0.0,0.00156642
+PTPRE,Hematopoietic stem cells,0.054,protein-coding gene,Bone,0.0,0.0404135
+TAF7,Hematopoietic stem cells,0.092,protein-coding gene,Bone,0.0,0.309211
+GATA2,Hematopoietic stem cells,0.02,protein-coding gene,Bone,0.0,0.0134712
+GPR171,Hematopoietic stem cells,0.016,protein-coding gene,Bone,0.0,0.0206767
+ANGPT1,Hematopoietic stem cells,0.01,protein-coding gene,Bone,0.0,0.0018797
+PROCR,Hematopoietic stem cells,0.016,protein-coding gene,Bone,0.0,0.0285088
+NFE2,Hematopoietic stem cells,0.015,protein-coding gene,Bone,0.0,0.0175439
+NKX2-3,Hematopoietic stem cells,0.003,protein-coding gene,Bone,0.0,0.00438596
+HHEX,Hematopoietic stem cells,0.037,protein-coding gene,Bone,0.0,0.0228697
+MEIS1,Hematopoietic stem cells,0.024,protein-coding gene,Bone,0.0,0.0379073
+LYL1,Hematopoietic stem cells,0.039,protein-coding gene,Bone,0.0,0.0635965
+ELF1,Hematopoietic stem cells,0.094,protein-coding gene,Bone,0.0,0.123747
+HLF,Hematopoietic stem cells,0.02,protein-coding gene,Bone,0.0,0.0
+RGS18,Hematopoietic stem cells,0.019,protein-coding gene,Bone,0.0,0.00344612
+MYCT1,Hematopoietic stem cells,0.022,protein-coding gene,Bone,0.0,0.0216165
+ADGRG1,Hematopoietic stem cells,0.045,protein-coding gene,Bone,0.0,0.0213033
+DNMT3B,Hematopoietic stem cells,0.012,protein-coding gene,Bone,0.0,0.0103383
+MYCN,Hematopoietic stem cells,0.012,protein-coding gene,Bone,0.0,0.00344612
+ARID3A,Hematopoietic stem cells,0.018,protein-coding gene,Bone,0.0,0.0479323
+ITGA2B,Hematopoietic stem cells,0.003,protein-coding gene,Bone,0.0,0.00407268
+GATA3,Hematopoietic stem cells,0.03,protein-coding gene,Bone,0.0,0.0200501
+ROBO4,Hematopoietic stem cells,0.013,protein-coding gene,Bone,0.0,0.00438596
+PITX2,Hematopoietic stem cells,0.01,protein-coding gene,Bone,0.0,0.0109649
+TXNIP,Hematopoietic stem cells,0.194,protein-coding gene,Bone,0.0,0.354637
+RUNX1,Hematopoietic stem cells,0.054,protein-coding gene,Bone,0.0,0.0313283
+PTPRS,Hematopoietic stem cells,0.209,protein-coding gene,Bone,0.0,0.0
+PTPRC,Hematopoietic stem cells,0.125,protein-coding gene,Bone,0.0,0.216165
+CD44,Hematopoietic stem cells,0.127,protein-coding gene,Bone,0.0,0.300439
+GFI1,Hematopoietic stem cells,0.001,protein-coding gene,Bone,0.0,0.0
+CD48,Hematopoietic stem cells,0.076,protein-coding gene,Bone,0.0,0.116228
+HMGB3,Hematopoietic stem cells,0.271,protein-coding gene,Bone,0.0,0.161028
+TLR2,Hematopoietic stem cells,0.014,protein-coding gene,Bone,0.0,0.00093985
+APC,Hematopoietic stem cells,0.1,protein-coding gene,Bone,0.0,0.0131579
+GNL3,Hematopoietic stem cells,0.094,protein-coding gene,Bone,0.0,0.120301
+MGST1,Hematopoietic stem cells,0.157,protein-coding gene,Bone,0.0,0.182018
+G0S2,Hematopoietic stem cells,0.04,protein-coding gene,Bone,0.0,0.0454261
+PRNP,Hematopoietic stem cells,0.242,protein-coding gene,Bone,0.0,0.0802005
+CD34,Hematopoietic stem cells,0.071,protein-coding gene,Bone,0.0,0.0404135
+BMI1,Hematopoietic stem cells,0.009,protein-coding gene,Bone,0.0,0.00532581
+CD59,Hematopoietic stem cells,0.07,protein-coding gene,Bone,0.0,0.371554
+ITGA4,Hematopoietic stem cells,0.036,protein-coding gene,Bone,0.0,0.0112782
+ANPEP,Hematopoietic stem cells,0.015,protein-coding gene,Bone,0.0,0.0128446
+CD33,Hematopoietic stem cells,0.017,protein-coding gene,Bone,0.0,0.0125313
+IL3RA,Hematopoietic stem cells,0.008,protein-coding gene,Bone,0.0,0.0
+HLX,Hematopoietic stem cells,0.022,protein-coding gene,Bone,0.0,0.00281955
+NKX3-1,Hematopoietic stem cells,0.002,protein-coding gene,Bone,0.0,0.0134712
+THSD1,Hematopoietic stem cells,0.008,protein-coding gene,Bone,0.0,0.00501253
+NCOR2,Hematopoietic stem cells,0.021,protein-coding gene,Bone,0.0,0.00657895
+EGR1,Hematopoietic stem cells,0.202,protein-coding gene,Bone,0.0,0.187657
+FGD5,Hematopoietic stem cells,0.007,protein-coding gene,Bone,0.0,0.00093985
+MECOM,Hematopoietic stem cells,0.011,protein-coding gene,Bone,0.0,0.0194236
+CTNNAL1,Hematopoietic stem cells,0.028,protein-coding gene,Bone,0.0,0.0924185
+VWF,Hematopoietic stem cells,0.016,protein-coding gene,Bone,0.0,0.0266291
+PBX2,Hematopoietic stem cells,0.009,protein-coding gene,Bone,0.0,0.00250627
+TAL1,Hematopoietic stem cells,0.004,protein-coding gene,Bone,0.0,0.00657895
+ERG,Hematopoietic stem cells,0.01,protein-coding gene,Bone,0.0,0.00814536
+NEO1,Hematopoietic stem cells,0.02,protein-coding gene,Bone,0.0,0.00501253
+EGR3,Hematopoietic stem cells,0.004,protein-coding gene,Bone,0.0,0.00344612
+MAFF,Hematopoietic stem cells,0.054,protein-coding gene,Bone,0.0,0.0961779
+ITGA6,Hematopoietic stem cells,0.059,protein-coding gene,Bone,0.0,0.0501253
+GJB1,Hematopoietic stem cells,0.033,protein-coding gene,Bone,0.0,0.0103383
+CDH2,Hematopoietic stem cells,0.059,protein-coding gene,Bone,0.0,0.0491855
+ALDH1A1,Hematopoietic stem cells,0.039,protein-coding gene,Bone,0.0,0.0880326
+GFI1B,Hematopoietic stem cells,0.005,protein-coding gene,Bone,0.0,0.0191103
+NOTCH1,Hematopoietic stem cells,0.007,protein-coding gene,Bone,0.0,0.00469925
+NOTCH2,Hematopoietic stem cells,0.096,protein-coding gene,Bone,0.0,0.0200501
+PLXDC2,Hematopoietic stem cells,0.046,protein-coding gene,Bone,0.0,0.018797
+ESAM,Hematopoietic stem cells,0.064,protein-coding gene,Bone,0.0,0.0429198
+ACE,Hematopoietic stem cells,0.022,protein-coding gene,Bone,0.0,0.0256892
+TRPC6,Hematopoietic stem cells,0.001,protein-coding gene,Bone,0.0,0.000626566
+HOXB5,Hematopoietic stem cells,0.003,protein-coding gene,Bone,0.0,0.00501253
+TET2,Hematopoietic stem cells,0.008,protein-coding gene,Bone,0.0,0.00438596
+ITGAL,Macrophages,0.013,protein-coding gene,Immune system,0.0,0.00408805
+ITGAM,Macrophages,0.025,protein-coding gene,Immune system,0.5,0.00125786
+CD14,Macrophages,0.051,protein-coding gene,Immune system,0.416667,0.0251572
+FUT4,Macrophages,0.001,protein-coding gene,Immune system,0.0,0.0
+FCGR3A,Macrophages,0.006,protein-coding gene,Immune system,0.583333,0.0333333
+CD33,Macrophages,0.017,protein-coding gene,Immune system,0.166667,0.0119497
+FCGR1A,Macrophages,0.001,protein-coding gene,Immune system,0.333333,0.00251572
+CD80,Macrophages,0.0,protein-coding gene,Immune system,0.0,0.0
+LILRB4,Macrophages,0.002,protein-coding gene,Immune system,0.5,0.0122642
+CD86,Macrophages,0.026,protein-coding gene,Immune system,0.25,0.0113208
+CD163,Macrophages,0.005,protein-coding gene,Immune system,0.25,0.00628931
+CCR5,Macrophages,0.015,protein-coding gene,Immune system,0.0,0.0
+TLR2,Macrophages,0.014,protein-coding gene,Immune system,0.0,0.000943396
+TLR4,Macrophages,0.0,protein-coding gene,Immune system,0.0,0.000314465
+ADGRE1,Macrophages,0.033,protein-coding gene,Immune system,0.0,0.000628931
+GPR34,Macrophages,0.026,protein-coding gene,Immune system,0.333333,0.00377358
+TREM2,Macrophages,0.042,protein-coding gene,Immune system,0.75,0.00377358
+FABP4,Macrophages,0.028,protein-coding gene,Immune system,0.0833333,0.0100629
+S100A8,Macrophages,0.064,protein-coding gene,Immune system,0.166667,0.0795598
+CPM,Macrophages,0.015,protein-coding gene,Immune system,0.416667,0.013522
+CHIT1,Macrophages,0.003,protein-coding gene,Immune system,0.25,0.000314465
+F13A1,Macrophages,0.021,protein-coding gene,Immune system,0.0833333,0.00408805
+CX3CR1,Macrophages,0.039,protein-coding gene,Immune system,0.0,0.00220126
+CXCL16,Macrophages,0.048,protein-coding gene,Immune system,0.666667,0.063522
+TGFBR1,Macrophages,0.031,protein-coding gene,Immune system,0.166667,0.0100629
+SLAMF9,Macrophages,0.01,protein-coding gene,Immune system,0.0,0.000628931
+SCIMP,Macrophages,0.008,protein-coding gene,Immune system,0.0,0.00157233
+LILRA5,Macrophages,0.007,protein-coding gene,Immune system,0.0,0.0103774
+CD83,Macrophages,0.045,protein-coding gene,Immune system,0.666667,0.0361635
+C3AR1,Macrophages,0.022,protein-coding gene,Immune system,0.25,0.00534591
+STAB1,Macrophages,0.018,protein-coding gene,Immune system,0.0833333,0.00220126
+MRC1,Macrophages,0.029,protein-coding gene,Immune system,0.416667,0.0081761
+PARP14,Macrophages,0.018,protein-coding gene,Immune system,0.416667,0.0421384
+FGD2,Macrophages,0.017,protein-coding gene,Immune system,0.0833333,0.0113208
+RAB7B,Macrophages,0.013,protein-coding gene,Immune system,0.25,0.00125786
+RBPJ,Macrophages,0.051,protein-coding gene,Immune system,0.666667,0.163522
+SLCO2B1,Macrophages,0.021,protein-coding gene,Immune system,0.25,0.00314465
+NAAA,Macrophages,0.025,protein-coding gene,Immune system,0.0,0.0141509
+MARCH1,Macrophages,0.005,protein-coding gene,Immune system,0.333333,0.00471698
+EGLN3,Macrophages,0.012,protein-coding gene,Immune system,0.0,0.0150943
+JAML,Macrophages,0.005,protein-coding gene,Immune system,0.0833333,0.0289308
+FGL2,Macrophages,0.03,protein-coding gene,Immune system,0.25,0.0349057
+GPNMB,Macrophages,0.013,protein-coding gene,Immune system,0.75,0.027044
+CLEC4D,Macrophages,0.007,protein-coding gene,Immune system,0.0,0.0
+ADAM8,Macrophages,0.01,protein-coding gene,Immune system,0.0,0.00566038
+ARL11,Macrophages,0.004,protein-coding gene,Immune system,0.0,0.0
+MMP12,Macrophages,0.003,protein-coding gene,Immune system,0.0,0.00188679
+LYVE1,Macrophages,0.012,protein-coding gene,Immune system,0.25,0.00440252
+PLTP,Macrophages,0.009,protein-coding gene,Immune system,0.333333,0.0248428
+VSIG4,Macrophages,0.005,protein-coding gene,Immune system,0.666667,0.0110063
+MS4A4A,Macrophages,0.002,protein-coding gene,Immune system,0.583333,0.00534591
+MS4A6A,Macrophages,0.007,protein-coding gene,Immune system,0.333333,0.0389937
+FPR1,Macrophages,0.003,protein-coding gene,Immune system,0.0833333,0.00314465
+CD180,Macrophages,0.012,protein-coding gene,Immune system,0.0833333,0.000628931
+GDF15,Macrophages,0.014,protein-coding gene,Immune system,0.166667,0.0566038
+RAB20,Macrophages,0.017,protein-coding gene,Immune system,0.416667,0.00628931
+HFE,Macrophages,0.017,protein-coding gene,Immune system,0.0,0.000314465
+TNF,Macrophages,0.008,protein-coding gene,Immune system,0.0,0.00125786
+CCR2,Macrophages,0.022,protein-coding gene,Immune system,0.0,0.0
+SNX20,Macrophages,0.02,protein-coding gene,Immune system,0.0,0.00125786
+FMNL1,Macrophages,0.022,protein-coding gene,Immune system,0.0,0.00660377
+GPR132,Macrophages,0.009,protein-coding gene,Immune system,0.0,0.000314465
+SLAMF7,Macrophages,0.013,protein-coding gene,Immune system,0.166667,0.00691824
+NCEH1,Macrophages,0.025,protein-coding gene,Immune system,0.416667,0.00660377
+CCL24,Macrophages,0.011,protein-coding gene,Immune system,0.0,0.0
+C5AR1,Macrophages,0.027,protein-coding gene,Immune system,0.583333,0.0119497
+CD300A,Macrophages,0.023,protein-coding gene,Immune system,0.166667,0.00786164
+CXCL2,Macrophages,0.041,protein-coding gene,Immune system,0.0833333,0.0566038
+CCL7,Macrophages,0.017,protein-coding gene,Immune system,0.0,0.000314465
+CCL2,Macrophages,0.037,protein-coding gene,Immune system,0.5,0.0632075
+IL1B,Macrophages,0.027,protein-coding gene,Immune system,0.166667,0.0248428
+IRF5,Macrophages,0.028,protein-coding gene,Immune system,0.0833333,0.0
+AHR,Macrophages,0.007,protein-coding gene,Immune system,0.0,0.0113208
+MYO1G,Macrophages,0.022,protein-coding gene,Immune system,0.0,0.0238994
+DUSP5,Macrophages,0.032,protein-coding gene,Immune system,0.0,0.0496855
+GPR171,Macrophages,0.016,protein-coding gene,Immune system,0.0,0.0207547
+CCR7,Macrophages,0.016,protein-coding gene,Immune system,0.0,0.0421384
+DNASE1L3,Macrophages,0.015,protein-coding gene,Immune system,0.0,0.0100629
+CXCL1,Macrophages,0.032,protein-coding gene,Immune system,0.0,0.0459119
+SAMSN1,Macrophages,0.046,protein-coding gene,Immune system,0.25,0.0506289
+NR4A3,Macrophages,0.01,protein-coding gene,Immune system,0.0833333,0.0119497
+CCL22,Macrophages,0.002,protein-coding gene,Immune system,0.166667,0.000314465
+S100A4,Macrophages,0.098,protein-coding gene,Immune system,0.916667,0.369182
+MMP9,Macrophages,0.015,protein-coding gene,Immune system,0.416667,0.0081761
+HILPDA,Macrophages,0.033,protein-coding gene,Immune system,0.0833333,0.0141509
+NRP2,Macrophages,0.04,protein-coding gene,Immune system,0.666667,0.0330189
+SLC37A2,Macrophages,0.001,protein-coding gene,Immune system,0.0833333,0.0
+CTSK,Macrophages,0.027,protein-coding gene,Immune system,0.0,0.0176101
+CD36,Macrophages,0.042,protein-coding gene,Immune system,0.666667,0.0320755
+LPCAT2,Macrophages,0.034,protein-coding gene,Immune system,0.25,0.00377358
+HPGDS,Macrophages,0.033,protein-coding gene,Immune system,0.333333,0.0172956
+IFNAR2,Macrophages,0.024,protein-coding gene,Immune system,0.0833333,0.00503145
+MS4A7,Macrophages,0.027,protein-coding gene,Immune system,0.833333,0.0292453
+SLC11A1,Macrophages,0.017,protein-coding gene,Immune system,0.416667,0.00503145
+HPGD,Macrophages,0.044,protein-coding gene,Immune system,0.0833333,0.0191824
+CCL3,Macrophages,0.036,protein-coding gene,Immune system,0.166667,0.0072327
+CLEC7A,Macrophages,0.03,protein-coding gene,Immune system,0.75,0.0440252
+CD5L,Macrophages,0.005,protein-coding gene,Immune system,0.0833333,0.000628931
+CCL5,Macrophages,0.042,protein-coding gene,Immune system,0.0,0.0861635
+CYTH4,Macrophages,0.053,protein-coding gene,Immune system,0.333333,0.000943396
+CD3E,Macrophages,0.041,protein-coding gene,Immune system,0.0,0.1
+CD19,Macrophages,0.007,protein-coding gene,Immune system,0.0,0.00786164
+CD74,Macrophages,0.169,protein-coding gene,Immune system,0.75,0.362264
+CSF1R,Macrophages,0.064,protein-coding gene,Immune system,0.5,0.0160377
+LGALS3,Macrophages,0.164,protein-coding gene,Immune system,0.583333,0.307862
+CD68,Macrophages,0.063,protein-coding gene,Immune system,0.0,0.0
+UCP2,Macrophages,0.013,protein-coding gene,Immune system,0.0,0.00503145
+TREML4,Macrophages,0.003,protein-coding gene,Immune system,0.0,0.0
+FGR,Macrophages,0.013,protein-coding gene,Immune system,0.416667,0.0204403
+CYBB,Macrophages,0.059,protein-coding gene,Immune system,0.916667,0.0342767
+CD200,Macrophages,0.111,protein-coding gene,Immune system,0.0,0.022956
+CD200R1,Macrophages,0.002,protein-coding gene,Immune system,0.0,0.0
+GATA6,Macrophages,0.019,protein-coding gene,Immune system,0.0,0.00471698
+ITGAX,Macrophages,0.007,protein-coding gene,Immune system,0.583333,0.0141509
+PPARG,Macrophages,0.006,protein-coding gene,Immune system,0.0833333,0.0106918
+TYROBP,Macrophages,0.149,protein-coding gene,Immune system,1.0,0.139623
+RGS1,Macrophages,0.049,protein-coding gene,Immune system,0.0833333,0.0638365
+DAB2,Macrophages,0.068,protein-coding gene,Immune system,0.75,0.045283
+P2RY6,Macrophages,0.018,protein-coding gene,Immune system,0.0,0.00283019
+MAF,Macrophages,0.072,protein-coding gene,Immune system,0.833333,0.0336478
+AIF1,Macrophages,0.085,protein-coding gene,Immune system,0.916667,0.127987
+CLEC10A,Macrophages,0.01,protein-coding gene,Immune system,0.0,0.0119497
+ADGRE5,Macrophages,0.04,protein-coding gene,Immune system,0.25,0.0380503
+SLC15A3,Macrophages,0.016,protein-coding gene,Immune system,0.25,0.00660377
+CYP27A1,Macrophages,0.006,protein-coding gene,Immune system,0.5,0.0132075
+SLC7A7,Macrophages,0.007,protein-coding gene,Immune system,0.75,0.0176101
+RUNX3,Macrophages,0.018,protein-coding gene,Immune system,0.0,0.0207547
+SYK,Macrophages,0.011,protein-coding gene,Immune system,0.416667,0.0091195
+ITGA2B,Megakaryocytes,0.003,protein-coding gene,Immune system,0.0,0.00407268
+GP1BA,Megakaryocytes,0.0,protein-coding gene,Immune system,0.0,0.000313283
+ITGB3,Megakaryocytes,0.001,protein-coding gene,Immune system,0.0,0.000313283
+MPL,Megakaryocytes,0.001,protein-coding gene,Immune system,0.0,0.0
+LAT,Megakaryocytes,0.034,protein-coding gene,Immune system,0.0,0.0140977
+PLEK,Megakaryocytes,0.051,protein-coding gene,Immune system,0.0,0.0451128
+S100A9,Megakaryocytes,0.061,protein-coding gene,Immune system,0.0,0.103383
+S100A8,Megakaryocytes,0.064,protein-coding gene,Immune system,0.0,0.0798872
+PF4,Megakaryocytes,0.029,protein-coding gene,Immune system,0.0,0.00344612
+F13A1,Megakaryocytes,0.021,protein-coding gene,Immune system,0.0,0.00438596
+CD9,Megakaryocytes,0.344,protein-coding gene,Immune system,0.0,0.27099
+EPOR,Megakaryocytes,0.004,protein-coding gene,Immune system,0.0,0.0147243
+CXCR4,Megakaryocytes,0.04,protein-coding gene,Immune system,0.0,0.198308
+GP5,Megakaryocytes,0.001,protein-coding gene,Immune system,0.0,0.0
+CXCR1,Megakaryocytes,0.0,protein-coding gene,Immune system,0.0,0.0
+CXCR2,Megakaryocytes,0.003,protein-coding gene,Immune system,0.0,0.0
+SLAMF1,Megakaryocytes,0.001,protein-coding gene,Immune system,0.0,0.00156642
+PDE6B,Megakaryocytes,0.002,protein-coding gene,Immune system,0.0,0.00125313
+MATK,Megakaryocytes,0.032,protein-coding gene,Immune system,0.0,0.0184837
+SPON2,Megakaryocytes,0.017,protein-coding gene,Immune system,0.0,0.0488722
+MKL2,Megakaryocytes,0.035,protein coding gene,Immune system,0.0,0.0056391
+TLR9,Megakaryocytes,0.0,protein-coding gene,Immune system,0.0,0.0
+KIF5B,Megakaryocytes,0.486,protein-coding gene,Immune system,0.0,0.327068
+GATA1,Megakaryocytes,0.008,protein-coding gene,Immune system,0.0,0.0178571
+FLI1,Megakaryocytes,0.036,protein-coding gene,Immune system,0.0,0.00595238
+PROX1,Megakaryocytes,0.028,protein-coding gene,Immune system,0.0,0.0109649
+SYP,Megakaryocytes,0.049,protein-coding gene,Immune system,0.0,0.00720551
+TSPAN9,Megakaryocytes,0.028,protein-coding gene,Immune system,0.0,0.00313283
+RGS18,Megakaryocytes,0.019,protein-coding gene,Immune system,0.0,0.00344612
+TREML1,Megakaryocytes,0.0,protein-coding gene,Immune system,0.0,0.000626566
+GATA2,Megakaryocytes,0.02,protein-coding gene,Immune system,0.0,0.0134712
+VWF,Megakaryocytes,0.016,protein-coding gene,Immune system,0.0,0.0266291
+ALOX12,Megakaryocytes,0.001,protein-coding gene,Immune system,0.0,0.0
+SELP,Megakaryocytes,0.003,protein-coding gene,Immune system,0.0,0.00125313
+NFATC1,Megakaryocytes,0.006,protein-coding gene,Immune system,0.0,0.00501253
+CIB1,Megakaryocytes,0.156,protein-coding gene,Immune system,0.0,0.300439
+PLK3,Megakaryocytes,0.01,protein-coding gene,Immune system,0.0,0.0093985
+MAFG,Megakaryocytes,0.076,protein-coding gene,Immune system,0.0,0.0435464
+IL2RA,Megakaryocytes,0.009,protein-coding gene,Immune system,0.0,0.0200501
+PECAM1,Megakaryocytes,0.051,protein-coding gene,Immune system,0.0,0.0441729
+PPARG,Megakaryocytes,0.006,protein-coding gene,Immune system,0.0,0.0109649
+IL6,Megakaryocytes,0.007,protein-coding gene,Immune system,0.0,0.0134712
+IL21R,Megakaryocytes,0.013,protein-coding gene,Immune system,0.0,0.0
+LRP1,Megakaryocytes,0.071,protein-coding gene,Immune system,0.0,0.035401
+ACHE,Megakaryocytes,0.016,protein-coding gene,Immune system,0.0,0.00469925
+VEGFA,Megakaryocytes,0.021,protein-coding gene,Immune system,0.0,0.0247494
+TGFB1,Megakaryocytes,0.11,protein-coding gene,Immune system,0.0,0.0451128
+GP9,Megakaryocytes,0.001,protein-coding gene,Immune system,0.0,0.000626566
+RGS1,Monocytes,0.049,protein-coding gene,Immune system,0.0,0.0644346
+APOBEC3A,Monocytes,0.001,protein-coding gene,Immune system,0.192308,0.0028427
+CD7,Monocytes,0.03,protein-coding gene,Immune system,0.0,0.104548
+TET2,Monocytes,0.008,protein-coding gene,Immune system,0.0,0.00442198
+CD40,Monocytes,0.012,protein-coding gene,Immune system,0.0769231,0.0126342
+DYSF,Monocytes,0.002,protein-coding gene,Immune system,0.0,0.00315856
+CMKLR1,Monocytes,0.003,protein-coding gene,Immune system,0.0,0.000315856
+MEFV,Monocytes,0.0,protein-coding gene,Immune system,0.0,0.0
+HCK,Monocytes,0.031,protein-coding gene,Immune system,0.0384615,0.0227416
+FCGR3B,Monocytes,0.0,protein-coding gene,Immune system,0.0,0.0
+PADI4,Monocytes,0.005,protein-coding gene,Immune system,0.0,0.000947568
+GHSR,Monocytes,0.0,protein-coding gene,Immune system,0.0,0.0
+ITGAX,Monocytes,0.007,protein-coding gene,Immune system,0.0384615,0.0161087
+SELE,Monocytes,0.001,protein-coding gene,Immune system,0.0,0.00536955
+TLR4,Monocytes,0.0,protein-coding gene,Immune system,0.0,0.000315856
+AR,Monocytes,0.013,protein-coding gene,Immune system,0.0,0.00189514
+CXCR4,Monocytes,0.04,protein-coding gene,Immune system,0.269231,0.197726
+CD86,Monocytes,0.026,protein-coding gene,Immune system,0.0769231,0.0116867
+CCR2,Monocytes,0.022,protein-coding gene,Immune system,0.0,0.0
+TNFRSF14,Monocytes,0.019,protein-coding gene,Immune system,0.0384615,0.0243209
+ADA2,Monocytes,0.002,protein-coding gene,Immune system,0.0,0.0129501
+MGMT,Monocytes,0.027,protein-coding gene,Immune system,0.0,0.0862287
+CD14,Monocytes,0.051,protein-coding gene,Immune system,0.269231,0.0246368
+CD33,Monocytes,0.017,protein-coding gene,Immune system,0.0,0.0126342
+ITGAM,Monocytes,0.025,protein-coding gene,Immune system,0.0,0.00315856
+ACE,Monocytes,0.022,protein-coding gene,Immune system,0.0,0.0259002
+FUT4,Monocytes,0.001,protein-coding gene,Immune system,0.0,0.0
+ICAM1,Monocytes,0.009,protein-coding gene,Immune system,0.0,0.00600126
+SELL,Monocytes,0.035,protein-coding gene,Immune system,0.269231,0.0584334
+CD163,Monocytes,0.005,protein-coding gene,Immune system,0.0769231,0.00663298
+FCGR1A,Monocytes,0.001,protein-coding gene,Immune system,0.0,0.00379027
+FCGR2B,Monocytes,0.031,protein-coding gene,Immune system,0.0,0.00473784
+ACP5,Monocytes,0.033,protein-coding gene,Immune system,0.0,0.0183196
+MRC1,Monocytes,0.029,protein-coding gene,Immune system,0.0,0.00979154
+TNF,Monocytes,0.008,protein-coding gene,Immune system,0.0,0.00126342
+PLAU,Monocytes,0.01,protein-coding gene,Immune system,0.153846,0.0429564
+GBP1,Monocytes,0.004,protein-coding gene,Immune system,0.384615,0.0224258
+OAS1,Monocytes,0.005,protein-coding gene,Immune system,0.692308,0.0161087
+IRF7,Monocytes,0.033,protein-coding gene,Immune system,0.538462,0.0243209
+PLSCR1,Monocytes,0.023,protein-coding gene,Immune system,0.692308,0.0590651
+MX1,Monocytes,0.008,protein-coding gene,Immune system,0.692308,0.0170562
+IL1RN,Monocytes,0.013,protein-coding gene,Immune system,0.269231,0.0176879
+HLA-DRA,Monocytes,0.039,protein-coding gene,Immune system,0.576923,0.209413
+IFIT1,Monocytes,0.015,protein-coding gene,Immune system,0.692308,0.0104232
+IDO1,Monocytes,0.003,protein-coding gene,Immune system,0.192308,0.00852811
+IFIT3,Monocytes,0.014,protein-coding gene,Immune system,0.692308,0.0164245
+TNFSF10,Monocytes,0.014,protein-coding gene,Immune system,0.653846,0.0596968
+CXCL10,Monocytes,0.009,protein-coding gene,Immune system,0.461538,0.00631712
+S100A9,Monocytes,0.061,protein-coding gene,Immune system,0.576923,0.0994946
+S100A8,Monocytes,0.064,protein-coding gene,Immune system,0.384615,0.0773847
+S100A4,Monocytes,0.098,protein-coding gene,Immune system,0.5,0.370183
+CLEC7A,Monocytes,0.03,protein-coding gene,Immune system,0.269231,0.0448515
+CSF3R,Monocytes,0.012,protein-coding gene,Immune system,0.230769,0.0195831
+MNDA,Monocytes,0.019,protein-coding gene,Immune system,0.461538,0.0426406
+MS4A6A,Monocytes,0.007,protein-coding gene,Immune system,0.346154,0.0375869
+ZFP36L2,Monocytes,0.103,protein-coding gene,Immune system,0.384615,0.418509
+LTA4H,Monocytes,0.053,protein-coding gene,Immune system,0.153846,0.0735944
+CLEC12A,Monocytes,0.009,protein-coding gene,Immune system,0.115385,0.00821226
+CD48,Monocytes,0.076,protein-coding gene,Immune system,0.269231,0.114972
+PRTN3,Monocytes,0.026,protein-coding gene,Immune system,0.0,0.0113708
+FCGR3A,Monocytes,0.006,protein-coding gene,Immune system,0.0384615,0.0353759
+VCAN,Monocytes,0.056,protein-coding gene,Immune system,0.307692,0.0950726
+IFITM3,Monocytes,0.33,protein-coding gene,Immune system,0.461538,0.419141
+FN1,Monocytes,0.091,protein-coding gene,Immune system,0.0769231,0.0994946
+ADGRE1,Monocytes,0.033,protein-coding gene,Immune system,0.0,0.000631712
+CD44,Monocytes,0.127,protein-coding gene,Immune system,0.5,0.2988
+CSF1R,Monocytes,0.064,protein-coding gene,Immune system,0.0,0.0180038
+CX3CR1,Monocytes,0.039,protein-coding gene,Immune system,0.0,0.00221099
+ITGAL,Monocytes,0.013,protein-coding gene,Immune system,0.0,0.00410613
+PECAM1,Monocytes,0.051,protein-coding gene,Immune system,0.0,0.0445357
+PTPRC,Monocytes,0.125,protein-coding gene,Immune system,0.615385,0.212887
+SPN,Monocytes,0.029,protein-coding gene,Immune system,0.0,0.0511687
+PSAP,Monocytes,0.588,protein-coding gene,Immune system,0.615385,0.497473
+FCN1,Monocytes,0.007,protein-coding gene,Immune system,0.461538,0.0322173
+LYZ,Monocytes,0.008,protein-coding gene,Immune system,,
+RHOC,Monocytes,0.205,protein-coding gene,Immune system,,
+PILRA,Monocytes,0.016,protein-coding gene,Immune system,,
+NFKBIZ,Monocytes,0.08,protein-coding gene,Immune system,,
+NAAA,Monocytes,0.025,protein-coding gene,Immune system,,
+LY6E,Monocytes,0.345,protein-coding gene,Immune system,,
+LYN,Monocytes,0.062,protein-coding gene,Immune system,,
+MS4A7,Monocytes,0.027,protein-coding gene,Immune system,,
+CEBPB,Monocytes,0.138,protein-coding gene,Immune system,,
+CD68,Monocytes,0.063,protein-coding gene,Immune system,,
+IFI30,Monocytes,0.078,protein-coding gene,Immune system,,
+S100A12,Monocytes,0.003,protein-coding gene,Immune system,,
+SERPINA1,Monocytes,0.016,protein-coding gene,Immune system,,
+RGS2,Monocytes,0.128,protein-coding gene,Immune system,,
+LST1,Monocytes,0.082,protein-coding gene,Immune system,,
+SPI1,Monocytes,0.094,protein-coding gene,Immune system,,
+TYMP,Monocytes,0.011,protein-coding gene,Immune system,,
+CSTA,Monocytes,0.012,protein-coding gene,Immune system,,
+FGL2,Monocytes,0.03,protein-coding gene,Immune system,,
+PYCARD,Monocytes,0.147,protein-coding gene,Immune system,,
+LYST,Monocytes,0.015,protein-coding gene,Immune system,,
+CCL3,Monocytes,0.036,protein-coding gene,Immune system,,
+IL1B,Monocytes,0.027,protein-coding gene,Immune system,,
+CFP,Monocytes,0.035,protein-coding gene,Immune system,,
+CD36,Monocytes,0.042,protein-coding gene,Immune system,,
+ITGAM,Myeloid-derived suppressor cells,0.025,protein-coding gene,Immune system,0.0,0.00313283
+FUT4,Myeloid-derived suppressor cells,0.001,protein-coding gene,Immune system,0.0,0.0
+CD33,Myeloid-derived suppressor cells,0.017,protein-coding gene,Immune system,0.0,0.0125313
+CEACAM8,Myeloid-derived suppressor cells,0.0,protein-coding gene,Immune system,0.0,0.0
+IL4R,Myeloid-derived suppressor cells,0.002,protein-coding gene,Immune system,0.0,0.0103383
+CCR2,Myeloid-derived suppressor cells,0.022,protein-coding gene,Immune system,0.0,0.0
+CD1D,Myeloid-derived suppressor cells,0.0,protein-coding gene,Immune system,0.0,0.00093985
+FCGR3A,Myeloid-derived suppressor cells,0.006,protein-coding gene,Immune system,0.0,0.035401
+ICAM1,Myeloid-derived suppressor cells,0.009,protein-coding gene,Immune system,0.0,0.00595238
+CD80,Myeloid-derived suppressor cells,0.0,protein-coding gene,Immune system,0.0,0.0
+CXCR1,Myeloid-derived suppressor cells,0.0,protein-coding gene,Immune system,0.0,0.0
+ADGRE1,Myeloid-derived suppressor cells,0.033,protein-coding gene,Immune system,0.0,0.000626566
+S100A9,Myeloid-derived suppressor cells,0.061,protein-coding gene,Immune system,0.0,0.103383
+S100A4,Myeloid-derived suppressor cells,0.098,protein-coding gene,Immune system,0.0,0.371241
+S100A8,Myeloid-derived suppressor cells,0.064,protein-coding gene,Immune system,0.0,0.0798872
+MME,Neutrophils,0.017,protein-coding gene,Immune system,0.0,0.0270525
+ITGAM,Neutrophils,0.025,protein-coding gene,Immune system,0.0,0.00314564
+ITGAX,Neutrophils,0.007,protein-coding gene,Immune system,0.0,0.0163573
+CD14,Neutrophils,0.051,protein-coding gene,Immune system,0.0,0.026738
+FUT4,Neutrophils,0.001,protein-coding gene,Immune system,0.0,0.0
+FCGR3A,Neutrophils,0.006,protein-coding gene,Immune system,0.0,0.0355458
+PECAM1,Neutrophils,0.051,protein-coding gene,Immune system,0.0,0.0443536
+CD33,Neutrophils,0.017,protein-coding gene,Immune system,0.0,0.0125826
+SELL,Neutrophils,0.035,protein-coding gene,Immune system,0.0,0.0603964
+CEACAM8,Neutrophils,0.0,protein-coding gene,Immune system,0.0,0.0
+C5AR1,Neutrophils,0.027,protein-coding gene,Immune system,0.0,0.0141554
+CXCR1,Neutrophils,0.0,protein-coding gene,Immune system,0.0,0.0
+CXCR2,Neutrophils,0.003,protein-coding gene,Immune system,0.0,0.0
+JAML,Neutrophils,0.005,protein-coding gene,Immune system,0.0,0.0292545
+TLR2,Neutrophils,0.014,protein-coding gene,Immune system,0.0,0.000943693
+MYLK,Neutrophils,0.047,protein-coding gene,Immune system,0.0,0.0556779
+S100A9,Neutrophils,0.061,protein-coding gene,Immune system,0.307692,0.102548
+MPO,Neutrophils,0.023,protein-coding gene,Immune system,1.0,0.0166719
+CD24,Neutrophils,0.039,protein-coding gene,Immune system,0.0,0.192828
+CEACAM1,Neutrophils,0.024,protein-coding gene,Immune system,0.0,0.0191884
+FCGR1A,Neutrophils,0.001,protein-coding gene,Immune system,0.0,0.00377477
+CRP,Neutrophils,0.002,protein-coding gene,Immune system,0.0,0.0044039
+LCN2,Neutrophils,0.043,protein-coding gene,Immune system,0.0,0.0569361
+DEFA1,Neutrophils,0.0,protein-coding gene,Immune system,0.0,0.0
+DEFA3,Neutrophils,0.002,protein-coding gene,Immune system,0.0,0.0
+LTF,Neutrophils,0.016,protein-coding gene,Immune system,0.0,0.00629129
+LYZ,Neutrophils,0.008,protein-coding gene,Immune system,0.615385,0.0383768
+ELANE,Neutrophils,0.019,protein-coding gene,Immune system,1.0,0.00629129
+S100A8,Neutrophils,0.064,protein-coding gene,Immune system,0.538462,0.078012
+IL1B,Neutrophils,0.027,protein-coding gene,Immune system,0.0,0.0254797
+CXCL2,Neutrophils,0.041,protein-coding gene,Immune system,0.0,0.0569361
+HP,Neutrophils,0.044,protein-coding gene,Immune system,0.0,0.0251651
+CCL3,Neutrophils,0.036,protein-coding gene,Immune system,0.0,0.00786411
+HDC,Neutrophils,0.019,protein-coding gene,Immune system,0.0,0.00157282
+MMP8,Neutrophils,0.004,protein-coding gene,Immune system,0.0,0.0
+LRG1,Neutrophils,0.026,protein-coding gene,Immune system,0.0,0.00346021
+OSM,Neutrophils,0.007,protein-coding gene,Immune system,0.0,0.0
+MMP9,Neutrophils,0.015,protein-coding gene,Immune system,0.0,0.00975149
+PILRA,Neutrophils,0.016,protein-coding gene,Immune system,0.0,0.01447
+CLEC4D,Neutrophils,0.007,protein-coding gene,Immune system,0.0,0.0
+CLEC4E,Neutrophils,0.006,protein-coding gene,Immune system,0.0,0.00251651
+ASPRV1,Neutrophils,0.001,protein-coding gene,Immune system,0.0,0.0
+CCRL2,Neutrophils,0.018,protein-coding gene,Immune system,0.0,0.00157282
+CCR1,Neutrophils,0.014,protein-coding gene,Immune system,0.0,0.00534759
+NCF1,Neutrophils,0.038,protein-coding gene,Immune system,0.0,0.0
+TREM1,Neutrophils,0.003,protein-coding gene,Immune system,0.0,0.00125826
+SORL1,Neutrophils,0.034,protein-coding gene,Immune system,0.0,0.012268
+ARG2,Neutrophils,0.001,protein-coding gene,Immune system,0.0,0.000314564
+BST1,Neutrophils,0.008,protein-coding gene,Immune system,0.0,0.00629129
+IL1R2,Neutrophils,0.007,protein-coding gene,Immune system,0.0,0.00723498
+CFP,Neutrophils,0.035,protein-coding gene,Immune system,0.0,0.0355458
+ADAM8,Neutrophils,0.01,protein-coding gene,Immune system,0.0,0.00566216
+CD177,Neutrophils,0.011,protein-coding gene,Immune system,0.0,0.00377477
+PTGS2,Neutrophils,0.009,protein-coding gene,Immune system,0.0,0.0138408
+OAS3,Neutrophils,0.003,protein-coding gene,Immune system,0.0,0.00817867
+PRTN3,Neutrophils,0.026,protein-coding gene,Immune system,1.0,0.00723498
+AZU1,Neutrophils,0.002,protein-coding gene,Immune system,1.0,0.0088078
+CTSG,Neutrophils,0.017,protein-coding gene,Immune system,1.0,0.00912237
+SERPINB1,Neutrophils,0.029,protein-coding gene,Immune system,1.0,0.155709
+CAMP,Neutrophils,0.022,protein-coding gene,Immune system,0.0,0.000314564
+SLC1A5,Neutrophils,0.038,protein-coding gene,Immune system,0.0,0.0465555
+SNX20,Neutrophils,0.02,protein-coding gene,Immune system,0.0,0.00125826
+ADPGK,Neutrophils,0.015,protein-coding gene,Immune system,0.0,0.0103806
+PSTPIP1,Neutrophils,0.014,protein-coding gene,Immune system,0.0,0.00251651
+LYST,Neutrophils,0.015,protein-coding gene,Immune system,0.0769231,0.0320856
+DOCK8,Neutrophils,0.015,protein-coding gene,Immune system,0.0,0.0160428
+S100A4,Neutrophils,0.098,protein-coding gene,Immune system,0.692308,0.369928
+NLRP3,Neutrophils,0.004,protein-coding gene,Immune system,0.0,0.000943693
+CSF3R,Neutrophils,0.012,protein-coding gene,Immune system,0.230769,0.0204467
+SLC6A6,Osteoblasts,0.102,protein-coding gene,Bone,0.0,0.000626566
+VDR,Osteoblasts,0.011,protein-coding gene,Bone,0.0,0.00250627
+LRP4,Osteoblasts,0.046,protein-coding gene,Bone,0.0,0.0
+EGFL6,Osteoblasts,0.01,protein-coding gene,Bone,0.0,0.00814536
+MMP13,Osteoblasts,0.003,protein-coding gene,Bone,0.0,0.0
+GPER1,Osteoblasts,0.01,protein-coding gene,Bone,0.0,0.00156642
+RUNX2,Osteoblasts,0.008,protein-coding gene,Bone,0.0,0.00877193
+NF2,Osteoblasts,0.016,protein-coding gene,Bone,0.0,0.0441729
+LRP5,Osteoblasts,0.003,protein-coding gene,Bone,0.0,0.00313283
+PHEX,Osteoblasts,0.001,protein-coding gene,Bone,0.0,0.000626566
+HIF1A,Osteoblasts,0.089,protein-coding gene,Bone,0.0,0.101817
+C5AR1,Osteoblasts,0.027,protein-coding gene,Bone,0.0,0.0140977
+CXCL12,Osteoblasts,0.07,protein-coding gene,Bone,0.0,0.0269424
+COL1A1,Osteoblasts,0.081,protein-coding gene,Bone,0.0,0.0999373
+PLCD4,Osteoblasts,0.004,protein-coding gene,Bone,0.0,0.0
+FOXO1,Osteoblasts,0.022,protein-coding gene,Bone,0.0,0.0075188
+SOCS3,Osteoblasts,0.081,protein-coding gene,Bone,0.0,0.0942982
+IL33,Osteoblasts,0.018,protein-coding gene,Bone,0.0,0.0106516
+MAGED1,Osteoblasts,0.334,protein-coding gene,Bone,0.0,0.0845865
+PARD6G,Osteoblasts,0.018,protein-coding gene,Bone,0.0,0.000313283
+CD44,Osteoblasts,0.127,protein-coding gene,Bone,0.0,0.300439
+NLRP3,Osteoblasts,0.004,protein-coding gene,Bone,0.0,0.00093985
+ALPL,Osteoblasts,0.009,protein-coding gene,Bone,0.0,0.00407268
+TNFSF11,Osteoblasts,0.001,protein-coding gene,Bone,0.0,0.000313283
+CCL11,Osteoblasts,0.008,protein-coding gene,Bone,0.0,0.00313283
+SPP1,Osteoblasts,0.057,protein-coding gene,Bone,0.0,0.0532581
+FAS,Osteoblasts,0.011,protein-coding gene,Bone,0.0,0.0147243
+TNFRSF10A,Osteoblasts,0.001,protein-coding gene,Bone,0.0,0.00469925
+WNT5A,Osteoblasts,0.015,protein-coding gene,Bone,0.0,0.00814536
+CX3CL1,Osteoblasts,0.033,protein-coding gene,Bone,0.0,0.0056391
+F2R,Osteoblasts,0.036,protein-coding gene,Bone,0.0,0.0338346
+PTH1R,Osteoblasts,0.019,protein-coding gene,Bone,0.0,0.00501253
+ITGA2,Osteoblasts,0.01,protein-coding gene,Bone,0.0,0.0451128
+ITGA5,Osteoblasts,0.016,protein-coding gene,Bone,0.0,0.0184837
+NOD1,Osteoblasts,0.0,protein-coding gene,Bone,0.0,0.0
+NOD2,Osteoblasts,0.0,protein-coding gene,Bone,0.0,0.0
+THY1,Osteoblasts,0.095,protein-coding gene,Bone,0.0,0.0322682
+ESR1,Osteoblasts,0.004,protein-coding gene,Bone,0.0,0.00093985
+CYP27B1,Osteoblasts,0.0,protein-coding gene,Bone,0.0,0.0
+P2RX4,Osteoblasts,0.025,protein-coding gene,Bone,0.0,0.0131579
+P2RX5,Osteoblasts,0.0,protein-coding gene,Bone,0.0,0.0018797
+INSR,Osteoblasts,0.022,protein-coding gene,Bone,0.0,0.0632832
+EFNB2,Osteoblasts,0.016,protein-coding gene,Bone,0.0,0.0291353
+EPHB4,Osteoblasts,0.009,protein-coding gene,Bone,0.0,0.0103383
+VCAM1,Osteoblasts,0.041,protein-coding gene,Bone,0.0,0.00720551
+FGFR1,Osteoblasts,0.072,protein-coding gene,Bone,0.0,0.0588972
+FGFR2,Osteoblasts,0.034,protein-coding gene,Bone,0.0,0.0156642
+BGLAP,Osteoblasts,0.005,protein-coding gene,Bone,0.0,0.0
+TLR5,Osteoblasts,0.0,protein-coding gene,Bone,0.0,0.0
+CALB1,Osteoblasts,0.019,protein-coding gene,Bone,0.0,0.00125313
+COL11A1,Osteoblasts,0.009,protein-coding gene,Bone,0.0,0.00971178
+COL11A2,Osteoblasts,0.005,protein-coding gene,Bone,0.0,0.00281955
+IBSP,Osteoblasts,0.006,protein-coding gene,Bone,0.0,0.0
+POSTN,Osteoblasts,0.033,protein-coding gene,Bone,0.0,0.023183
+SFRP4,Osteoblasts,0.006,protein-coding gene,Bone,0.0,0.00720551
+BMP1,Osteoblasts,0.024,protein-coding gene,Bone,0.0,0.0100251
+OLFML2B,Osteoblasts,0.011,protein-coding gene,Bone,0.0,0.00971178
+COL12A1,Osteoblasts,0.013,protein-coding gene,Bone,0.0,0.0056391
+WISP2,Osteoblasts,0.005,protein-coding gene,Bone,0.0,0.00657895
+SP7,Osteoblasts,0.001,protein-coding gene,Bone,0.0,0.0
+PENK,Osteoblasts,0.02,protein-coding gene,Bone,0.0,0.0275689
+NPNT,Osteoblasts,0.017,protein-coding gene,Bone,0.0,0.00908521
+OLFML1,Osteoblasts,0.002,protein-coding gene,Bone,0.0,0.0
+SDC1,Plasma cells,0.046,protein-coding gene,Immune system,0.555556,0.0405577
+IRF4,Plasma cells,0.003,protein-coding gene,Immune system,0.0,0.00855513
+CD38,Plasma cells,0.016,protein-coding gene,Immune system,0.5,0.00855513
+PRDM1,Plasma cells,0.005,protein-coding gene,Immune system,0.25,0.0174271
+CD93,Plasma cells,0.044,protein-coding gene,Immune system,0.0,0.0193283
+CD27,Plasma cells,0.018,protein-coding gene,Immune system,0.722222,0.0148923
+ENPP1,Plasma cells,0.005,protein-coding gene,Immune system,0.0,0.0114068
+KLF4,Plasma cells,0.126,protein-coding gene,Immune system,0.0833333,0.139417
+MS4A4A,Plasma cells,0.002,protein-coding gene,Immune system,0.0,0.00760456
+PIAS1,Plasma cells,0.018,protein-coding gene,Immune system,0.0,0.0307351
+CYCS,Plasma cells,0.38,protein-coding gene,Immune system,0.777778,0.504119
+DIABLO,Plasma cells,0.026,protein-coding gene,Immune system,0.0,0.0
+HTRA2,Plasma cells,0.001,protein-coding gene,Immune system,0.0,0.000316857
+MS4A1,Plasma cells,0.014,protein-coding gene,Immune system,0.0,0.0205957
+CD9,Plasma cells,0.344,protein-coding gene,Immune system,0.277778,0.270913
+CD19,Plasma cells,0.007,protein-coding gene,Immune system,0.0,0.00792142
+CD24,Plasma cells,0.039,protein-coding gene,Immune system,0.0,0.194233
+CD37,Plasma cells,0.116,protein-coding gene,Immune system,0.111111,0.217047
+CD40,Plasma cells,0.012,protein-coding gene,Immune system,0.0,0.013308
+CD74,Plasma cells,0.169,protein-coding gene,Immune system,0.972222,0.356781
+CXCR4,Plasma cells,0.04,protein-coding gene,Immune system,0.361111,0.196451
+GZMB,Plasma cells,0.017,protein-coding gene,Immune system,0.0,0.0611534
+TNFRSF17,Plasma cells,0.005,protein-coding gene,Immune system,0.777778,0.00126743
+TNFRSF13B,Plasma cells,0.016,protein-coding gene,Immune system,0.305556,0.00190114
+FCGR2B,Plasma cells,0.031,protein-coding gene,Immune system,0.0277778,0.004436
+CCR10,Plasma cells,0.002,protein-coding gene,Immune system,0.166667,0.00095057
+ABCB9,Plasma cells,0.002,protein-coding gene,Immune system,0.0277778,0.000316857
+AMPD1,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.0
+ANGPT4,Plasma cells,0.001,protein-coding gene,Immune system,0.0,0.0
+ATXN8OS,Plasma cells,0.0,non-coding RNA,Immune system,0.0,0.0
+C11ORF80,Plasma cells,0.002,protein-coding gene,Immune system,0.0,0.01109
+CD79A,Plasma cells,0.024,protein-coding gene,Immune system,0.75,0.0351711
+DENND5B,Plasma cells,0.013,protein-coding gene,Immune system,0.0,0.00602028
+EAF2,Plasma cells,0.009,protein-coding gene,Immune system,0.638889,0.0237643
+FCRL2,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.0
+GNG7,Plasma cells,0.009,protein-coding gene,Immune system,0.555556,0.019962
+GPR25,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.0
+GUSBP11,Plasma cells,0.0,pseudogene,Immune system,0.0,0.0
+HIST1H2AE,Plasma cells,0.02,protein-coding gene,Immune system,0.0,0.000633714
+HIST1H2BG,Plasma cells,0.002,protein-coding gene,Immune system,0.0277778,0.00792142
+HLA-DOB,Plasma cells,0.001,protein-coding gene,Immune system,0.0555556,0.004436
+IGHD,Plasma cells,0.008,other,Immune system,0.0,0.00887199
+IGHE,Plasma cells,0.0,other,Immune system,0.0,0.000316857
+IGHM,Plasma cells,0.078,other,Immune system,0.277778,0.0525982
+IGKC,Plasma cells,0.072,other,Immune system,1.0,0.153359
+IGLL3P,Plasma cells,0.0,pseudogene,Immune system,0.0,0.0
+KCNA3,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.0
+KCNG2,Plasma cells,0.003,protein-coding gene,Immune system,0.0,0.0
+LIME1,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.0
+MAN1A1,Plasma cells,0.004,protein-coding gene,Immune system,0.0,0.0218631
+MANEA,Plasma cells,0.002,protein-coding gene,Immune system,0.0,0.00126743
+MAST1,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.0
+MROH7,Plasma cells,0.002,protein-coding gene,Immune system,0.0,0.0107731
+MZB1,Plasma cells,0.025,protein-coding gene,Immune system,0.972222,0.0275665
+P2RX5,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.00190114
+PAX7,Plasma cells,0.001,protein-coding gene,Immune system,0.0,0.00095057
+PDK1,Plasma cells,0.015,protein-coding gene,Immune system,0.333333,0.0129911
+PNOC,Plasma cells,0.009,protein-coding gene,Immune system,0.0277778,0.000633714
+RASGRP3,Plasma cells,0.025,protein-coding gene,Immune system,0.166667,0.00760456
+REN,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.002218
+RGS13,Plasma cells,0.003,protein-coding gene,Immune system,0.0,0.00475285
+RPL3P7,Plasma cells,0.003,pseudogene,Immune system,0.0,0.0186945
+SIK1,Plasma cells,0.029,protein-coding gene,Immune system,0.0,0.0
+SPAG4,Plasma cells,0.005,protein-coding gene,Immune system,0.305556,0.01109
+ST6GALNAC4,Plasma cells,0.014,protein-coding gene,Immune system,0.111111,0.0190114
+TGM5,Plasma cells,0.001,protein-coding gene,Immune system,0.0,0.0
+TMEM156,Plasma cells,0.001,protein-coding gene,Immune system,0.166667,0.00316857
+UGT2B17,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.0
+ZBP1,Plasma cells,0.015,protein-coding gene,Immune system,0.166667,0.00538657
+ZNF165,Plasma cells,0.003,protein-coding gene,Immune system,0.0,0.0171103
+IGLC2,Plasma cells,0.022,other,Immune system,0.833333,0.0361217
+IGHG1,Plasma cells,0.006,other,Immune system,0.638889,0.01109
+IGHG2,Plasma cells,0.002,other,Immune system,0.583333,0.00316857
+IGHG3,Plasma cells,0.005,other,Immune system,0.611111,0.00823828
+IGHGP,Plasma cells,0.003,other,Immune system,0.555556,0.00887199
+IGLC3,Plasma cells,0.02,other,Immune system,0.722222,0.0186945
+JCHAIN,Plasma cells,0.017,protein-coding gene,Immune system,0.833333,0.0405577
+IGHA1,Plasma cells,0.013,other,Immune system,0.861111,0.0605196
+IGHG4,Plasma cells,0.002,other,Immune system,0.555556,0.00602028
+IGHA2,Plasma cells,0.003,other,Immune system,0.611111,0.00602028
+IGLV3-1,Plasma cells,0.0,other,Immune system,0.222222,0.000316857
+IGLC7,Plasma cells,0.0,other,Immune system,0.138889,0.0
+SSR4,Plasma cells,0.51,protein-coding gene,Immune system,1.0,0.657161
+IL16,Plasma cells,0.014,protein-coding gene,Immune system,0.0,0.0095057
+BHLHA15,Plasma cells,0.0,protein-coding gene,Immune system,0.0,0.0
+PPIB,Plasma cells,0.016,protein-coding gene,Immune system,0.0,0.00697085
+CD4,Plasmacytoid dendritic cells,0.009,protein-coding gene,Immune system,0.272727,0.0170347
+CD8A,Plasmacytoid dendritic cells,0.01,protein-coding gene,Immune system,0.0,0.0160883
+CD40,Plasmacytoid dendritic cells,0.012,protein-coding gene,Immune system,0.0,0.0132492
+CD80,Plasmacytoid dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+CD83,Plasmacytoid dendritic cells,0.045,protein-coding gene,Immune system,0.0,0.0388013
+LILRA4,Plasmacytoid dendritic cells,0.001,protein-coding gene,Immune system,1.0,0.00189274
+CD86,Plasmacytoid dendritic cells,0.026,protein-coding gene,Immune system,0.0,0.0123028
+IL3RA,Plasmacytoid dendritic cells,0.008,protein-coding gene,Immune system,0.0,0.0
+CCR7,Plasmacytoid dendritic cells,0.016,protein-coding gene,Immune system,0.0,0.0422713
+CLEC4C,Plasmacytoid dendritic cells,0.001,protein-coding gene,Immune system,0.409091,0.000315457
+CXCR3,Plasmacytoid dendritic cells,0.005,protein-coding gene,Immune system,0.0454545,0.00504732
+TRADD,Plasmacytoid dendritic cells,0.015,protein-coding gene,Immune system,0.0454545,0.0268139
+ARHGAP9,Plasmacytoid dendritic cells,0.023,protein-coding gene,Immune system,0.136364,0.0236593
+LAMP5,Plasmacytoid dendritic cells,0.005,protein-coding gene,Immune system,0.0909091,0.0022082
+GPR183,Plasmacytoid dendritic cells,0.019,protein-coding gene,Immune system,0.772727,0.0438486
+MAP3K2,Plasmacytoid dendritic cells,0.009,protein-coding gene,Immune system,0.227273,0.0205047
+TNFSF13B,Plasmacytoid dendritic cells,0.011,protein-coding gene,Immune system,0.0454545,0.0485804
+PTCRA,Plasmacytoid dendritic cells,0.004,protein-coding gene,Immune system,0.818182,0.000630915
+ERN1,Plasmacytoid dendritic cells,0.002,protein-coding gene,Immune system,0.0909091,0.00536278
+ETV6,Plasmacytoid dendritic cells,0.015,protein-coding gene,Immune system,0.181818,0.048265
+MAP3K8,Plasmacytoid dendritic cells,0.014,protein-coding gene,Immune system,0.318182,0.0454259
+FAM129C,Plasmacytoid dendritic cells,0.003,protein-coding gene,Immune system,0.636364,0.00347003
+SPIB,Plasmacytoid dendritic cells,0.01,protein-coding gene,Immune system,0.5,0.00536278
+GZMB,Plasmacytoid dendritic cells,0.017,protein-coding gene,Immune system,1.0,0.0539432
+CXCR4,Plasmacytoid dendritic cells,0.04,protein-coding gene,Immune system,0.727273,0.194637
+PACSIN1,Plasmacytoid dendritic cells,0.04,protein-coding gene,Immune system,0.0,0.0
+TLR7,Plasmacytoid dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.0
+TLR9,Plasmacytoid dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.0
+IRF7,Plasmacytoid dendritic cells,0.033,protein-coding gene,Immune system,1.0,0.0217666
+IRF8,Plasmacytoid dendritic cells,0.069,protein-coding gene,Immune system,1.0,0.0205047
+IGLL1,Plasmacytoid dendritic cells,0.007,protein-coding gene,Immune system,0.0,0.0356467
+CUX2,Plasmacytoid dendritic cells,0.024,protein-coding gene,Immune system,0.0,0.0
+MCTP2,Plasmacytoid dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.000315457
+KLK1,Plasmacytoid dendritic cells,0.013,protein-coding gene,Immune system,0.0,0.00820189
+BLNK,Plasmacytoid dendritic cells,0.017,protein-coding gene,Immune system,0.0,0.000630915
+GRM8,Plasmacytoid dendritic cells,0.002,protein-coding gene,Immune system,0.0,0.00410095
+PRKCA,Plasmacytoid dendritic cells,0.033,protein-coding gene,Immune system,0.0,0.0154574
+CDH1,Plasmacytoid dendritic cells,0.056,protein-coding gene,Immune system,0.0,0.0419558
+IL17RB,Plasmacytoid dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.000315457
+CARD6,Plasmacytoid dendritic cells,0.0,protein-coding gene,Immune system,0.0,0.000315457
+CLEC4G,Plasmacytoid dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.000315457
+S100A8,Plasmacytoid dendritic cells,0.064,protein-coding gene,Immune system,0.272727,0.0785489
+JCHAIN,Plasmacytoid dendritic cells,0.017,protein-coding gene,Immune system,1.0,0.0429022
+SERPINF1,Plasmacytoid dendritic cells,0.057,protein-coding gene,Immune system,1.0,0.0996845
+ITM2C,Plasmacytoid dendritic cells,0.354,protein-coding gene,Immune system,1.0,0.22429
+TCF4,Plasmacytoid dendritic cells,0.394,protein-coding gene,Immune system,0.909091,0.164353
+BCL11A,Plasmacytoid dendritic cells,0.134,protein-coding gene,Immune system,0.909091,0.107886
+MZB1,Plasmacytoid dendritic cells,0.025,protein-coding gene,Immune system,0.954545,0.0318612
+DERL3,Plasmacytoid dendritic cells,0.01,protein-coding gene,Immune system,0.772727,0.0287066
+ZFAT,Plasmacytoid dendritic cells,0.001,protein-coding gene,Immune system,0.0,0.000630915
+NRP1,Plasmacytoid dendritic cells,0.099,protein-coding gene,Immune system,0.5,0.0621451
+SLC15A4,Plasmacytoid dendritic cells,0.006,protein-coding gene,Immune system,0.454545,0.0164038
+CCR9,Plasmacytoid dendritic cells,0.005,protein-coding gene,Immune system,0.0,0.0
+IRF5,Plasmacytoid dendritic cells,0.028,protein-coding gene,Immune system,0.0,0.000315457
+BST2,Plasmacytoid dendritic cells,0.177,protein-coding gene,Immune system,0.454545,0.202839
+RUVBL1,Reticulocytes,0.059,protein-coding gene,Blood,0.0,0.091792
+TFRC,Reticulocytes,0.042,protein-coding gene,Blood,0.0,0.0614035
+UCP3,Reticulocytes,0.0,protein-coding gene,Blood,0.0,0.0
+FOLR1,Reticulocytes,0.017,protein-coding gene,Blood,0.0,0.0093985
+UBE2O,Reticulocytes,0.0,protein-coding gene,Blood,0.0,0.0
+CD36,Reticulocytes,0.042,protein-coding gene,Blood,0.0,0.0344612
+ITGA4,Reticulocytes,0.036,protein-coding gene,Blood,0.0,0.0112782
+SLC11A2,Reticulocytes,0.007,protein-coding gene,Blood,0.0,0.00657895
+MMP1,Stromal cells,0.003,protein-coding gene,Connective tissue,0.0,0.0156642
+MMP2,Stromal cells,0.045,protein-coding gene,Connective tissue,0.0,0.0676692
+MMP9,Stromal cells,0.015,protein-coding gene,Connective tissue,0.0,0.00971178
+TLR3,Stromal cells,0.003,protein-coding gene,Connective tissue,0.0,0.00720551
+MME,Stromal cells,0.017,protein-coding gene,Connective tissue,0.0,0.0269424
+PECAM1,Stromal cells,0.051,protein-coding gene,Connective tissue,0.0,0.0441729
+ITGA4,Stromal cells,0.036,protein-coding gene,Connective tissue,0.0,0.0112782
+ICAM3,Stromal cells,0.0,protein-coding gene,Connective tissue,0.0,0.0
+ITGAV,Stromal cells,0.026,protein-coding gene,Connective tissue,0.0,0.0219298
+ICAM1,Stromal cells,0.009,protein-coding gene,Connective tissue,0.0,0.00595238
+VCAM1,Stromal cells,0.041,protein-coding gene,Connective tissue,0.0,0.00720551
+KIT,Stromal cells,0.015,protein-coding gene,Connective tissue,0.0,0.00250627
+PDGFRA,Stromal cells,0.044,protein-coding gene,Connective tissue,0.0,0.047619
+PDGFRB,Stromal cells,0.033,protein-coding gene,Connective tissue,0.0,0.0363409
+MADCAM1,Stromal cells,0.001,protein-coding gene,Connective tissue,0.0,0.00219298
+B4GALNT1,Stromal cells,0.003,protein-coding gene,Connective tissue,0.0,0.0
+TLR1,Stromal cells,0.0,protein-coding gene,Connective tissue,0.0,0.0
+TLR2,Stromal cells,0.014,protein-coding gene,Connective tissue,0.0,0.00093985
+TLR4,Stromal cells,0.0,protein-coding gene,Connective tissue,0.0,0.000313283
+CDH11,Stromal cells,0.039,protein-coding gene,Connective tissue,0.0,0.0516917
+CALB2,Stromal cells,0.03,protein-coding gene,Connective tissue,0.0,0.00281955
+DES,Stromal cells,0.021,protein-coding gene,Connective tissue,0.0,0.0093985
+MMRN2,Stromal cells,0.022,protein-coding gene,Connective tissue,0.0,0.00845865
+CD248,Stromal cells,0.022,protein-coding gene,Connective tissue,0.0,0.014411
+FAP,Stromal cells,0.006,protein-coding gene,Connective tissue,0.0,0.00250627
+LAMC2,Stromal cells,0.012,protein-coding gene,Connective tissue,0.0,0.0225564
+SNED1,Stromal cells,0.001,protein-coding gene,Connective tissue,0.0,0.0
+TNC,Stromal cells,0.033,protein-coding gene,Connective tissue,0.0,0.0128446
+LUM,Stromal cells,0.051,protein-coding gene,Connective tissue,0.0,0.0870927
+COL15A1,Stromal cells,0.016,protein-coding gene,Connective tissue,0.0,0.0281955
+GDF10,Stromal cells,0.005,protein-coding gene,Connective tissue,0.0,0.000313283
+COL4A1,Stromal cells,0.105,protein-coding gene,Connective tissue,0.0,0.0808271
+BMP4,Stromal cells,0.019,protein-coding gene,Connective tissue,0.0,0.0241228
+WNT2,Stromal cells,0.004,protein-coding gene,Connective tissue,0.0,0.0075188
+BMP5,Stromal cells,0.002,protein-coding gene,Connective tissue,0.0,0.00657895

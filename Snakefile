@@ -23,8 +23,7 @@ samples = input_df['sample_id'].to_list()
 input_names = utils.get_input_names(input_df, OUTPUT)
 
 print("\nINPUT FILES:")
-for x in input_names:
-    print(x)
+[print(x) for x in samples]
 
 
 ################ RULE FILES ################
@@ -53,15 +52,12 @@ rule all:
         expand(f"{OUTPUT}mapping/{{sid}}.tagged.bam", sid=samples),
         expand(f"{OUTPUT}reports/bamstats/{{sid}}.bamstats", sid=samples),
         expand(f"{OUTPUT}counts/individual/{{sid}}.counts.txt", sid=samples),
-        expand(f"{OUTPUT}nanocount/mapping/{{sid}}.bam", sid=samples),
-        expand(f"{OUTPUT}nanocount/{{sid}}.tx_counts.tsv", sid=samples),
         OUTPUT + 'merged/merged.bam.bai',
         OUTPUT + 'merged/merged.stats',
         OUTPUT + 'merged/merged.bamstats',
         OUTPUT + 'counts/counts.txt',
         OUTPUT + 'scanpy/anndata.h5ad',
         OUTPUT + 'scanpy/anndata.processed.h5ad',
-        OUTPUT + 'nanocount/merged/merged_tx_counts.tsv',
         OUTPUT + 'v5_tagged/v5_tagged.fastq.gz',
 
 
@@ -74,6 +70,7 @@ rule archive:
         expand(f"{OUTPUT}flair/correct/{{sid}}_all_corrected.bed", sid=samples),
         expand(f"{OUTPUT}flair/collapse/{{sid}}.isoforms.bed", sid=samples),
         expand(f"{OUTPUT}velocyto/{{sid}}.done", sid=samples),
+        OUTPUT + 'nanocount/merged/merged_tx_counts.tsv',
 
 
 

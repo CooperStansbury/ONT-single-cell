@@ -61,6 +61,7 @@ rule tag_bam:
     shell:
         """python scripts/tag_bam.py {input} {output.bam} {output.records}"""
 
+
 rule merge_bam:
     input:
         expand(f"{OUTPUT}mapping/{{sid}}.tagged.bam", sid=samples),

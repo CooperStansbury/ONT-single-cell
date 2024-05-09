@@ -17,6 +17,7 @@ def load_gtf(gtf_path):
         'STAT5A',
         'REL',  
     ]
+    
     print(f"{len(TFs)=}")
     
     genes = gdf.copy()
