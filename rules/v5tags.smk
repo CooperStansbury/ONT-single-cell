@@ -2,6 +2,7 @@ rule get_v5_tagged_reads:
     input:
         bam=OUTPUT + "merged/merged.bam",
         gtf=config['gtf_path'],
+        index=OUTPUT + 'merged/merged.bam.bai',
     output:
         OUTPUT + "v5_tagged/read_ids.txt"
     shell:
@@ -24,7 +25,7 @@ rule extract_read_v5_tag:
 
 rule merge_v5_tags:
     input:
-        expand(f"{OUTPUT}v5_tagged/{{sid}}.v5_tagged.fastq.gz", sid=samples)
+        expand(OUTPUT + "v5_tagged/{sid}.v5_tagged.fastq.gz", sid=samples)
     output:
         OUTPUT + "v5_tagged/v5_tagged.fastq.gz"
     wildcard_constraints:

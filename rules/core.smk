@@ -64,7 +64,7 @@ rule tag_bam:
 
 rule merge_bam:
     input:
-        expand(f"{OUTPUT}mapping/{{sid}}.tagged.bam", sid=samples),
+        expand(OUTPUT + "mapping/{sid}.tagged.bam", sid=samples),
     output:
         OUTPUT + 'merged/merged.bam',
     wildcard_constraints:
@@ -117,7 +117,7 @@ rule htseq_count:
         bam=OUTPUT + 'merged/merged.bam',
         annotations=config['gtf_path'],
     output:
-        OUTPUT + "counts/counts.txt"
+        OUTPUT + "merged/merged.counts.txt"
     conda:
         "../envs/htseq_count.yml"
     params:
@@ -131,7 +131,7 @@ rule htseq_count_individual:
         bam=OUTPUT + 'mapping/{sid}.tagged.bam',
         annotations=config['gtf_path'],
     output:
-        OUTPUT + "counts/individual/{sid}.counts.txt"
+        OUTPUT + "individual_counts/{sid}.counts.txt"
     conda:
         "../envs/htseq_count.yml"
     params:

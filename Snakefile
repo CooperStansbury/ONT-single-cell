@@ -1,3 +1,4 @@
+from datetime import datetime
 import pandas as pd
 import yaml
 from pathlib import Path
@@ -25,15 +26,18 @@ input_names = utils.get_input_names(input_df, OUTPUT)
 print("\nINPUT FILES:")
 [print(x) for x in samples]
 
+# timestamp
+now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+test_file = OUTPUT + "test/" + now + ".txt"
+
 
 ################ RULE FILES ################
 include: "rules/reference.smk"
 include: "rules/demultiplex.smk"
-include: "rules/flair.smk"
 include: "rules/core.smk"
 include: "rules/anndata.smk"
 include: "rules/v5tags.smk"
-include: "rules/nanocount.smk"
+include: "rules/isoquant.smk"
 
 
 
@@ -45,32 +49,28 @@ rule all:
         OUTPUT + 'references/geneTable.csv',
         OUTPUT + 'reports/seqkit_stats/raw_report.txt',
         OUTPUT + 'reports/seqkit_stats/demultiplexed_report.txt',
-        expand(f"{OUTPUT}fastq/{{sid}}.raw.fastq.gz", sid=samples),
-        expand(f"{OUTPUT}demultiplex/{{sid}}.done", sid=samples),
-        expand(f"{OUTPUT}reports/fastqc/{{sid}}.report.html", sid=samples),
-        expand(f"{OUTPUT}mapping/{{sid}}.bam.bai", sid=samples),
-        expand(f"{OUTPUT}mapping/{{sid}}.tagged.bam", sid=samples),
-        expand(f"{OUTPUT}reports/bamstats/{{sid}}.bamstats", sid=samples),
-        expand(f"{OUTPUT}counts/individual/{{sid}}.counts.txt", sid=samples),
+        expand(OUTPUT + "fastq/{sid}.raw.fastq.gz", sid=samples),
+        expand(OUTPUT + "demultiplex/{sid}.done", sid=samples),
+        expand(OUTPUT + "reports/fastqc/{sid}.report.html", sid=samples),
+        expand(OUTPUT + "mapping/{sid}.bam.bai", sid=samples),
+        expand(OUTPUT + "mapping/{sid}.tagged.bam", sid=samples),
+        expand(OUTPUT + "reports/bamstats/{sid}.bamstats", sid=samples),
+        expand(OUTPUT + "individual_counts/{sid}.counts.txt", sid=samples),
         OUTPUT + 'merged/merged.bam.bai',
         OUTPUT + 'merged/merged.stats',
         OUTPUT + 'merged/merged.bamstats',
-        OUTPUT + 'counts/counts.txt',
-        OUTPUT + 'scanpy/anndata.h5ad',
-        OUTPUT + 'scanpy/anndata.processed.h5ad',
+        OUTPUT + 'merged/merged.counts.txt',
+        OUTPUT + 'scanpy/raw.anndata.h5ad',
+        OUTPUT + "scanpy/processed.anndata.h5ad",
+        OUTPUT + "scanpy/clustered.anndata.h5ad",
         OUTPUT + 'v5_tagged/v5_tagged.fastq.gz',
+        OUTPUT + "isoquant/annotations.db",
+        test_file,
 
-
-
-rule archive:
-    input:
-        expand(f"{OUTPUT}nanocount/mapping/{{sid}}.bam", sid=samples),
-        expand(f"{OUTPUT}nanocount/{{sid}}.tx_counts.tsv", sid=samples),
-        expand(f"{OUTPUT}flair/align/{{sid}}.bam", sid=samples),
-        expand(f"{OUTPUT}flair/correct/{{sid}}_all_corrected.bed", sid=samples),
-        expand(f"{OUTPUT}flair/collapse/{{sid}}.isoforms.bed", sid=samples),
-        expand(f"{OUTPUT}velocyto/{{sid}}.done", sid=samples),
-        OUTPUT + 'nanocount/merged/merged_tx_counts.tsv',
+rule test:
+    output:
+        touch(test_file),
+    
 
 
 

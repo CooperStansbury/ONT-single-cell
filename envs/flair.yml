@@ -1,3 +1,4 @@
+name: flair
 channels:
   - conda-forge
   - bioconda

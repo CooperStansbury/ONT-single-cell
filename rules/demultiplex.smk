@@ -13,7 +13,7 @@ rule get_fastq:
 
 rule raw_report:
     input:
-        expand(f"{OUTPUT}fastq/{{sid}}.raw.fastq.gz", sid=samples),
+        expand(OUTPUT + "fastq/{sid}.raw.fastq.gz", sid=samples),
     output:
         OUTPUT + "reports/seqkit_stats/raw_report.txt",
     wildcard_constraints:
@@ -53,7 +53,7 @@ rule demultiplex:
 
 rule demultiplexed_report:
     input:
-        flags=expand(f"{OUTPUT}demultiplex/{{sid}}.done", sid=samples),
+        flags=expand(OUTPUT + "demultiplex/{sid}.done", sid=samples),
     output:
         OUTPUT + "reports/seqkit_stats/demultiplexed_report.txt",
     wildcard_constraints:
@@ -61,7 +61,7 @@ rule demultiplexed_report:
     threads:
         config['threads'] // 4
     params:
-        files=expand(f"{OUTPUT}demultiplex/{{sid}}.matched_reads.fastq.gz", sid=samples),
+        files=expand(OUTPUT + "demultiplex/{sid}.matched_reads.fastq.gz", sid=samples),
     shell:
         """seqkit stats -a -b -j {threads} {params.files} -o {output}"""
 

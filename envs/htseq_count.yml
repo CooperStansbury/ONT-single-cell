@@ -1,3 +1,4 @@
+name: htseq
 channels:
   - conda-forge
   - bioconda
