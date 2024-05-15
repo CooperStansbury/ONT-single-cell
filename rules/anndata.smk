@@ -12,7 +12,8 @@ rule make_anndata:
 
 rule process_anndata:
     input:
-        OUTPUT + "scanpy/raw.anndata.h5ad",
+        raw=OUTPUT + "scanpy/raw.anndata.h5ad",
+        v5=OUTPUT + 'v5_tagged/v5_result.table.csv'
     output:
         OUTPUT + "scanpy/processed.anndata.h5ad",
     conda:
@@ -20,7 +21,7 @@ rule process_anndata:
     params:
         annotations="/home/cstansbu/git_repositories/ONT-single-cell/config/gene_annotations/"
     shell:
-        """python scripts/process_anndata.py {input} {output} {params.annotations}"""
+        """python scripts/process_anndata.py {input.raw} {output} {params.annotations} {input.v5}"""
         
         
         

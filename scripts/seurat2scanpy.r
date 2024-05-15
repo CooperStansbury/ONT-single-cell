@@ -1,7 +1,6 @@
-#!/usr/bin/env Rscript  
-
 library(sceasy)
 library(reticulate)
+library(monocle) 
 library(Seurat)
 reticulate::use_condaenv('sceasy')
 
@@ -26,7 +25,7 @@ for (file in list.files(input_dir, pattern = "*.RDS$", full.names = TRUE)) {
   
   tryCatch({
     cat("Converting:", file, "to", outfile, "\n")
-    data <- readRDS(file)
+    data <- readRDS(file)  
     sceasy::convertFormat(data, from = "seurat", to = "anndata", outFile = outfile)
   }, error = function(e) {
     cat("Error processing", file, ":", e$message, "\n")

@@ -25,6 +25,8 @@ rule samtools_index:
         OUTPUT + 'mapping/{sid}.bam'
     output:
         OUTPUT + 'mapping/{sid}.bam.bai'
+    conda:
+        "../envs/samtools.yml"
     wildcard_constraints:
         sid='|'.join([re.escape(x) for x in set(samples)]),
     threads:
@@ -62,6 +64,21 @@ rule tag_bam:
         """python scripts/tag_bam.py {input} {output.bam} {output.records}"""
 
 
+rule samtools_index_tagged:
+    input:
+        OUTPUT + 'mapping/{sid}.tagged.bam'
+    output:
+        OUTPUT + 'mapping/{sid}.tagged.bam.bai'
+    conda:
+        "../envs/samtools.yml"
+    wildcard_constraints:
+        sid='|'.join([re.escape(x) for x in set(samples)]),
+    threads:
+        int(config['threads'])
+    shell:
+        """samtools index -@ {threads} {input}"""
+
+
 rule merge_bam:
     input:
         expand(OUTPUT + "mapping/{sid}.tagged.bam", sid=samples),
@@ -69,6 +86,8 @@ rule merge_bam:
         OUTPUT + 'merged/merged.bam',
     wildcard_constraints:
         sid='|'.join([re.escape(x) for x in set(samples)]),
+    conda:
+        "../envs/samtools.yml"
     threads:
         int(config['threads'])
     shell:
@@ -80,6 +99,8 @@ rule samtools_index_merged:
         OUTPUT + 'merged/merged.bam',
     output:
         OUTPUT + 'merged/merged.bam.bai'
+    conda:
+        "../envs/samtools.yml"
     threads:
         int(config['threads'])
     shell:
@@ -91,6 +112,8 @@ rule samtools_stats_merged:
         OUTPUT + 'merged/merged.bam',
     output:
         OUTPUT + 'merged/merged.stats'
+    conda:
+        "../envs/samtools.yml"
     threads:
         int(config['threads']) // 4
     shell:

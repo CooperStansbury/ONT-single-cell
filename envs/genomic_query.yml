@@ -1,0 +1,7 @@
+name: genomic_query
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - pyranges
+  - pysam

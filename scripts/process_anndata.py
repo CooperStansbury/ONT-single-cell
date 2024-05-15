@@ -133,6 +133,7 @@ if __name__ == "__main__":
     anndata_path = sys.argv[1]
     out_path = sys.argv[2]
     annotation_directory = sys.argv[3]
+    v5_path = sys.argv[4]
 
     # load the data 
     adata = sc.read_h5ad(anndata_path)
@@ -145,6 +146,11 @@ if __name__ == "__main__":
 
     # add gene annotations
     adata = add_annotations(adata, annotation_directory)
+    
+    # add v5 information
+    v5_df = pd.read_csv(v5_path)
+    v5_df = v5_df.set_index('barcode')
+    adata.uns['v5_tags'] = v5_df
     
     # write the object to file
     adata.write(out_path)

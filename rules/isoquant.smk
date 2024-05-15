@@ -9,9 +9,14 @@ rule run_isoquant:
         log=OUTPUT + "isoquant/isoquant.log",
         db=OUTPUT + "isoquant/annotations.db",
     params:
-        prefix=OUTPUT + "isoquant"
+        outdir=OUTPUT + "isoquant"
     conda:
         "../envs/isoquant.yml"
+    threads:
+        config['threads']
     shell:
-        """isoquant.py --reference {input.ref} --genedb {input.gtf} --bam {input.bam} --data_type 'nanopore' --complete_genedb -o {params.prefix}"""
+        """isoquant.py --reference {input.ref} --genedb {input.gtf} \
+        --threads {threads} --count_exons --prefix 'output' \
+        --bam {input.bam} --data_type 'nanopore' \
+        --complete_genedb -o {params.outdir}"""
 
