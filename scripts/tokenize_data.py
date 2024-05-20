@@ -5,6 +5,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 import scipy.sparse as sp
+import scanpy as sc
+import anndata as an
+from datasets import Dataset
+
+KEEP_COLUMNS = [
+    'cell_type',
+    'n_counts',
+    'dataset',
+]
+
 
 def load_gene_median_dict(gene_median_file):
     """
@@ -62,7 +72,7 @@ def rank_genes(gene_vector, gene_tokens):
 
 def tokenize_anndata(adata, genelist_dict, gene_median_dict, 
                      chunk_size=1000, target_sum=10000, 
-                     counts_column='n_counts', gene_id="ensembl_id"):
+                     counts_column='n_counts', gene_id="ensemble_id"):
     """
     Tokenizes and ranks genes within an AnnData object, optimizing for memory efficiency.
 
@@ -151,32 +161,30 @@ def create_dataset(tokenized_cells, cell_metadata, gene_token_dict, model_input_
     return output_dataset.map(format_cell_features, num_proc=nproc)  # Return mapped dataset
 
 
-def save_hf_dataset(dataset: Dataset, output_directory: str, output_prefix: str, overwrite=False):
+def save_hf_dataset(dataset: Dataset, output_path: str, overwrite=True):
     """
-    Saves a Hugging Face Dataset to disk in a specified directory.
+    Saves a Hugging Face Dataset to disk at a specified file path.
+
+    This function serializes a Hugging Face `Dataset` object and saves it to disk in the Arrow format.
 
     Args:
-        dataset (Dataset): The Hugging Face Dataset to be saved.
-        output_directory (str): The directory where the dataset will be saved.
-        output_prefix (str): The prefix for the dataset filename.
-        overwrite (bool, optional): Whether to overwrite an existing dataset. Defaults to False.
+        dataset (Dataset): The Hugging Face `Dataset` object to be saved.
+        output_path (str): The full file path (including the filename) where the dataset will be saved. 
+        overwrite (bool, optional): If `True`, an existing dataset at `output_path` will be overwritten. 
+                                   If `False` and the file exists, a `FileExistsError` is raised (default: True).
 
     Raises:
-        TypeError: If the dataset is not a Hugging Face Dataset instance.
-        FileExistsError: If a dataset with the same name exists and `overwrite` is False.
+        TypeError: If `dataset` is not a Hugging Face `Dataset` instance.
+        FileExistsError: If `output_path` points to an existing file and `overwrite` is False.
     """
 
     if not isinstance(dataset, Dataset):
         raise TypeError("The provided dataset is not a Hugging Face Dataset.")
 
-    output_path = os.path.join(output_directory, f"{output_prefix}.dataset")
-
     if os.path.exists(output_path) and not overwrite:
         raise FileExistsError(
             f"Dataset '{output_path}' already exists. Set `overwrite=True` to overwrite."
         )
-
-    os.makedirs(output_directory, exist_ok=True)
     dataset.save_to_disk(output_path)
 
         
@@ -185,26 +193,27 @@ if __name__ == "__main__":
     output_path = sys.argv[2]
     gene_median = sys.argv[3]
     token_dict = sys.argv[4]
-    output_prefix = sys.argv[5]
     
     # load the data 
     gene_token_dict, gene_keys, genelist_dict = load_gene_tokenization(token_dict)
     gene_median_dict = load_gene_median_dict(gene_median)
     
     # load and restructure
-    # @ HANDLE DIVERSE INPUTS
     adata = sc.read_h5ad(adata_path)
     
+    # drop most metadata columns
+    adata.obs = adata.obs[KEEP_COLUMNS]
+
     # tokenize
     tokenized_cells, cell_metadata = tokenize_anndata(adata, 
                                                       genelist_dict, 
                                                       gene_median_dict)
     
-    # to hugging face dataset
+    #     to hugging face dataset
     dataset = create_dataset(tokenized_cells, cell_metadata, gene_token_dict)
     
-    # outputs
-    save_hf_dataset(dataset, output_path, output_prefix, overwrite=True)
+    # store output
+    save_hf_dataset(dataset, output_path, overwrite=True)
     
     
     

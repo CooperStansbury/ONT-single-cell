@@ -115,8 +115,11 @@ if __name__ == "__main__":
     adata = adata[:, not_na]
     
     # Convert all categorical columns to strings
-    for col in adata.obs.select_dtypes(include='category'):
+    for col in adata.obs.select_dtypes(include=['category', 'object']):
         adata.obs[col] = adata.obs[col].astype(str)
+    
+    for column in adata.obs.columns:
+        print(column, adata.obs[column].dtype)
     
     # output the results
     adata.write(output_path)

@@ -1,0 +1,421 @@
+type = "protocol"
+
+script = "sequencing/sequencing.py"
+
+[meta]
+exp_script_purpose = "sequencing_run"
+
+[meta.protocol]
+experiment_type = "sequencing"
+flow_cells = ["FLO-MIN106", "FLO-FLG001"]
+kits = [
+    "SQK-16S024",
+    "SQK-CS9109",
+    "SQK-LSK109",
+    "SQK-LSK109-XL",
+    "SQK-LSK110",
+    "SQK-LSK110-XL",
+    "SQK-MLK111-96-XL",
+    "SQK-RAD004",
+    "SQK-RBK004",
+    "SQK-RBK110-96",
+    "SQK-DCS109",
+    "SQK-PCB109",
+    "SQK-PCB111-24",
+    "SQK-PCS109",
+    "SQK-PCS111",
+    "VSK-PTC001",
+    "VSK-VSK003",
+    "VSK-VSK004",
+    "VSK-VMK004",
+    "VSK-VPS001",
+    "SQK-RAB204",
+    "SQK-LRK001",
+    "SQK-PBK004",
+    "SQK-PSK004",
+    "SQK-RPB004",
+]
+
+default_basecall_model = "dna_r9.4.1_450bps_fast.cfg"
+available_basecall_models = ["dna_r9.4.1_450bps_fast.cfg",
+                             "dna_r9.4.1_450bps_hac.cfg",
+                             "dna_r9.4.1_450bps_sup.cfg",
+                             "dna_r9.4.1_450bps_modbases_5mc_cg_fast.cfg",
+                             "dna_r9.4.1_450bps_modbases_5mc_cg_hac.cfg",
+                             "dna_r9.4.1_450bps_modbases_5mc_cg_sup.cfg",
+                             "dna_r9.4.1_450bps_modbases_5hmc_5mc_cg_fast.cfg",
+                             "dna_r9.4.1_450bps_modbases_5hmc_5mc_cg_hac.cfg",
+                             "dna_r9.4.1_450bps_modbases_5hmc_5mc_cg_sup.cfg"]
+
+[meta.protocol.flongle]
+default_basecall_model = "dna_r9.4.1_450bps_hac.cfg"
+
+[meta.protocol.gridion]
+default_basecall_model = "dna_r9.4.1_450bps_hac.cfg"
+
+# Minit/mk1c doesn't currently support the sup model or remora
+# Minit/mk1c have special configs
+[meta.protocol.minit]
+default_basecall_model = "dna_r9.4.1_450bps_fast_mk1c.cfg"
+available_basecall_models = ["dna_r9.4.1_450bps_fast_mk1c.cfg",
+                             "dna_r9.4.1_450bps_hac_mk1c.cfg"]
+[meta.protocol.mk1c]
+default_basecall_model = "dna_r9.4.1_450bps_fast_mk1c.cfg"
+available_basecall_models = ["dna_r9.4.1_450bps_fast_mk1c.cfg",
+                             "dna_r9.4.1_450bps_hac_mk1c.cfg"]
+
+[meta.context_tags]
+package = "bream4"
+experiment_type = "genomic_dna"
+
+[compatibility]
+minknow_core = "5.6"
+bream = "7.6.0"
+
+
+[device]
+import = "shared/default_device_settings.toml"
+sample_rate = 4000
+unblock_voltage = -300
+
+
+[writer_configuration]
+import = "shared/default_writer.toml"
+
+[writer_configuration.sequencing_summary]
+enable = [[1, 3000]]
+
+[writer_configuration.read_fast5]
+modifications_table = [[1,3000]]
+raw = [[1,3000]]
+
+[basecaller_configuration]
+enable = false
+enable_read_splitting = false
+
+# Set via UI as there are no defaults known at build time
+# [basecaller_configuration.alignment_configuration]
+# reference_files = ["..."]
+# bed_file = ""
+
+# [basecaller_configuration.barcoding_configuration]
+# barcoding_kits = []
+# trim_barcodes = false
+# require_barcodes_both_ends = false
+# detect_mid_strand_barcodes = false
+# min_score = 60
+# min_score_rear = 60
+# min_score_mid = 60
+
+
+[analysis_configuration.read_detection]
+mode = "lookback"
+minimum_delta_mean = 30.0
+look_back = 4
+break_reads_after_events = 250
+break_reads_after_seconds = 0.6 
+break_reads_on_mux_changes = true
+open_pore_min = 150.0
+open_pore_max = 250.0
+
+[analysis_configuration.read_classification]
+classification_strategy = "modal"
+selected_classifications = ["strand"]
+scheme_module = "parsed"
+
+[analysis_configuration.read_classification.parameters]
+rules_in_execution_order = [
+     "multiple=        (local_median,gt,350)&(local_median,lt,990)&(local_median_sd,gt,1.5)&(local_median_dwell,gt,0.005)&(duration,gt,0.02)",
+     "pore_1=          (local_median,gt,160)&(local_median,lt,280)&(median_sd,gt,0.9)&(median_sd,lt,5)&(local_range,lt,35)&(duration,gt,15)",
+     "pore=            (local_median,gt,160)&(local_median,lt,280)&(median_sd,gt,0.9)&(median_sd,lt,5)&(local_range,lt,35)",
+     "event=           (median_before,gt,160)&(median_before,lt,280)&(median_before,gt,median)&(median,lt,140)&(median,gt,20)&(duration,lt,0.1)&(event_count,lt,20)",
+     "adapter=         (median_before,gt,160)&(median_before,lt,280)&(median,lt,120)&(median,gt,50)&(event_count,lt,120)&(event_count,gt,7)&(median_sd,gt,1)&(median_sd,lt,5)&(local_range,lt,75)&(duration,lt,1)",
+     "strand=          (local_median,gt,50)&(local_median,lt,150)&(local_range,gt,20)&(local_range,lt,44)&(local_median_sd,gt,0.9)&(local_median_sd,lt,5)&(event_count,gt,119)&(local_median_dwell,lt,0.006)",
+     "strand2=         (local_median,gt,50)&(local_median,lt,150)&(local_range,gt,5)&(local_range,lt,44)&(local_median_sd,gt,0.9)&(local_median_sd,lt,5)&(event_count,gt,119)&(local_median_dwell,lt,0.015)",
+     "unavailable=     (local_median,gt,10)&(local_median,lt,250)&(local_median_sd,gt,0.6)",
+     "zero=            (local_median,gt,-25)&(local_median,lt,10)",
+     "unknown_positive=(local_median,gt,0)&(local_median,lt,999)",
+     "unknown_negative=(local_median,gt,-999)&(local_median,lt,0)"
+]
+
+[analysis_configuration.event_detection]
+peak_height = 1.0
+threshold = 4.13
+window_size = 10
+events_to_base_ratio = 1.8
+break_on_mux_changes = true
+max_mux_change_back_shift = 5
+
+[analysis_configuration.channel_states]
+import = "sequencing/sequencing_channel_states.toml"
+
+[analysis_configuration.read_scaling]
+tracking_alpha = 0.05
+alpha_number_estimates_decay = 0.3
+quantile_maxdiff = 20
+trust_limit_fraction = 0.1
+diff_threshold = 0.1
+emission_threshold = 1.0
+dacs_breakpoint = 450
+
+quantile_locations = [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99]
+
+q90_q10_to_normal = 0.322
+quantile_weights_scale = [ -0.42, 0.71, -0.42, -0.17, 0.72, -0.94, 1.01, -1.4, 1.44, -0.86, 0.85, -0.34, -0.62, 0.57, -0.22, -0.35, 0.2, 0.38, 0.5, -2.62, 3.77, -3.51, 3.61, -3.09, 1.01, -1.02, 2.91, -3.15, 1.05, 2.06, -4.36, 5.28, -4.46, 3.49, -2.6, 1.97, -0.31, -1.66, 1.54, 0.66, -1.9, 1.98, -3.68, 4.4, -1.44, 0.7, -4.69, 3.44, 1.88, -3.97, 3.66, -2.38, 0.91, 2.25, -5.54, 4.71, -2.18, 1.78, -1.22, 0.58, -0.53, 1.18, -2.27, 2.75, -2.01, 0.02, 1.97, -1.98, 0.83, -0.91, 0.94, 0.04, -0.05, -0.23, -0.19, 0.21, -0.52, 0.89, -0.22, -0.46, 0.19, 0.6, -0.62, -0.25, 1.1, -1.09, 0.43, 0.07, 0.04, -0.34, 0.42, -0.46, 0.3, 0.07, -0.37, 0.44, -0.29, 0.24, -0.1,]
+conductance_factor_scale = -0.22
+
+quantile_weights_shift = [ -0.05, 0.07, -0.3, 0.8, -1.01, 0.23, 0.82, 0.44, -2.45, 2.19, 0.47, -3.36, 4.05, -3.03, 1.5, -0.43, 0.17, 1.13, -3.32, 3.77, -1.65, -0.14, -1.02, 0.41, 2.42, -4.45, 4.49, -2.36, 0.04, 1.74, -4.2, 5.8, -3.99, -0.99, 4.45, -3.87, 2.38, -2.08, 1.9, -0.91, -2.04, 4.75, -0.89, -7.92, 11.22, -3.47, -7.74, 12.42, -5.93, 0.0, -8.38, 17.05, -16.26, 12.25, -6.77, 3.32, -2.89, 6.51, -7.58, 4.02, -0.3, -1.94, 4.23, -5.04, 2.01, 1.7, -3.09, 1.65, 0.87, -2.24, 2.23, -1.07, 0.15, 0.76, -0.6, -0.7, 0.99, -0.65, 0.07, 0.45, -0.49, 0.76, -1.15, 1.03, -0.22, -0.53, 0.38, -0.12, 0.37, -0.67, 0.78, -1.28, 1.29, -0.49, -0.7, 1.41, -0.87, -0.33, 0.78,]
+conductance_factor_shift = -0.49
+
+###############################
+# Sequencing Feature Settings #
+###############################
+
+# basic_settings #
+[custom_settings]
+enable_relative_unblock_voltage = false
+effective_unblock_voltage = 110
+start_bias_voltage = -185
+# UI parameters
+translocation_speed_min = 300
+translocation_speed_max = 425
+
+min_read_length_base_pairs = 200  # How many min bases to write out. Use table below to lookup read_length
+min_read_length_lookup = {20 = 0, 200 = 119, 1000 = 600}
+
+[custom_settings.temperature]
+target = 34.0
+timeout = 300
+tolerance = 0.1
+min_stable_duration = 15 # Seconds
+
+[custom_settings.temperature.flongle]
+target = 35.0
+
+#-------- Channel States Disable ---------#
+
+[custom_settings.channel_states_disable]
+states_to_disable = ['multiple', 'saturated']
+enabled = true
+
+#-------- Group Manager ---------#
+
+[custom_settings.group_manager]
+# If this is true, and a channel becomes disabled/locked then swap the channel for another well if possible
+swap_out_disabled_channels = true
+# If this is True then when the groups determined by the mux scan reach the final mux it will loop back around to the
+# first group. If this is disabled, once the groups have reached the last tier the channel will be disabled until the
+# groups are refreshed, (by say another mux scan)
+cycle_groups = false
+# How many muxes to include per channel, if possible. Only applies if cycle_groups is true
+cycle_limit_per_channel = 3
+[custom_settings.group_manager.global_mux_change]
+interval = 28800 # (seconds)
+enabled = false
+
+#-------- Global Flicks ---------#
+
+[custom_settings.global_flick]
+enabled = false
+
+interval = 3600 # Timing between flicks (in seconds)
+
+# voltage, pause, voltage, pause, voltage, pause
+perform_relative_flick = true
+rest_voltage = 0
+rest_duration = 1.0
+flick_duration = 3.0
+voltage_gap = 300
+
+#-------- Progressive Unblock ---------#
+
+[custom_settings.progressive_unblock]
+enabled = true
+
+# A flick tier would go (flick for x seconds, rest for y seconds) * repeats
+flick_duration = [ 0.1, 2.0, 10.0, 30.0 ]
+rest_duration  = [ 3, 3, 15, 30 ]
+repeats        = [ 1, 1, 4, 4 ]
+
+states_to_flick = ['unavailable', 'zero'] # When see this, flick
+states_to_reset = ['strand', 'pore', 'adapter' , 'event', 'locked', 'disabled'] # If any of these appear 'reset' the channel so it starts again
+
+change_mux_after_last_tier = true # Feeds into group_manager. If this is true the channel is flagged to be replaced by group manager
+
+[custom_settings.progressive_unblock.flongle]
+rest_duration = [ 3, 3, 15, 300 ]
+
+#-------- Drift Correction ---------#
+
+[custom_settings.drift_correction]
+enabled = false
+
+interval = 600 # Try to correct this often (seconds)
+
+setpoint = 30.0 # Try to keep (q90-q10) range close to this value (in pA)
+
+channels_threshold = 50 # This many channels need to have classification to count
+classification = "strand" # Use this as the source
+
+### Small adjustment
+lower_threshold = 0.8 # if average of observed medians is below the setpoint by this threshold then adjust
+upper_threshold = 1.5 # if average of observed medians is above the setpoint by this threshold then adjust
+initial_pA_adjustment_per_minimum_voltage_adjustment = 1
+
+ewma_factor = 0.3 # exponentially weighted moving average weight factor. Closer to 1 == weight newest information more
+
+voltage_fallback = -250 # Once voltage goes outside this, use fallback static
+voltage_fallback_interval = 5400 # If not corrected in this long (seconds), or in fallback, adjust by the minimum_voltage_adjustment
+
+# Don't go out of these limits
+voltage_max = -170
+voltage_min = -250
+
+[custom_settings.drift_correction.flongle]
+channels_threshold = 5 # A lot less channels to work with
+
+[custom_settings.static_drift_correction]
+enabled = true
+
+interval = 7200 # Correct this often (seconds)
+reset_interval_every_mux_scan = true  # Only run every x seconds _inside_ a mux scan
+
+voltage_max = -170
+voltage_min = -250
+
+minimum_voltage_adjustment = 5
+
+############
+# Mux Scan #
+############
+
+[custom_settings.mux_scan]
+
+# ---   classify_well   --- #
+threshold = 2.5  # 2.5 seconds of time in well must be pore/strand/adapter to be eligible to be picked
+states_to_count = ['pore', 'strand', 'adapter', 'event']
+
+# ---   report generation   --- #
+enable_ping = true   # Whether to ping the mux scan
+enable_report = true  # Whether to output data to the log directory
+
+# ---   routine settings   --- #
+enabled = true
+collect_0mv_readings = true
+collection_time_per_well = 10  # How long to look at each well for
+interval = 5400  # (seconds) 1hr=3600
+initial_global_flick = true
+realign_offset_for_group_1 = true
+
+# ---   Well Filtering    --- #
+enable_reserve_pore = true  # boolean indicating if reserve pore will be used to filter channels
+reserve_voltage_offset_threshold = -10
+
+# ---   Channel Ordering   --- #
+priorities = ['intercept', 'total_good_samples']
+# A list of the metrics to use to priorities the wells of a channel
+priorities_sort_ascending = [false, false]
+
+# ---   Read Scaling   --- #
+update_read_scale_tracking = true
+
+[custom_settings.mux_scan.flongle]
+enable_reserve_pore = false
+
+# ---   Offset Calibration --- #
+[custom_settings.mux_scan.offset_calibration]
+voltage_steps = [-10, -20, -30]
+collection_time = 1
+minimum_conductance = 0.6
+maximum_conductance = 1.4
+maximum_confidence = 50
+minimum_confidence = -50
+maximum_adjustment = 300
+min_wells = 20
+
+[custom_settings.mux_scan.offset_calibration.flongle]
+min_wells = 2
+
+# ---   Global Flick Config   --- #
+[custom_settings.mux_scan.global_flick]
+enabled = true
+perform_relative_flick = true
+rest_voltage = 0
+rest_duration = 1.0
+flick_duration = 3.0
+voltage_gap = 300
+
+[custom_settings.mux_scan_progressive_unblock]
+enabled = true
+
+# A flick tier would go (flick for x seconds, rest for y seconds) * repeats
+flick_duration = [ 0.1, 2.0, 10.0, 30.0 ]
+rest_duration  = [ 3, 3, 15, 30 ]
+repeats        = [ 1, 1, 4, 4 ]
+
+states_to_flick = ['unavailable'] # When see this, flick
+states_to_reset = ['strand', 'pore', 'adapter' , 'event', 'locked', 'disabled'] # If any of these appear 'reset' the channel so it starts again
+
+change_mux_after_last_tier = true # Feeds into group_manager. If this is true the channel is flagged to be replaced by group manager
+
+
+#####################
+# Channel Wind Down #
+#####################
+
+[custom_settings.channel_wind_down]
+timeout = 60
+enabled = true
+
+[custom_settings.channel_wind_down.channel_states_disable]
+states_to_disable = ['pore', 'saturated', 'multiple', 'unknown_negative', 'unknown_positive', 'zero']
+enabled = true
+stop_feature_manage_enabled = true
+min_channel_threshold = 10
+active_states = ['strand']
+
+[custom_settings.channel_wind_down.channel_states_disable.flongle]
+min_channel_threshold = 2
+
+[custom_settings.channel_wind_down.progressive_unblock]
+enabled = true
+
+# A flick tier would go (flick for x seconds, rest for y seconds) * repeats
+flick_duration = [ 0.1, 2.0, 10.0, 30.0 ]
+rest_duration  = [ 3, 3, 3, 3 ]
+repeats        = [ 1, 1, 4, 4 ]
+
+states_to_flick = ['unavailable', 'zero'] # When see this, flick
+states_to_reset = ['strand', 'pore', 'adapter' , 'event', 'locked', 'disabled'] # If any of these appear 'reset' the channel so it starts again
+
+change_mux_after_last_tier = true # Feeds into group_manager. If this is true the channel is flagged to be replaced by group manager
+
+
+
+##################
+#   Read Until   #
+##################
+
+[custom_processes.read_until]
+script = "sequencing/read_until/read_until_script_CUSTOM.py"
+enabled = true
+
+# See the read until script argparse for parameters to pass
+# Anything passed by the UI will be on the end of this
+arguments = ["--guppy_config=dna_r9.4.1_450bps_fast.cfg", "--enrich_unblock_min_sequence_length=200", "--deplete_stop_receiving_min_sequence_length=4000"]
+
+[custom_processes.read_until.mk1c]
+arguments = ["--guppy_config=dna_r9.4.1_450bps_fast_mk1c.cfg","--enrich_unblock_min_sequence_length=0", "--deplete_stop_receiving_min_sequence_length=0", "--max_unblock_read_length_samples=28000", "--accepted_first_chunk_classifications", "strand", "adapter", "unknown_positive"]
+
+
+##################
+#   Run Until   #
+##################
+
+[custom_processes.run_until]
+script = "sequencing/run_until/run_until_script.py"
+enabled = true
+
+# See the run until script argparse for parameters to pass
+# Anything passed by the UI will be on the end of this
+arguments = []
