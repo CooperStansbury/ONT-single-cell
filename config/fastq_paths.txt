@@ -21,3 +21,9 @@ Run1x0415,/nfs/turbo/umms-indikar/shared/projects/HSC/data/adaptive_sampling/mer
 Run4x0422,/nfs/turbo/umms-indikar/shared/projects/HSC/data/adaptive_sampling/merged_fastq/Run4_04_22.fastq.gz
 Run9x0503,/nfs/turbo/umms-indikar/shared/projects/HSC/data/adaptive_sampling/merged_fastq/Run9_05_03.fastq.gz
 Run3x0418,/nfs/turbo/umms-indikar/shared/projects/HSC/data/adaptive_sampling/merged_fastq/Run3_04_18.fastq.gz
+P2r8d,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/05_17_2024_iHSC_merged/P2r8d_merged.fastq.gz
+Gridr5,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/05_17_2024_iHSC_merged/Gridr5_merged.fastq.gz
+P2r8,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/05_17_2024_iHSC_merged/P2r8_merged.fastq.gz
+P2r8b,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/05_17_2024_iHSC_merged/P2r8b_merged.fastq.gz
+P2r8c,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/05_17_2024_iHSC_merged/P2r8c_merged.fastq.gz
+# P2r8a,/nfs/turbo/umms-indikar/shared/projects/HSC/data/10xBarcoded_SingleCell/05_17_2024_iHSC_merged/P2r8a_merged.fastq.gz

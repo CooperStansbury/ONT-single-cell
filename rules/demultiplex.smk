@@ -20,6 +20,8 @@ rule raw_report:
         sid='|'.join([re.escape(x) for x in set(samples)]),
     threads:
         config['threads'] // 4
+    conda:
+        "../envs/seqkit.yml"
     shell:
         """seqkit stats -a -b -j {threads} {input} -o {output}"""
 
@@ -43,6 +45,8 @@ rule demultiplex:
     params:
         expected=config['expected_cells'],
         output_prefix=lambda wildcards: OUTPUT + "demultiplex/" + wildcards.sid + ".", 
+    conda:
+        "blaze"
     log:
         OUTPUT + "demultiplex/{sid}.log",
     shell:
@@ -60,6 +64,8 @@ rule demultiplexed_report:
         sid='|'.join([re.escape(x) for x in set(samples)]),
     threads:
         config['threads'] // 4
+    conda:
+        "../envs/seqkit.yml"
     params:
         files=expand(OUTPUT + "demultiplex/{sid}.matched_reads.fastq.gz", sid=samples),
     shell:

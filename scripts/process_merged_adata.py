@@ -4,6 +4,7 @@ import os
 import sys
 import anndata as ad
 import scanpy as sc
+from scipy import sparse
 
 def basic_qc(adata, 
              min_genes=100, 
@@ -31,9 +32,6 @@ def basic_qc(adata,
     
     # Doublet detection
     sc.pp.scrublet(adata)
-    
-    # Saving count data
-    adata.layers["filtered_counts"] = adata.X.copy()
 
     # Mitochondrial gene annotation
     adata.var['mt'] = adata.var['gene_name'].str.startswith('MT-')
@@ -131,25 +129,39 @@ if __name__ == "__main__":
 
     # load the data 
     adata = sc.read_h5ad(anndata_path)
+    
+    print("------------------------ Raw Matrix ------------------------")
+    sc.logging.print_memory_usage()
 
     # process the data 
     adata = basic_qc(adata)
+    
+    # Store raw counts
+    adata.layers["log_norm"] = adata.X.copy()
+    
+    print("------------------------ Post QC ------------------------")
+    sc.logging.print_memory_usage()
     
     """BATCH CORRECTION"""
     sc.pp.combat(adata, key='dataset')
 
     # handle negatives
-    adata.X = np.where(adata.X < 0, 0, adata.X)
+    adata.X = sparse.csr_matrix(np.where(adata.X < 0, 0, adata.X))
+    
+    print("------------------------ Post Combat ------------------------")
+    sc.logging.print_memory_usage()
     
     # Highly variable gene selection 
-    sc.pp.highly_variable_genes(adata, n_top_genes=5000)
+    sc.pp.highly_variable_genes(adata)
     
-
     # establish a deafault embeddings
     adata = get_embeddings(adata)
 
     # add gene annotations
     adata = add_annotations(adata, annotation_directory)
+    
+    print("------------------------ Post Annotation ------------------------")
+    sc.logging.print_memory_usage()
     
     # write the object to file
     adata.write(out_path)

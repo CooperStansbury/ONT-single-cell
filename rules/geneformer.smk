@@ -97,10 +97,22 @@ rule merge_geneformer_inputs:
         """python scripts/merge_geneformer_adata.py {input.gene_table} {output} {input.adatas}"""
         
         
+rule process_merged_adata_gene:
+    input:
+        OUTPUT + "geneformer_adata/merged.anndata.h5ad"
+    output:
+        OUTPUT + "geneformer_adata/processed.anndata.h5ad"
+    conda:
+        "../envs/scanpy.yml"
+    params:
+        annotations="/home/cstansbu/git_repositories/ONT-single-cell/config/gene_annotations/"
+    shell:
+        """python scripts/process_merged_adata.py {input} {output} {params.annotations}"""
+    
         
 rule tokenize:
     input:
-        adata= OUTPUT + "geneformer_adata/merged.anndata.h5ad",
+        adata= OUTPUT + "geneformer_adata/processed.anndata.h5ad",
         gene_lengths="/home/cstansbu/git_repositories/Geneformer/geneformer/gene_median_dictionary.pkl",
         tokens="/home/cstansbu/git_repositories/Geneformer/geneformer/token_dictionary.pkl",
     output:

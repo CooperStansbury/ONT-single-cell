@@ -8,6 +8,8 @@ import scipy.sparse as sp
 import scanpy as sc
 import anndata as an
 from datasets import Dataset
+import multiprocessing
+
 
 KEEP_COLUMNS = [
     'cell_type',
@@ -71,7 +73,7 @@ def rank_genes(gene_vector, gene_tokens):
 
 
 def tokenize_anndata(adata, genelist_dict, gene_median_dict, 
-                     chunk_size=1000, target_sum=10000, 
+                     chunk_size=10000, target_sum=10000, 
                      counts_column='n_counts', gene_id="ensemble_id"):
     """
     Tokenizes and ranks genes within an AnnData object, optimizing for memory efficiency.
@@ -130,7 +132,7 @@ def tokenize_anndata(adata, genelist_dict, gene_median_dict,
     return tokenized_cells, file_cell_metadata
 
 
-def create_dataset(tokenized_cells, cell_metadata, gene_token_dict, model_input_size=2048, nproc=16):
+def create_dataset(tokenized_cells, cell_metadata, gene_token_dict, model_input_size=2048):
     """
     Creates a Hugging Face Dataset from tokenized cells and associated metadata.
 
@@ -139,7 +141,6 @@ def create_dataset(tokenized_cells, cell_metadata, gene_token_dict, model_input_
         cell_metadata (dict, optional): Dictionary containing additional cell metadata.
         model_input_size (int): The maximum input size for the model.
         gene_token_dict (dict): Dictionary mapping genes to their tokens.
-        nproc (int, optional): Number of processes to use for mapping. Defaults to 16.
 
     Returns:
         datasets.Dataset: The processed Hugging Face dataset.
@@ -158,6 +159,7 @@ def create_dataset(tokenized_cells, cell_metadata, gene_token_dict, model_input_
         example["length"] = len(example["input_ids"])  # Add length for convenience
         return example
 
+    nproc = multiprocessing.cpu_count()
     return output_dataset.map(format_cell_features, num_proc=nproc)  # Return mapped dataset
 
 
