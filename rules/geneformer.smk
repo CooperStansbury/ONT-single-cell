@@ -108,11 +108,22 @@ rule process_merged_adata_gene:
         annotations="/home/cstansbu/git_repositories/ONT-single-cell/config/gene_annotations/"
     shell:
         """python scripts/process_merged_adata.py {input} {output} {params.annotations}"""
+        
+        
+rule trim_the_fat:
+    input:
+        OUTPUT + "geneformer_adata/processed.anndata.h5ad"
+    output:
+        OUTPUT + "geneformer_adata/processed.anndata.lt.h5ad"
+    conda:
+        "../envs/scanpy.yml"
+    shell:
+        """python scripts/make_lightweight.py {input} {output}"""
     
         
 rule tokenize:
     input:
-        adata= OUTPUT + "geneformer_adata/processed.anndata.h5ad",
+        adata=OUTPUT + "geneformer_adata/processed.anndata.lt.h5ad",
         gene_lengths="/home/cstansbu/git_repositories/Geneformer/geneformer/gene_median_dictionary.pkl",
         tokens="/home/cstansbu/git_repositories/Geneformer/geneformer/token_dictionary.pkl",
     output:

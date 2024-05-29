@@ -2,30 +2,139 @@ import sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import patheffects as pe
 import scipy 
 import seaborn as sns 
 import scanpy as sc
 
 
+def plot_basin(df, x='UMAP 1', y='UMAP 2', cmap="Reds", bins=100, pthresh=.1, levels=4):
+    """
+    Plots a basin based on UMAP dimensionality reduction, combining scatter, 2D histogram, and density contours with automatic color selection.
+
+    Args:
+        df (pandas.DataFrame): The dataframe containing the UMAP coordinates.
+        x (str): The column name for the x-axis ('UMAP 1' by default).
+        y (str): The column name for the y-axis ('UMAP 2' by default).
+        cmap (str): The colormap for the 2D histogram ("Reds" by default).
+        bins (int): The number of bins for the 2D histogram (100 by default).
+        pthresh (float): The percentile threshold for the 2D histogram (0.1 by default).
+        levels (int): The number of contour levels for the density plot (4 by default).
+    """
+
+    # 2D Histogram: Shows density distribution
+    sns.histplot(data=df, x=x, y=y, bins=bins, pthresh=pthresh, cmap=cmap)
+
+    # Determine Color for Contours based on colormap
+    cmap_obj = plt.cm.get_cmap(cmap)  # Get the colormap object
+    contour_color = cmap_obj(0.8)  # Choose a color towards the end of the colormap
+    
+    # 3. Density Contours: Smoothly outlines areas of high density
+    sns.kdeplot(data=df, x=x, y=y, levels=levels, color=contour_color, linewidths=0.5)
+
+
+def plot_labels(data, label_col, ax=None, offset=(5, 2), text_kwargs=None):
+    """
+    Creates a scatterplot with labels directly on the provided axes (or a new one),
+    without plotting points. Assumes UMAP coordinates for x and y axes.
+    Scales plot limits to encompass the data and existing axes limits.
+
+    Args:
+        data (pd.DataFrame): DataFrame with 'UMAP 1', 'UMAP 2', and `label_col` columns.
+        label_col (str): The column name for the labels.
+        ax (plt.Axes, optional): The axes to plot on. If None, a new figure and axes will be created.
+        offset (tuple, optional): Offset (x, y) for label positioning (default is (5, 2)).
+        text_kwargs (dict, optional): Additional keyword arguments to pass to `ax.text`.
+    """
+
+    if ax is None:
+        _, ax = plt.subplots()
+
+    # Default text properties (can be overridden by text_kwargs)
+    default_text_kwargs = {
+        'color': 'w',
+        'path_effects': [pe.withStroke(linewidth=1.5, foreground="k", alpha=0.95)],
+        'verticalalignment': 'center',
+        'horizontalalignment': 'center',
+        'fontsize': '10',
+    }
+    # Combine default and user-provided kwargs
+    if text_kwargs is None:
+        text_kwargs = {}
+    text_kwargs = {**default_text_kwargs, **text_kwargs}  # Merge dictionaries
+
+    for _, row in data.iterrows():
+        ax.text(row['UMAP 1'], row['UMAP 2'], row[label_col], **text_kwargs)
+
+    # Adjust x and y limits to fit data and/or existing plot elements
+    ax.set_xlim(
+        min(data['UMAP 1'].min(), ax.get_xlim()[0]),  
+        max(data['UMAP 1'].max(), ax.get_xlim()[1])   
+    )
+    ax.set_ylim(
+        min(data['UMAP 2'].min(), ax.get_ylim()[0]),
+        max(data['UMAP 2'].max(), ax.get_ylim()[1])
+    )
+
+    ax.set_xlabel('UMAP 1')
+    ax.set_ylabel('UMAP 2')
+
+    plt.show()
+
+
+def create_standalone_colorbar(scatter_result, figsize=(0.15, 1.5), labelsize=8):
+    """Creates a standalone colorbar figure from a matplotlib scatter plot result.
+
+    Args:
+        scatter_result: The return value of plt.scatter().
+        figsize (tuple, optional): Size of the figure (width, height). Defaults to (0.15, 1.5).
+        labelsize (int, optional): Font size of the colorbar tick labels. Defaults to 8.
+
+    Returns:
+        A matplotlib figure object containing the colorbar.
+    """
+    
+    # Get colormap directly or from name
+    cmap = scatter_result.cmap
+    if isinstance(cmap, str):
+        cmap = plt.cm.get_cmap(cmap)
+
+    # Create figure and axes for colorbar with specified size
+    fig, ax = plt.subplots(figsize=figsize)
+
+    # Create ScalarMappable for colorbar
+    sm = plt.cm.ScalarMappable(cmap=cmap, norm=scatter_result.norm)
+    sm.set_array([])  # No actual data needed, just colormapping
+
+    # Add colorbar and customize tick labels
+    cbar = plt.colorbar(sm, cax=ax)
+    cbar.ax.tick_params(labelsize=labelsize)
+
+    return fig
+
+
 def plot_umap_scatter(
-    adata, x= "UMAP 1", 
-    y="UMAP 2", color="CD34", 
-    cmap="viridis",
-    vmin=None,
-    vmax=None,
+    adata, 
+    color="CD34", 
+    cmap="viridis", 
+    vmin=None, 
+    vmax=None, 
+    label=True, 
+    title=None,
+    colorbar=True,
     **kwargs
-) -> plt.Axes:
+):
     """
     Creates a scatterplot of UMAP data from an AnnData object with color mapping and a colorbar.
 
     Args:
         adata (anndata.AnnData): The AnnData object containing the UMAP embedding and color data.
-        x (str, optional): Column name in `adata.obsm` for x-coordinates (default: "UMAP 1").
-        y (str, optional): Column name in `adata.obsm` for y-coordinates (default: "UMAP 2").
         color (str, optional): Column name in `adata.var` or `adata.obs` for color mapping (default: "CD34").
         cmap (str or matplotlib.colors.Colormap, optional): Colormap to use (default: "viridis").
         vmin (float, optional): Minimum value for colormap normalization (default: None).
         vmax (float, optional): Maximum value for colormap normalization (default: None).
+        label (bool, optional): Whether to add labels to the axes (default: True).
+        colorbar (bool, optional): Whether to add a colorbar (default: True).
         **kwargs: Additional keyword arguments passed to `plt.scatter`.
 
     Returns:
@@ -34,11 +143,11 @@ def plot_umap_scatter(
     Raises:
         KeyError: If `color` is not found in `adata.var` or `adata.obs`.
     """
-
-    if color in adata.var_names:  # Color is a gene expression value
+    
+    
+    if color in adata.var_names: # Color is a gene expression value
         df = adata.to_df()
-        df.columns = adata.var['gene_name'].values  # Use gene names as column labels
-        expression = df[color].values  
+        expression = df[color].values
     elif color in adata.obs:
         expression = adata.obs[color].values
     else:
@@ -53,69 +162,27 @@ def plot_umap_scatter(
     if vmax is None:
         vmax = np.max(expression)
 
-    # Create scatterplot with normalized colormap
+
     fig, ax = plt.subplots()
+    
     scatter = ax.scatter(
-        adata.obs[x].iloc[order],
-        adata.obs[y].iloc[order],
+        adata.obsm['X_umap'][:, 0][order],
+        adata.obsm['X_umap'][:, 1][order],
         c=expression[order],
         cmap=cmap,
         vmin=vmin,
         vmax=vmax,
         **kwargs
     )
+    
+    ax.set_aspect('auto')
 
-    # Add colorbar
-    cbar = plt.colorbar(scatter, shrink=0.4, ax=ax)
-
-    # Additional formatting
-    sns.despine(ax=ax)
-    ax.set(
-        xlabel=x,
-        ylabel=y,
-        xticks=[],
-        yticks=[]
-    )
-
-    return ax
-
-
-
-def plot_diffusing_umap_average(df, ax=None, color="blue", base_alpha=0.8, scale=1.0, margin=0.1, num_circles=20):
-    """
-    Plots the average UMAP coordinates as a faded circle, scaled by variability, and adjusts plot limits.
-
-    Args:
-        df (pandas.DataFrame): The dataframe containing UMAP coordinates.
-        ax (matplotlib.axes.Axes, optional): An existing axes object to plot on.
-        color (str): The color of the circle.
-        base_alpha (float): The base transparency for the innermost circle.
-        scale (float): A scaling factor to adjust the circle size.
-        margin (float): The fraction of the plot range to add as a margin around the circle.
-        num_circles (int): The number of circles to create for the fading effect.
-    """
-
-    if ax is None:
-        fig, ax = plt.subplots()
-
-    # Calculate average and standard deviation of UMAP coordinates
-    avg_umap1 = df['UMAP 1'].mean()
-    avg_umap2 = df['UMAP 2'].mean()
-    std_umap1 = df['UMAP 1'].std()
-    std_umap2 = df['UMAP 2'].std()
-
-    # Combined standard deviation
-    combined_std = np.sqrt(std_umap1**2 + std_umap2**2)
-
-    # Determine the step size for increasing the radius and decreasing alpha
-    radius_step = combined_std * scale / num_circles
-    alpha_step = base_alpha / num_circles
-
-    # Create multiple circles with fading transparency
-    for i in range(num_circles):
-        radius = radius_step * (i + 1)
-        alpha = base_alpha - alpha_step * i
-        circle = plt.Circle((avg_umap1, avg_umap2), radius, color=color, alpha=alpha)
-        ax.add_patch(circle)
-
-    return ax
+    if colorbar:
+        create_standalone_colorbar(scatter)
+    
+    # Simplified axis label setting
+    x_label, y_label = ("UMAP 1", "UMAP 2") if label else ("", "")
+    ax.set(xlabel=x_label, ylabel=y_label, xticks=[], yticks=[])
+    
+    if not title is None:
+        ax.set_title(title)

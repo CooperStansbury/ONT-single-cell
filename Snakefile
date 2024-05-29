@@ -70,8 +70,6 @@ rule all:
         OUTPUT + 'references/transcripts.fa',
         OUTPUT + 'references/annotations.gtf',
         OUTPUT + 'references/geneTable.csv',
-        OUTPUT + 'reports/seqkit_stats/raw_report.txt',
-        OUTPUT + 'reports/seqkit_stats/demultiplexed_report.txt',
         expand(OUTPUT + "fastq/{sid}.raw.fastq.gz", sid=samples),
         expand(OUTPUT + "demultiplex/{sid}.done", sid=samples),
         expand(OUTPUT + "reports/fastqc/{sid}.report.html", sid=samples),
@@ -80,6 +78,8 @@ rule all:
         expand(OUTPUT + "reports/bamstats/{sid}.bamstats", sid=samples),
         expand(OUTPUT + "individual_counts/{sid}.counts.txt", sid=samples),
         expand(OUTPUT + "v5_tagged/{sid}.tagged.csv", sid=samples),
+        OUTPUT + 'reports/seqkit_stats/raw_report.txt',
+        OUTPUT + 'reports/seqkit_stats/demultiplexed_report.txt',
         OUTPUT + "v5_tagged/read_ids.txt",
         OUTPUT + 'merged/merged.bam.bai',
         OUTPUT + 'merged/merged.stats',
@@ -93,11 +93,12 @@ rule all:
         OUTPUT + "geneformer_adata/pellin.anndata.h5ad",
         OUTPUT + "geneformer_adata/tabula_sapiens.anndata.h5ad",
         expand(OUTPUT + "geneformer_adata/{pid}.anndata.h5ad", pid=weng_ids), 
-        OUTPUT + "geneformer_adata/merged.anndata.h5ad",
+        OUTPUT + "geneformer_adata/processed.anndata.h5ad",
+        OUTPUT + "geneformer_adata/processed.anndata.lt.h5ad",
         OUTPUT + "geneformer_inputs/iHSC.dataset",
+        expand(OUTPUT + "isoquant/{sid}.done", sid=samples),
         OUTPUT + "isoquant/annotations.db",
-
-
+        
 rule test:
     output:
         touch(test_file),

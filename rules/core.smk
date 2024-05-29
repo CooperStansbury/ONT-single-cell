@@ -14,6 +14,8 @@ rule align_reads:
         sid='|'.join([re.escape(x) for x in set(samples)]),
     log:
         OUTPUT + "mapping/{sid}.log",
+    conda:
+        "aligner"
     shell:
         """minimap2 {params.args} -t {threads} \
         {input.ref} {params.fastq} | samtools sort \
@@ -31,6 +33,8 @@ rule samtools_index:
         sid='|'.join([re.escape(x) for x in set(samples)]),
     threads:
         int(config['threads'])
+    conda:
+        "aligner"
     shell:
         """samtools index -@ {threads} {input}"""
 
@@ -60,6 +64,8 @@ rule tag_bam:
         records=OUTPUT + 'mapping/{sid}.records.csv',
     wildcard_constraints:
         sid='|'.join([re.escape(x) for x in set(samples)]),
+    conda:
+        "aligner"
     shell:
         """python scripts/tag_bam.py {input} {output.bam} {output.records}"""
 
@@ -70,7 +76,7 @@ rule samtools_index_tagged:
     output:
         OUTPUT + 'mapping/{sid}.tagged.bam.bai'
     conda:
-        "../envs/samtools.yml"
+        "aligner"
     wildcard_constraints:
         sid='|'.join([re.escape(x) for x in set(samples)]),
     threads:
@@ -87,7 +93,7 @@ rule merge_bam:
     wildcard_constraints:
         sid='|'.join([re.escape(x) for x in set(samples)]),
     conda:
-        "../envs/samtools.yml"
+        "aligner"
     threads:
         int(config['threads'])
     shell:
@@ -100,7 +106,7 @@ rule samtools_index_merged:
     output:
         OUTPUT + 'merged/merged.bam.bai'
     conda:
-        "../envs/samtools.yml"
+        "aligner"
     threads:
         int(config['threads'])
     shell:
@@ -113,7 +119,7 @@ rule samtools_stats_merged:
     output:
         OUTPUT + 'merged/merged.stats'
     conda:
-        "../envs/samtools.yml"
+        "aligner"
     threads:
         int(config['threads']) // 4
     shell:

@@ -8,7 +8,6 @@ import scipy.sparse as sp
 import scanpy as sc
 import anndata as an
 from datasets import Dataset
-import multiprocessing
 
 
 KEEP_COLUMNS = [
@@ -211,8 +210,20 @@ if __name__ == "__main__":
                                                       genelist_dict, 
                                                       gene_median_dict)
     
-    #     to hugging face dataset
-    dataset = create_dataset(tokenized_cells, cell_metadata, gene_token_dict)
+    # Merge cell metadata into the dataset dictionary
+    dataset_dict = {
+        "input_ids": tokenized_cells,
+        **cell_metadata 
+    }
+    
+    output_dataset = Dataset.from_dict(dataset_dict)
+
+    def format_cell_features(example):
+        example["input_ids"] = example["input_ids"][0 : model_input_size] # truncate
+        example["length"] = len(example["input_ids"])  # Add length for convenience
+        return example
+
+    dataset = output_dataset.map(format_cell_features, num_proc=16) 
     
     # store output
     save_hf_dataset(dataset, output_path, overwrite=True)

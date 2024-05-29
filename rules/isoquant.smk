@@ -17,6 +17,7 @@ rule run_isoquant:
         bam_index=OUTPUT + "mapping/{sid}.tagged.bam.bai",
     output:
         directory(OUTPUT + "isoquant/{sid}"),
+        touch(OUTPUT + "isoquant/{sid}.done"),
     params:
         outdir=OUTPUT + "isoquant",
         prefix=lambda wildcards: wildcards.sid
