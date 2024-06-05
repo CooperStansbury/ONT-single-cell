@@ -1,11 +1,120 @@
 import sys
 import pandas as pd
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import patheffects as pe
 import scipy 
 import seaborn as sns 
 import scanpy as sc
+
+def make_colorbar(cmap='viridis', 
+                  width=0.2,
+                  height=2.5, 
+                  title='', 
+                  orientation='vertical', 
+                  tick_labels=[0, 1]):
+    """
+    Creates and displays a standalone colorbar using Matplotlib.
+
+    Args:
+        cmap (str or matplotlib.colors.Colormap): The colormap to use for the colorbar.
+        width (float): The width of the colorbar figure in inches.
+        height (float): The height of the colorbar figure in inches.
+        title (str): The title to display above or next to the colorbar.
+        orientation (str): The orientation of the colorbar ('vertical' or 'horizontal').
+        tick_labels (list of str): The labels to display at each tick on the colorbar.
+
+    Returns:
+        None: This function displays the colorbar directly using Matplotlib.
+
+    Raises:
+        ValueError: If the `orientation` is not 'vertical' or 'horizontal'.
+    """
+    
+    a = np.array([[0, 1]])  # Dummy data for the image
+    plt.figure(figsize=(width, height))
+    img = plt.imshow(a, cmap=cmap)
+    plt.gca().set_visible(False)  # Hide the axes of the image
+    cax = plt.axes([0.1, 0.2, 0.8, 0.6])  # Define the colorbar position
+
+    ticks = np.linspace(0, 1, len(tick_labels)) 
+    cbar = plt.colorbar(
+        orientation=orientation,
+        cax=cax,
+        label=title,
+        ticks=ticks
+    )
+
+    if orientation == 'vertical':
+        cbar.ax.set_yticklabels(tick_labels)
+    elif orientation == 'horizontal':
+        cbar.ax.set_xticklabels(tick_labels)
+
+
+def makeColorbar(cmap, width, hieght, title, orientation, tickLabels):
+    a = np.array([[0,1]])
+    plt.figure(figsize=(width, hieght))
+    img = plt.imshow(a, cmap=cmap)
+    plt.gca().set_visible(False)
+    cax = plt.axes([0.1, 0.2, 0.8, 0.6])
+    ticks = np.linspace(0,1 , len(tickLabels))
+    cbar = plt.colorbar(orientation=orientation, 
+                        cax=cax, 
+                        label=title,
+                        ticks=ticks)
+
+    if orientation == 'vertical':
+        cbar.ax.set_yticklabels(tickLabels)
+    else:
+        cbar.ax.set_xticklabels(tickLabels)
+        
+
+def generate_color_mapping(data, palette_name):
+    """Generates a color mapping for unique values in a pandas Series.
+
+    Args:
+        data: A pandas Series containing categorical values.
+        palette_name: The name of the seaborn color palette to use.
+
+    Returns:
+        A dictionary mapping unique values in the Series to corresponding colors.
+    """
+
+    unique_values = data.unique()
+    color_palette = sns.color_palette(palette_name, n_colors=len(unique_values))
+    return dict(zip(unique_values, color_palette))
+
+
+def get_n_colors(n, cmap_name='viridis'):
+    """Generates n evenly spaced hex color codes from a Matplotlib colormap.
+
+    Args:
+        n: The number of colors to generate.
+        cmap_name: The name of the Matplotlib colormap (default: 'viridis').
+
+    Returns:
+        A list of n hex color codes (e.g., '#RRGGBB').
+    """
+
+    cmap = plt.get_cmap(cmap_name)
+    return [plt.colors.rgb2hex(cmap(i / (n - 1))) for i in range(n)]
+
+
+def label_point(x, y, val, ax, offset=0.05, fontsize=4):
+    """Annotates points in a plot with their values.
+
+    Args:
+        x: x-coordinates of the points.
+        y: y-coordinates of the points.
+        val: Values to display as labels.
+        ax: The Matplotlib Axes object to draw on.
+        offset: Distance between the point and the label.
+        fontsize: Font size of the labels.
+    """
+
+    for x_coord, y_coord, label in zip(x, y, val):
+        ax.text(x_coord + offset, y_coord, str(label), fontsize=fontsize, fontweight='bold')
 
 
 def plot_basin(df, x='UMAP 1', y='UMAP 2', cmap="Reds", bins=100, pthresh=.1, levels=4):

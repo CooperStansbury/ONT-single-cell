@@ -24,7 +24,6 @@ def clean_adata(adata, additional_obs=None, additional_var=None, additional_uns=
     # Data to remove
     data_to_remove = {
         'obsp': ['connectivities', 'distances'],
-        'layers': ['log_norm', 'raw_counts'],
         'obsm': ['X_pca', 'X_umap', 'X_tsne'],
         'uns': [
             'tsne', 'pca', 'umap', 'scrublet', 'neighbors', 'HSC_vs_FB', 'HSC_vs_FB_pure', 
@@ -49,7 +48,11 @@ def clean_adata(adata, additional_obs=None, additional_var=None, additional_uns=
             'Sig.ncMono1', 'Sig.cDC1', 'Sig.pDC1', 'Sig.ProB1', 'Sig.PreB1', 'Sig.B1', 'Sig.Plasma1',
             'Sig.T1', 'Sig.CTL1', 'Sig.NK1', 'meanCov', 'ClonalGroup.Prob', 'wsnn_res.0.8', 
             'Origin.Seurat'
+        ],
+        'layers': [
+            'log_norm',
         ]
+        
     }
 
     # Add additional data to remove if provided
@@ -103,8 +106,42 @@ if __name__ == "__main__":
     adata = adata[adata.obs['cell_type'].isin(keep), :]
     gc.collect()
     
+    # drop some datasets
+    data = [
+        'pellin', # pelling 2019
+        'iHSC', # our iHSC data
+        'old1_BMMC_HSPC', # weng data
+        'old2_BMMC_HSPC', # weng data
+        'young2_HSC', # weng data
+        'tabula_sapiens', # fibroblast
+    ]
+
+    adata = adata[adata.obs['dataset'].isin(data), :]
+    gc.collect()
+    
+    # drop HSC from tabula
+    mask = (adata.obs['cell_type'] == 'HSC') & (adata.obs['dataset'] == 'tabula_sapiens')
+    adata = adata[~mask, :]
+    gc.collect()
+    
     print("------------------------ Subsetted Matrix ------------------------")
     sc.logging.print_memory_usage()
+    
+    # re-process and combat
+    adata.X = adata.layers['raw_counts']
+    
+    sc.pp.filter_genes(adata, min_counts=3)
+    sc.pp.filter_cells(adata, min_counts=100)
+    
+    sc.pp.normalize_total(adata)
+    sc.pp.log1p(adata)
+    adata.layers["log_norm"] = adata.X.copy()
+    
+    # batch correction
+    sc.pp.combat(adata, key='dataset')
+
+    # handle negatives
+    adata.X = sparse.csr_matrix(np.where(adata.X < 0, 0, adata.X))
     
     # make matrix sparse, reduce the precision
     adata.X = sparse.csr_matrix(adata.X.astype('float32'))
@@ -113,7 +150,7 @@ if __name__ == "__main__":
     sc.logging.print_memory_usage()
     
     # output the results
-    adata.write(output_path)
+    adata.copy().write(output_path)
     
     
     

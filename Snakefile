@@ -94,10 +94,13 @@ rule all:
         OUTPUT + "geneformer_adata/tabula_sapiens.anndata.h5ad",
         expand(OUTPUT + "geneformer_adata/{pid}.anndata.h5ad", pid=weng_ids), 
         OUTPUT + "geneformer_adata/processed.anndata.h5ad",
-        OUTPUT + "geneformer_adata/processed.anndata.lt.h5ad",
-        OUTPUT + "geneformer_inputs/iHSC.dataset",
         expand(OUTPUT + "isoquant/{sid}.done", sid=samples),
         OUTPUT + "isoquant/annotations.db",
+        OUTPUT + "isoquant_prepared/gene_counts.csv",
+        OUTPUT + "isoquant_prepared/transcript_counts.csv",
+        OUTPUT + "isoquant_prepared/isoforms.csv",
+        OUTPUT + "geneformer_adata/processed.anndata.lt.h5ad",
+        OUTPUT + "geneformer_inputs/iHSC.dataset",
         
 rule test:
     output:

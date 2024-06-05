@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 import numpy as np
 import matplotlib 
@@ -6,135 +7,95 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import scipy
 from scipy import stats
-from Bio import SeqIO
-from Bio.KEGG import REST
-from Bio.KEGG.KGML import KGML_parser
-import io
-
-def min_max(v):
-    return (v - v.min()) / (v.max() - v.min())
-
-def label_point(x, y, val, ax):
-    a = pd.concat({'x': x, 'y': y, 'val': val}, axis=1)
-    for i, point in a.iterrows():
-        ax.text(point['x']+.05, 
-                point['y'],
-                str(point['val']),
-                fontsize=4,
-                fontweight='bold')
-
-def labeler(x, y, label, ax, 
-            kws={'fontsize': 4, 'fontweight':'bold'}):
-    ax.text(x, y, str(label), **kws)
-    
-        
-def ncolor(n, cmap='viridis'):
-    cmap = matplotlib.cm.get_cmap(cmap)
-    arr = np.linspace(0, 1, n)
-    return [matplotlib.colors.rgb2hex(cmap(x)) for x in arr] 
+import scanpy as sc
 
 
-def get_colors(data, cmap):
-    """A function to return seaborn colormap
-    dict from a colum """
-    color_list = sns.palettes.color_palette(cmap,
-                                            data.nunique(), 
-                                            as_cmap=False)
-    return color_list
-
-
-def parseKEGG(pathId):
-    genes = []
-    results = REST.kegg_get(pathId).read()
-    current_section = None
-    for line in results.rstrip().split("\n"):
-        section = line[:12].strip()  # section names are within 12 columns
-        if not section == "":
-            current_section = section
-
-        if current_section == "GENE":
-            linesplit = line[12:].split("; ")
-            gene_identifiers = linesplit[0]
-            gene_id, gene_symbol = gene_identifiers.split()
-    
-            if not gene_symbol in genes:
-                genes.append(gene_symbol)
-    return genes
-
-
-def getPathname(pathId):
-    """A function to return the legg pathname"""
-    result = REST.kegg_list(pathId).read()
-    return result.split("\t")[1].split("-")[0].strip()
-
-
-def makeColorbar(cmap, width, hieght, title, orientation, tickLabels):
-    a = np.array([[0,1]])
-    plt.figure(figsize=(width, hieght))
-    img = plt.imshow(a, cmap=cmap)
-    plt.gca().set_visible(False)
-    cax = plt.axes([0.1, 0.2, 0.8, 0.6])
-    ticks = np.linspace(0,1 , len(tickLabels))
-    cbar = plt.colorbar(orientation=orientation, 
-                        cax=cax, 
-                        label=title,
-                        ticks=ticks)
-
-    if orientation == 'vertical':
-        cbar.ax.set_yticklabels(tickLabels)
-    else:
-        cbar.ax.set_xticklabels(tickLabels)
-
-
-def get_pangloa(fpath, celltypes, cell_names):
-    """A fucntion to get marker genes from panglao"""
-    pdf = pd.read_csv(fpath, sep='\t')
-    pdf = pdf[pdf['cell type'].isin(celltypes)]
-    pdf = pdf[['official gene symbol', 'cell type']].drop_duplicates()
-    pdf.columns = ['gene_name', 'cell_type']
-    pdf['values'] = 1
-    pdf = pd.pivot_table(pdf, 
-                         columns='cell_type', 
-                         index='gene_name',
-                         values='values')
-    pdf = pdf.fillna(0)
-    pdf.columns = cell_names
-    pdf = pdf.reset_index(drop=False)
-    return pdf
-    
-
-def get_marker_genes(fpath, adata, celltypes, cell_names):
-    """A function to load marker genes for given cell
-    types """
-    pdf = get_pangloa(fpath, celltypes, cell_names)
-    var = adata.var.copy()
-    var = var[var['gene_name'].isin(pdf['gene_name'].to_list())]
-    var = var.reset_index(drop=False)
-    var = pd.merge(var, pdf, 
-                   how='left',
-                   left_on='gene_name',
-                   right_on='gene_name',)
-    var = var.set_index('gene_id')
-    return var
-
-
-def get_genes_by_cell_type(pdf, cell_type, ui_upper=None):
-    """Retrieves genes based on cell type and optional ubiquitousness index filtering.
+def min_max(values):
+    """Scales a series of values to the range [0, 1] using NumPy.
 
     Args:
-        pdf (pandas.DataFrame): The DataFrame containing gene data.
-        cell_type (str): The cell type to filter for.
-        ui_upper (float, optional): Maximum ubiquitousness index for filtering. 
-                                    Defaults to None (no filtering).
+        values: A Pandas Series or a NumPy array of numeric values.
 
     Returns:
-        list: A list of official gene symbols matching the criteria.
+        The scaled values as a Pandas Series or a NumPy array.
     """
 
-    genes = pdf[pdf['cell type'] == cell_type]
+    range_val = np.ptp(values)  # Peak-to-peak (max - min)
+    if range_val == 0:
+        return values
+    
+    scaled_values = (values - values.min()) / range_val
+    return scaled_values
 
-    if ui_upper is not None:
-        genes = genes[genes['ubiquitousness index'] < ui_upper]
 
-    return genes['official gene symbol'].to_list()
+def calculate_gene_expression_stats(df):
+    """
+    Calculates aggregate gene expression statistics for a given DataFrame.
 
+    Args:
+        df (pd.DataFrame): A DataFrame with cells as rows and genes as columns.
+
+    Returns:
+        pd.DataFrame: A DataFrame with one row per gene, containing aggregated statistics.
+    """
+
+    # Aggregate statistics
+    stats = pd.DataFrame({
+        'average_expression': df.mean(),
+        'median_expression': df.median(),
+        'std_dev': df.std(ddof=0),  # Sample standard deviation
+        'num_nonzero_cells': (df > 0).sum(),
+        'percent_nonzero': 100 * (df != 0).mean()
+    })
+
+    # Round percent_nonzero to 2 decimal places
+    stats['percent_nonzero'] = stats['percent_nonzero'].round(2)
+    stats = stats.sort_values(by='average_expression', ascending=False)
+
+    return stats
+
+
+def top_n_de_genes(df, n=10, alpha=0.05, pct_nz_threshold=0.25, pct_nz_reference=0.90, values='logfoldchanges', gene_list=None):
+    """
+    Returns the top N differentially expressed genes for each group, ranked by absolute log fold change.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing DE analysis results.
+        n (int, optional): Number of top genes per group (default: 10).
+        alpha (float, optional): Significance level (default: 0.05).
+        pct_nz_threshold (float, optional): Min. proportion expressed in group (default: 0.25).
+        pct_nz_reference (float, optional): Max. proportion expressed in reference (default: 0.90).
+        values (str, optional): Pivot table values to fill (default: 'logfoldchanges')
+
+    Returns:
+        pd.DataFrame: A pivot table of log fold changes where rows are groups, columns are names, and values are logfoldchanges
+    """
+
+    # Filter by significance and expression percentage
+    df_filtered = df.query(
+        f"`pvals_adj` <= {alpha} and `pct_nz_group` >= {pct_nz_threshold} and `pct_nz_reference` <= {pct_nz_reference}"
+    )
+    
+    if not gene_list is None:
+        df_filtered = df_filtered[df_filtered['names'].isin(gene_list)]
+
+    # Sort by log fold change within each group (descending order for top genes)
+    df_sorted = df_filtered.sort_values(
+        ['group', 'logfoldchanges'], ascending=[True, False]
+    )
+
+    # Group by and select top N rows
+    top_genes = df_sorted.groupby('group').head(n)['names'].values
+
+    table = df[df['names'].isin(top_genes)]
+
+    table = pd.pivot_table(
+        table,
+        index='group',
+        columns='names',
+        values=values
+    )
+    
+    table = table[top_genes]
+
+    return table

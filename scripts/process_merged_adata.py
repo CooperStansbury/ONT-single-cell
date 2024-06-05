@@ -142,21 +142,9 @@ if __name__ == "__main__":
     print("------------------------ Post QC ------------------------")
     sc.logging.print_memory_usage()
     
-    """BATCH CORRECTION"""
-    sc.pp.combat(adata, key='dataset')
-
-    # handle negatives
-    adata.X = sparse.csr_matrix(np.where(adata.X < 0, 0, adata.X))
-    
     print("------------------------ Post Combat ------------------------")
     sc.logging.print_memory_usage()
     
-    # Highly variable gene selection 
-    sc.pp.highly_variable_genes(adata)
-    
-    # establish a deafault embeddings
-    adata = get_embeddings(adata)
-
     # add gene annotations
     adata = add_annotations(adata, annotation_directory)
     

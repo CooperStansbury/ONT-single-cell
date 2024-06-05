@@ -10,7 +10,12 @@ import anndata as an
 from datasets import Dataset
 
 
+MODEL_INPUT_SIZE = 2048
+NUMBER_PROC = 16
+
+
 KEEP_COLUMNS = [
+    'cell_id',
     'cell_type',
     'n_counts',
     'dataset',
@@ -72,7 +77,7 @@ def rank_genes(gene_vector, gene_tokens):
 
 
 def tokenize_anndata(adata, genelist_dict, gene_median_dict, 
-                     chunk_size=10000, target_sum=10000, 
+                     chunk_size=100000, target_sum=10000, 
                      counts_column='n_counts', gene_id="ensemble_id"):
     """
     Tokenizes and ranks genes within an AnnData object, optimizing for memory efficiency.
@@ -202,7 +207,11 @@ if __name__ == "__main__":
     # load and restructure
     adata = sc.read_h5ad(adata_path)
     
+    """USE RAW COUNTS!!! """
+    adata.X = adata.layers['raw_counts']
+    
     # drop most metadata columns
+    adata.obs['cell_id'] = adata.obs.index
     adata.obs = adata.obs[KEEP_COLUMNS]
 
     # tokenize
@@ -219,11 +228,11 @@ if __name__ == "__main__":
     output_dataset = Dataset.from_dict(dataset_dict)
 
     def format_cell_features(example):
-        example["input_ids"] = example["input_ids"][0 : model_input_size] # truncate
+        example["input_ids"] = example["input_ids"][0 : MODEL_INPUT_SIZE] # truncate
         example["length"] = len(example["input_ids"])  # Add length for convenience
         return example
 
-    dataset = output_dataset.map(format_cell_features, num_proc=16) 
+    dataset = output_dataset.map(format_cell_features, num_proc=NUMBER_PROC) 
     
     # store output
     save_hf_dataset(dataset, output_path, overwrite=True)

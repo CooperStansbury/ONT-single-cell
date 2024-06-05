@@ -33,3 +33,40 @@ rule run_isoquant:
         --bam {input.bam} --data_type 'nanopore' \
         --bam_tags 'CB,UB,RD' \
         --complete_genedb -o {params.outdir}"""
+        
+        
+rule merge_gene_counts:
+    input:
+        expand(OUTPUT + "isoquant/{sid}/{sid}.gene_counts.tsv", sid=samples),
+    output:
+        OUTPUT + "isoquant_prepared/gene_counts.csv"
+    wildcard_constraints:
+        sid='|'.join([re.escape(x) for x in set(samples)]),
+    shell:
+        """python scripts/merge_isoquant.py {output} {input}"""
+        
+        
+rule merge_transcript_counts:
+    input:
+        expand(OUTPUT + "isoquant/{sid}/{sid}.transcript_counts.tsv", sid=samples),
+    output:
+        OUTPUT + "isoquant_prepared/transcript_counts.csv"
+    wildcard_constraints:
+        sid='|'.join([re.escape(x) for x in set(samples)]),
+    shell:
+        """python scripts/merge_isoquant.py {output} {input}"""
+        
+        
+rule make_prepped_isoquant:
+    input:
+        gene_table=OUTPUT + 'references/geneTable.csv',
+        gene_path=OUTPUT + "isoquant_prepared/gene_counts.csv",
+        trx_path=OUTPUT + "isoquant_prepared/transcript_counts.csv",
+    output:
+        OUTPUT + "isoquant_prepared/isoforms.csv"
+    conda:
+        "bioinf"
+    shell:
+        """python scripts/process_isoquant.py {input.gene_table} {input.gene_path} {input.trx_path} {output}"""
+    
+        
