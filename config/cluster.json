@@ -1,6 +1,6 @@
 {
     "__default__": {
-    "account_slurm": "indikar1",
+    "account_slurm": "indikar99",
     "partition": "standard",
     "jobname": "{rule}.{wildcards}",
     "nodes": 1,

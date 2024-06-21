@@ -16,6 +16,7 @@ def create_read_map(read_map_path: str) -> dict[str, str]:
     read_map_df = pd.read_csv(read_map_path)
     return read_map_df.set_index('query_name')['gene_name'].to_dict()
 
+
 def parse_seqID(input_string):
     """
     Parse an input string containing barcode, UMI, and read name.

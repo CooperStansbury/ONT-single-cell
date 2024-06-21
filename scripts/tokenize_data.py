@@ -76,6 +76,33 @@ def rank_genes(gene_vector, gene_tokens):
     return gene_tokens[np.argsort(-gene_vector)]
 
 
+def normalize_counts(adata_chunk,  counts_column='n_counts', target_sum=10000):
+    """Normalizes gene expression counts within a chunk of AnnData.
+
+    Args:
+        adata_chunk (AnnData): A chunk of the AnnData object containing gene expression data.
+        counts_column (str): Name of the column in `adata_chunk.obs` containing the total counts per cell.
+        target_sum (float): The desired total count per cell after normalization.
+        norm_factor_vector (numpy.ndarray): An array of normalization factors for each gene.
+
+    Returns:
+        scipy.sparse.csr_matrix: A sparse matrix containing the normalized gene expression counts.
+
+    This function performs the following steps:
+        1. Extracts the total counts per cell from the specified column (`counts_column`).
+        2. Normalizes the gene expression matrix (`adata_chunk.X`) by dividing by the total counts 
+           and multiplying by the `target_sum`.
+        3. Further adjusts the normalized values by dividing by the gene-specific normalization 
+           factors (`norm_factor_vector`).
+        4. Returns the normalized expression matrix as a sparse CSR matrix for efficient storage 
+           and computation.
+    """
+    
+    n_counts = adata_chunk.obs[counts_column].values[:, None]  # Cell counts as column vector
+    X_norm = adata_chunk.X / n_counts * target_sum / norm_factor_vector
+    return sp.csr_matrix(X_norm)  # Efficient sparse representation
+
+
 def tokenize_anndata(adata, genelist_dict, gene_median_dict, 
                      chunk_size=100000, target_sum=10000, 
                      counts_column='n_counts', gene_id="ensemble_id"):
@@ -116,11 +143,69 @@ def tokenize_anndata(adata, genelist_dict, gene_median_dict,
     for chunk_start in range(0, adata.shape[0], chunk_size):
         chunk_end = chunk_start + chunk_size
         adata_chunk = adata[chunk_start:chunk_end, coding_miRNA_loc]
-
-        # Normalize counts
+        
+        # Normalize counts (could be replaced with the untested function above)
         n_counts = adata_chunk.obs[counts_column].values[:, None]
         X_norm = adata_chunk.X / n_counts * target_sum / norm_factor_vector
         X_norm = sp.csr_matrix(X_norm)  
+
+        # Tokenize and rank genes for each cell in chunk
+        for i in range(X_norm.shape[0]):
+            ranks = rank_genes(X_norm[i].data, coding_miRNA_tokens[X_norm[i].indices])
+            ranks = list(ranks[~np.isnan(ranks)].astype(int))
+
+            tokenized_cells.append(ranks)
+
+        # Update metadata
+        for k in adata.obs.columns:
+            file_cell_metadata[k].extend(adata_chunk.obs[k].tolist())
+
+    return tokenized_cells, file_cell_metadata
+
+
+def tokenize_anndata_prenormalized(adata, 
+                                   genelist_dict, 
+                                   gene_median_dict, 
+                                   chunk_size=100000,
+                                   gene_id="ensemble_id"):
+    """
+    Tokenizes and ranks genes within an AnnData object, optimizing for memory efficiency.
+
+    This function processes gene expression data in chunks, applies normalization, and ranks genes
+    for each cell based on their expression levels. The resulting tokenized and ranked gene
+    representations, along with cell metadata, are returned.
+
+    Args:
+        adata (AnnData): The AnnData object containing gene expression data.
+        genelist_dict (dict): Dictionary mapping gene IDs to boolean values indicating relevance.
+        gene_median_dict (dict): Dictionary mapping gene IDs to their median expression values.
+        chunk_size (int, optional): Number of cells to process in each chunk (default: 1000).
+        target_sum (int, optional): Target sum for count normalization (default: 10000).
+        counts_column (str, optional): The column in `adata.obs` containing cell counts (default: 'n_counts').
+        gene_id (str, optional): The column in `adata.var` containing gene IDs (default: 'ensembl_id').
+
+    Returns:
+        tuple: 
+            - list: List of tokenized and ranked gene lists for each cell.
+            - dict: Dictionary containing cell metadata (keys are metadata column names).
+    """
+    # Filter relevant miRNAs
+    coding_miRNA_mask = np.array([genelist_dict.get(i, False) for i in adata.var[gene_id]])
+    coding_miRNA_loc = np.where(coding_miRNA_mask)[0]
+
+    # Extract miRNA information
+    coding_miRNA_ids = adata.var[gene_id][coding_miRNA_loc]
+    norm_factor_vector = np.array([gene_median_dict[i] for i in coding_miRNA_ids])
+    coding_miRNA_tokens = np.array([gene_token_dict[i] for i in coding_miRNA_ids])
+
+    tokenized_cells = []
+    file_cell_metadata = {k: [] for k in adata.obs.columns}  # Initialize metadata dict
+
+    # Process in chunks for memory efficiency
+    for chunk_start in range(0, adata.shape[0], chunk_size):
+        chunk_end = chunk_start + chunk_size
+        adata_chunk = adata[chunk_start:chunk_end, coding_miRNA_loc]
+        X_norm = sp.csr_matrix(adata_chunk.X)  
 
         # Tokenize and rank genes for each cell in chunk
         for i in range(X_norm.shape[0]):
@@ -206,16 +291,14 @@ if __name__ == "__main__":
     
     # load and restructure
     adata = sc.read_h5ad(adata_path)
-    
-    """USE RAW COUNTS!!! """
-    adata.X = adata.layers['raw_counts']
+   
     
     # drop most metadata columns
     adata.obs['cell_id'] = adata.obs.index
     adata.obs = adata.obs[KEEP_COLUMNS]
 
-    # tokenize
-    tokenized_cells, cell_metadata = tokenize_anndata(adata, 
+    # tokenize based on prenormalized counts
+    tokenized_cells, cell_metadata = tokenize_anndata_prenormalized(adata, 
                                                       genelist_dict, 
                                                       gene_median_dict)
     

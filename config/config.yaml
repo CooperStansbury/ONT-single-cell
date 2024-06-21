@@ -10,5 +10,5 @@ umi_distance: 1
 threads: 36
 scanpy_params:
     target_sum: 1000000
-    min_genes: 200
-    min_cells: 3
+    min_genes: 500
+    min_cells: 10
