@@ -97,7 +97,7 @@ rule locate_factors:
     conda:
         "../envs/seqkit.yml"
     params:
-        mismatches=2
+        mismatches=10
     shell:
         """seqkit locate -m {params.mismatches} -f {input.codes} {input.fastq} -j {threads} > {output} """
         
