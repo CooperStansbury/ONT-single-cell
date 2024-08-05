@@ -28,6 +28,54 @@ def min_max(values):
     return scaled_values
 
 
+def anndata_stats(anndata, gene_list=None, label=None):
+    """Calculates gene expression statistics for specified genes in an AnnData object.
+
+    Args:
+        anndata (anndata.AnnData): The AnnData object containing gene expression data.
+        gene_list (list): A list of gene names to calculate statistics for.
+        label (str, optional): An optional label to add to the results.
+
+    Returns:
+        pd.DataFrame: A DataFrame with gene statistics, including:
+            - average_expression
+            - median_expression
+            - std_dev
+            - num_nonzero_cells
+            - percent_nonzero
+            - mean_nonzero
+            - median_nonzero
+            - gene_name (if a label is provided)
+    """
+    
+    if gene_list is None:
+        gene_list = anndata.var_names
+
+    # Validate gene list
+    valid_gene_list = list(set(gene_list).intersection(anndata.var_names))
+    if not valid_gene_list:
+        raise ValueError("None of the provided genes are found in the AnnData object.")
+
+    # Extract data and calculate statistics
+    df = anndata[:, valid_gene_list].to_df()
+    stats = pd.DataFrame({
+        'average_expression': df.mean(),
+        'median_expression': df.median(),
+        'std_dev': df.std(ddof=0),
+        'num_nonzero_cells': (df > 0).sum(),
+        'percent_nonzero': 100 * (df != 0).mean(),
+        'mean_nonzero': df[df > 0].mean(),
+        'median_nonzero': df[df > 0].median(),
+    })
+    stats = stats.reset_index(names='gene_name')
+
+    # Add optional label
+    if label is not None:
+        stats['label'] = label
+
+    return stats
+
+
 def calculate_gene_expression_stats(df):
     """
     Calculates aggregate gene expression statistics for a given DataFrame.

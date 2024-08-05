@@ -7,6 +7,70 @@ from matplotlib import patheffects as pe
 import scipy 
 import seaborn as sns 
 import scanpy as sc
+from matplotlib.colors import ListedColormap
+
+CUSTOM_COLORS = [
+    "#A30015", "#FF6978", "#FCB9B2", "#993300", "#D95F02", "#FDB462", 
+    "#1F78B4", "#A6CEE3", "#33A02C", "#B2DF8A", "#FFFF99", "#6A3D9A", 
+    "#CAB2D6", "#000000", "#8DD3C7", "#BEBADA", "#FB8072", "#80B1D3", 
+    "#FDB462", "#FCCDE5", "#BC80BD", "#CCEBC5", "#FFED6F", "#FFFFB3", 
+    "#666666", "#006400", "#00FFFF", "#B3DE69", "#00008B", "#808080", 
+    "#FF0000", "#4B0082", "#EEE685", "#708090", "#008080"
+]
+
+def plot_gene_percent(adata, gene='GFI1B', threshold=0.0):
+    """Plots the percentage of cells expressing a gene across different cell types.
+
+    Args:
+      adata: AnnData object containing the gene expression data.
+      gene: The name of the gene to analyze.
+      threshold: The expression threshold to consider a cell positive for the gene.
+    """
+
+    pdf = adata.obs.copy()
+    pdf[gene] = adata[:, gene].to_df(layer='raw_counts')
+    pdf[gene] = np.where(pdf[gene] > threshold, 1, 0)
+
+    pdf = pdf.groupby('cell_label').agg(
+      total=(gene, 'count'),
+      positive=(gene, 'sum'),
+    )
+
+    pdf['percent'] = pdf['positive'] / pdf['total']
+
+    sns.barplot(data=pdf, y='cell_label', x='percent', ec='k')
+    sns.despine()
+    plt.xlim([0, 1])
+    plt.title(gene)
+    plt.ylabel("")
+    plt.xlabel(f"Percent {gene}+")
+    plt.show()
+
+
+def create_custom_colormap(colors):
+    """Creates a custom Matplotlib colormap from a list of colors.
+
+    This function takes a list of color specifications (e.g., hex codes, RGB tuples)
+    and constructs a discrete colormap that can be used in Matplotlib plots.
+
+    Args:
+        colors: A list of color specifications. Each element can be:
+            - A hex code string (e.g., "#FF0000" for red)
+            - An RGB tuple (e.g., (1.0, 0.0, 0.0) for red)
+            - Any other format accepted by Matplotlib's `ListedColormap`.
+
+    Returns:
+        matplotlib.colors.ListedColormap: The custom colormap object.
+
+    Example:
+        ```
+        cmap = create_custom_colormap(["#FF0000", "#00FF00", "#0000FF"])
+        plt.scatter(x, y, c=labels, cmap=cmap)
+        ```
+    """
+    return ListedColormap(colors)
+
+
 
 def make_colorbar(cmap='viridis', 
                   width=0.2,
@@ -295,3 +359,4 @@ def plot_umap_scatter(
     
     if not title is None:
         ax.set_title(title)
+    return 
