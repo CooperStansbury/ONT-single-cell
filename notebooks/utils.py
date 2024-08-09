@@ -9,6 +9,28 @@ import scipy
 from scipy import stats
 import scanpy as sc
 
+def drop_zero_sum_columns(df):
+    """
+    Drops columns from a DataFrame where the sum of all values is zero.
+
+    Args:
+        df: The DataFrame to process.
+
+    Returns:
+        The DataFrame with zero-sum columns removed.
+    """
+
+    # Calculate the sum of each column
+    column_sums = df.sum(axis=0)  # Sum along rows (axis=0)
+
+    # Identify columns with zero sum
+    zero_sum_columns = column_sums[column_sums == 0].index
+
+    # Drop the identified columns
+    df_cleaned = df.drop(zero_sum_columns, axis=1)  # Drop columns (axis=1)
+
+    return df_cleaned
+
 
 def min_max(values):
     """Scales a series of values to the range [0, 1] using NumPy.

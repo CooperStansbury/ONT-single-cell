@@ -18,6 +18,7 @@ CUSTOM_COLORS = [
     "#FF0000", "#4B0082", "#EEE685", "#708090", "#008080"
 ]
 
+
 def plot_gene_percent(adata, gene='GFI1B', threshold=0.0):
     """Plots the percentage of cells expressing a gene across different cell types.
 
@@ -162,7 +163,7 @@ def get_n_colors(n, cmap_name='viridis'):
     """
 
     cmap = plt.get_cmap(cmap_name)
-    return [plt.colors.rgb2hex(cmap(i / (n - 1))) for i in range(n)]
+    return [plt.cm.colors.rgb2hex(cmap(i / (n - 1))) for i in range(n)]
 
 
 def label_point(x, y, val, ax, offset=0.05, fontsize=4):
@@ -316,8 +317,6 @@ def plot_umap_scatter(
     Raises:
         KeyError: If `color` is not found in `adata.var` or `adata.obs`.
     """
-    
-    
     if color in adata.var_names: # Color is a gene expression value
         df = adata.to_df()
         expression = df[color].values
