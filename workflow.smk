@@ -61,6 +61,7 @@ include: "rules/anndata.smk"
 include: "rules/v5tags.smk"
 include: "rules/geneformer.smk"
 include: "rules/isoquant.smk"
+include: "rules/rna_velocity.smk"
 
 
 
@@ -92,19 +93,26 @@ rule all:
         OUTPUT + "scanpy/processed.anndata.h5ad",
         OUTPUT + "scanpy/clustered.anndata.h5ad",
         OUTPUT + 'v5_tagged/v5_result.table.csv',
-        OUTPUT + "geneformer_adata/iHSC.anndata.h5ad",
-        OUTPUT + "geneformer_adata/pellin.anndata.h5ad",
-        OUTPUT + "geneformer_adata/tabula_sapiens.anndata.h5ad",
         OUTPUT + 'v5_tagged/all_reads_merged.fastq',
-        expand(OUTPUT + "geneformer_adata/{pid}.anndata.h5ad", pid=weng_ids), 
-        OUTPUT + "geneformer_adata/processed.anndata.h5ad",
         expand(OUTPUT + "isoquant/{sid}.done", sid=samples),
         OUTPUT + "isoquant/annotations.db",
         OUTPUT + "isoquant_prepared/gene_counts.csv",
         OUTPUT + "isoquant_prepared/transcript_counts.csv",
         OUTPUT + "isoquant_prepared/isoforms.csv",
+        OUTPUT + 'velocyto/merged.tagged.bam',
+        OUTPUT + 'velocyto/run_velocyto.done',
+
+
+
+rule geneformer:
+    input:
+        expand(OUTPUT + "geneformer_adata/{pid}.anndata.h5ad", pid=weng_ids), 
+        OUTPUT + "geneformer_adata/processed.anndata.h5ad",
         OUTPUT + "geneformer_adata/processed.anndata.lt.h5ad",
         OUTPUT + "geneformer_inputs/iHSC.dataset",
+        OUTPUT + "geneformer_adata/iHSC.anndata.h5ad",
+        OUTPUT + "geneformer_adata/pellin.anndata.h5ad",
+        OUTPUT + "geneformer_adata/tabula_sapiens.anndata.h5ad",
         
 rule test:
     output:

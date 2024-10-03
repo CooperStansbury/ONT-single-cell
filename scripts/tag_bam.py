@@ -19,7 +19,7 @@ if __name__ == "__main__":
                 umi = align.query_name.split('_')[1].split("#")[0]
                 read_name = align.query_name.split("#")[1][:-2]
 
-                # write out nes bam headers
+                # write out nessicary bam headers
                 align.set_tag('CB', barcode, value_type="Z")
                 align.set_tag('UB', umi, value_type="Z")
                 align.set_tag('RD', read_name, value_type="Z")

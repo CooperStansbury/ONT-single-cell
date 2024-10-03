@@ -9,6 +9,38 @@ import scipy
 from scipy import stats
 import scanpy as sc
 
+def load_pathway(fpath):
+    """
+    Loads an Enrichr-like database file into a boolean DataFrame.
+
+    Args:
+        fpath (str): Path to the Enrichr-like database file.
+
+    Returns:
+        pandas.DataFrame: A boolean DataFrame where:
+            - Index: Genes
+            - Columns: Pathways
+            - Values: True if the gene is in the pathway, False otherwise.
+    """
+
+    result = []
+    with open(fpath) as f:
+        for line in f:
+            split_line = [x for x in line.strip().split('\t') if x]  # Remove empty strings directly
+
+            row = {'label': split_line[0]}
+            for gene in split_line[1:]:
+                row[gene] = 1
+
+            result.append(row)
+
+    df = pd.DataFrame(result)
+    df = df.fillna(0.0).set_index('label').astype(bool).T  # Chained operations for clarity
+
+    return df
+
+
+
 def drop_zero_sum_columns(df):
     """
     Drops columns from a DataFrame where the sum of all values is zero.

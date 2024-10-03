@@ -61,6 +61,7 @@ include: "rules/anndata.smk"
 include: "rules/v5tags.smk"
 include: "rules/geneformer.smk"
 include: "rules/isoquant.smk"
+include: "rules/rna_velocity.smk"
 
 
 
@@ -98,6 +99,9 @@ rule all:
         OUTPUT + "isoquant_prepared/gene_counts.csv",
         OUTPUT + "isoquant_prepared/transcript_counts.csv",
         OUTPUT + "isoquant_prepared/isoforms.csv",
+        OUTPUT + 'velocyto/merged.tagged.bam',
+        OUTPUT + 'velocyto/run_velocyto.done',
+
 
 
 rule geneformer:
