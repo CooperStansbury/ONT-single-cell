@@ -2,6 +2,7 @@
 .snakemake/*
 *.h5ad
 *.pt
+*.gz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
