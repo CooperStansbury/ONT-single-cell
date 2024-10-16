@@ -1,4 +1,4 @@
-output_path: "/scratch/indikar_root/indikar1/cstansbu/HSC/"
+output_path: "/scratch/indikar_root/indikar1/shared_data/sc_HSC/"
 inputs: "config/fastq_paths.txt"
 ref_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz" 
 transcript_path: "/nfs/turbo/umms-indikar/shared/projects/HSC/data/RefGenome/Homo_sapiens.GRCh38.cdna.all.fa.gz" 

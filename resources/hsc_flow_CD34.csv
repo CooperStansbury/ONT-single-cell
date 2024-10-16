@@ -1,0 +1,13 @@
+experiment,comment,condition,percent
+F2HS#9,no lenti no dox,control,0.50
+F2HS#8,no lenti no dox,control,0.073
+F2HS#8,no dox,5TF,0.12
+F2HS#7,no dox,5TF,0.25
+F2HS#8,low,5TF,3.08
+F2HS#8,low,5TF,2.41
+F2HS#8,high,5TF,2.59
+F2HS#8,high,5TF,1.86
+F2HS#7,high,5TF,1.9
+F2HS#7,low,5TF,3.51
+F2HS#7,Bone marrow,control,40
+F2HS#7,Bone marrow,control,27.3
