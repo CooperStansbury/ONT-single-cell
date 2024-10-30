@@ -4,6 +4,10 @@
 *.pt
 *.gz
 
+# scenic resources
+resources/scenic.10kb_up_10kb_down.csv
+resources/scenic.500b_up_100bp_down.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

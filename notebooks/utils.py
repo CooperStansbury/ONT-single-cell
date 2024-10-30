@@ -24,7 +24,7 @@ def load_pathway(fpath):
     """
 
     result = []
-    with open(fpath) as f:
+    with open(fpath,  encoding='utf-8') as f:
         for line in f:
             split_line = [x for x in line.strip().split('\t') if x]  # Remove empty strings directly
 
